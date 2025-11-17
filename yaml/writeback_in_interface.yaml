@@ -1,0 +1,77 @@
+# Writeback in interface
+uvmf:
+  interfaces:
+    writeback_in:
+      clock: clock
+      reset: reset
+      reset_assertion_level: 'True'
+      veloce_ready: 'True'
+      ports:  # Instruction set slides 25-26
+        - name: "enable_writeback" # Master enable. If zero, the register is not written to.
+          width: '1'
+          dir: input
+          reset_value: "1'b0"
+        - name: "W_Control" # Write control, determines which input to write to the register file
+          width: '2'
+          dir: input
+          reset_value: "2'b00"
+        - name: "aluout" # ALU operation output from execution unit
+          width: '16'
+          dir: input
+          reset_value: "16'b0"
+        - name: "memout" # Values read from memory
+          width: '16'
+          dir: input
+          reset_value: "16'b0"
+        - name: "pcout" # program counter 
+          width: '16'
+          dir: input
+          reset_value: "16'b0"
+        - name: "sr1" # source register 1 from decode unit
+          width: '3'
+          dir: input
+          reset_value: "3'b0"
+        - name: "sr2" # source register 2 from decode unit
+          width: '3'
+          dir: input
+          reset_value: "3'b0"
+        - name: "dr" # destination register from decode unit
+          width: '3'
+          dir: input
+          reset_value: "3'b0"
+      transaction_vars:
+        - name: "enable_writeback"
+          type: bit
+          isrand: 'False'
+          iscompare: 'True'
+        - name: "W_Control"
+          type: bit [1:0]
+          isrand: 'False'
+          iscompare: 'True'
+        - name: "aluout"
+          type: bit [15:0]
+          isrand: 'False'
+          iscompare: 'True'
+        - name: "memout"
+          type: bit [15:0]
+          isrand: 'False'
+          iscompare: 'True'
+        - name: "pcout"
+          type: bit [15:0]
+          isrand: 'False'
+          iscompare: 'True'
+        - name: "sr1"
+          type: bit [2:0]
+          isrand: 'False'
+          iscompare: 'True'
+        - name: "sr2"
+          type: bit [2:0]
+          isrand: 'False'
+          iscompare: 'True'
+        - name: "dr"
+          type: bit [2:0]
+          isrand: 'False'
+          iscompare: 'True'
+      config_vars: []
+      config_constraints: []
+      transaction_constraints: []

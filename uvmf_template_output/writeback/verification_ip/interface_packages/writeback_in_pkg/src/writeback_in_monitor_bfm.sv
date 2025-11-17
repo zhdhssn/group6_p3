@@ -1,0 +1,177 @@
+//----------------------------------------------------------------------
+// Created with uvmf_gen version 2023.4_2
+//----------------------------------------------------------------------
+// pragma uvmf custom header begin
+// pragma uvmf custom header end
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+//     
+// DESCRIPTION: This interface performs the writeback_in signal monitoring.
+//      It is accessed by the uvm writeback_in monitor through a virtual
+//      interface handle in the writeback_in configuration.  It monitors the
+//      signals passed in through the port connection named bus of
+//      type writeback_in_if.
+//
+//     Input signals from the writeback_in_if are assigned to an internal input
+//     signal with a _i suffix.  The _i signal should be used for sampling.
+//
+//     The input signal connections are as follows:
+//       bus.signal -> signal_i 
+//
+//      Interface functions and tasks used by UVM components:
+//             monitor(inout TRANS_T txn);
+//                   This task receives the transaction, txn, from the
+//                   UVM monitor and then populates variables in txn
+//                   from values observed on bus activity.  This task
+//                   blocks until an operation on the writeback_in bus is complete.
+//
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+//
+import uvmf_base_pkg_hdl::*;
+import writeback_in_pkg_hdl::*;
+`include "src/writeback_in_macros.svh"
+
+
+interface writeback_in_monitor_bfm 
+  ( writeback_in_if  bus );
+  // The pragma below and additional ones in-lined further down are for running this BFM on Veloce
+  // pragma attribute writeback_in_monitor_bfm partition_interface_xif                                  
+
+`ifndef XRTL
+// This code is to aid in debugging parameter mismatches between the BFM and its corresponding agent.
+// Enable this debug by setting UVM_VERBOSITY to UVM_DEBUG
+// Setting UVM_VERBOSITY to UVM_DEBUG causes all BFM's and all agents to display their parameter settings.
+// All of the messages from this feature have a UVM messaging id value of "CFG"
+// The transcript or run.log can be parsed to ensure BFM parameter settings match its corresponding agents parameter settings.
+import uvm_pkg::*;
+`include "uvm_macros.svh"
+initial begin : bfm_vs_agent_parameter_debug
+  `uvm_info("CFG", 
+      $psprintf("The BFM at '%m' has the following parameters: ", ),
+      UVM_DEBUG)
+end
+`endif
+
+
+  // Structure used to pass transaction data from monitor BFM to monitor class in agent.
+`writeback_in_MONITOR_STRUCT
+  writeback_in_monitor_s writeback_in_monitor_struct;
+
+  // Structure used to pass configuration data from monitor class to monitor BFM.
+ `writeback_in_CONFIGURATION_STRUCT
+ 
+
+  // Config value to determine if this is an initiator or a responder 
+  uvmf_initiator_responder_t initiator_responder;
+  // Custom configuration variables.  
+  // These are set using the configure function which is called during the UVM connect_phase
+
+  tri clock_i;
+  tri reset_i;
+  tri  enable_writeback_i;
+  tri [1:0] W_Control_i;
+  tri [15:0] aluout_i;
+  tri [15:0] memout_i;
+  tri [15:0] pcout_i;
+  tri [2:0] sr1_i;
+  tri [2:0] sr2_i;
+  tri [2:0] dr_i;
+  assign clock_i = bus.clock;
+  assign reset_i = bus.reset;
+  assign enable_writeback_i = bus.enable_writeback;
+  assign W_Control_i = bus.W_Control;
+  assign aluout_i = bus.aluout;
+  assign memout_i = bus.memout;
+  assign pcout_i = bus.pcout;
+  assign sr1_i = bus.sr1;
+  assign sr2_i = bus.sr2;
+  assign dr_i = bus.dr;
+
+  // Proxy handle to UVM monitor
+  writeback_in_pkg::writeback_in_monitor  proxy;
+  // pragma tbx oneway proxy.notify_transaction                 
+
+  // pragma uvmf custom interface_item_additional begin
+  // pragma uvmf custom interface_item_additional end
+  
+  //******************************************************************                         
+  task wait_for_reset();// pragma tbx xtf  
+    @(posedge clock_i) ;                                                                    
+    do_wait_for_reset();                                                                   
+  endtask                                                                                   
+
+  // ****************************************************************************              
+  task do_wait_for_reset(); 
+  // pragma uvmf custom reset_condition begin
+    wait ( reset_i === 0 ) ;                                                              
+    @(posedge clock_i) ;                                                                    
+  // pragma uvmf custom reset_condition end                                                                
+  endtask    
+
+  //******************************************************************                         
+ 
+  task wait_for_num_clocks(input int unsigned count); // pragma tbx xtf 
+    @(posedge clock_i);  
+                                                                   
+    repeat (count-1) @(posedge clock_i);                                                    
+  endtask      
+
+  //******************************************************************                         
+  event go;                                                                                 
+  function void start_monitoring();// pragma tbx xtf    
+    -> go;
+  endfunction                                                                               
+  
+  // ****************************************************************************              
+  initial begin                                                                             
+    @go;                                                                                   
+    forever begin                                                                        
+      @(posedge clock_i);  
+      do_monitor( writeback_in_monitor_struct );
+                                                                 
+ 
+      proxy.notify_transaction( writeback_in_monitor_struct );
+ 
+    end                                                                                    
+  end                                                                                       
+
+  //******************************************************************
+  // The configure() function is used to pass agent configuration
+  // variables to the monitor BFM.  It is called by the monitor within
+  // the agent at the beginning of the simulation.  It may be called 
+  // during the simulation if agent configuration variables are updated
+  // and the monitor BFM needs to be aware of the new configuration 
+  // variables.
+  //
+    function void configure(writeback_in_configuration_s writeback_in_configuration_arg); // pragma tbx xtf  
+    initiator_responder = writeback_in_configuration_arg.initiator_responder;
+  // pragma uvmf custom configure begin
+  // pragma uvmf custom configure end
+  endfunction   
+
+
+  // ****************************************************************************  
+            
+  task do_monitor(output writeback_in_monitor_s writeback_in_monitor_struct);
+    // Wait for enable_writeback to be active (high) before sampling
+    while (enable_writeback_i !== 1'b1) @(posedge clock_i);
+    
+    // Sample all input signals on the clock edge when enable_writeback is active
+    @(posedge clock_i);
+    writeback_in_monitor_struct.enable_writeback = enable_writeback_i;
+    writeback_in_monitor_struct.W_Control = W_Control_i;
+    writeback_in_monitor_struct.aluout = aluout_i;
+    writeback_in_monitor_struct.memout = memout_i;
+    writeback_in_monitor_struct.pcout = pcout_i;
+    writeback_in_monitor_struct.sr1 = sr1_i;
+    writeback_in_monitor_struct.sr2 = sr2_i;
+    writeback_in_monitor_struct.dr = dr_i;
+  endtask         
+  
+ 
+endinterface
+
+// pragma uvmf custom external begin
+// pragma uvmf custom external end
+

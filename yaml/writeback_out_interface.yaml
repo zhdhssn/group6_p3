@@ -1,0 +1,41 @@
+# Writeback out interface
+# Oden said no need for parameters, our data won't have config variables either
+uvmf:
+  interfaces:
+    writeback_out:
+      clock: clock
+      reset: reset
+      reset_assertion_level: 'False'
+      veloce_ready: 'True'
+      # Ports from the perspective of the WriteBack block (outputs from WriteBack)
+      ports:  
+        - name: "psr" # PSR output. Indicates the status of the destination register.
+          width: '3'
+          dir: input
+          reset_value: "3'b0"
+        - name: "vsr1" # Value from register file for source register 1
+          width: '16'
+          dir: input
+          reset_value: "16'b0"
+        - name: "vsr2" # Value from register file for source register 2
+          width: '16'
+          dir: input
+          reset_value: "16'b0"
+      # Transaction variables for monitoring
+      transaction_vars:
+        - name: "psr"
+          type: bit [2:0]
+          isrand: 'False'
+          iscompare: 'True'
+        - name: "vsr1"
+          type: bit [15:0]
+          isrand: 'False'
+          iscompare: 'True'
+        - name: "vsr2"
+          type: bit [15:0]
+          isrand: 'False'
+          iscompare: 'True'
+      config_vars: []
+      config_constraints: []
+      transaction_constraints: []
+
