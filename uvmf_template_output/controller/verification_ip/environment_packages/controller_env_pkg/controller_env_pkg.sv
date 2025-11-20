@@ -23,7 +23,9 @@ package controller_env_pkg;
   import uvm_pkg::*;
   `include "uvm_macros.svh"
   import uvmf_base_pkg::*;
+  
   import controller_in_pkg::*;
+  import lc3_prediction_pkg::*;
   import controller_in_pkg_hdl::*;
   import controller_out_pkg::*;
   import controller_out_pkg_hdl::*;
