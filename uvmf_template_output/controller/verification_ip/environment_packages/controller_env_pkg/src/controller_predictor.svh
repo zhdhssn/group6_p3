@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------
-// Created with uvmf_gen version 2023.4_2
+// Created with uvmf_gen version 2023.4
 //----------------------------------------------------------------------
 // pragma uvmf custom header begin
 // pragma uvmf custom header end
@@ -100,7 +100,26 @@ class controller_predictor #(
     // `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
     // `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "UVMF_CHANGE_ME: The controller_predictor::write_analysis_export function needs to be completed with DUT prediction model",UVM_NONE)
     // `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
-    
+    c_model_output = controller_model(
+        .complete_data(t.complete_data),
+        .complete_instr(t.complete_instr),
+        .IR(t.IR),
+        .psr(t.psr),
+        .IR_Exec(t.IR_Exec),
+        .IMem_dout(t.IMem_dout),
+        .NZP(t.NZP),
+        .enable_updatePC(analysis_port_output_transaction.enable_updatePC),
+        .enable_fetch(analysis_port_output_transaction.enable_fetch),
+        .enable_decode(analysis_port_output_transaction.enable_decode),
+        .enable_execute(analysis_port_output_transaction.enable_execute),
+        .enable_writeback(analysis_port_output_transaction.enable_writeback),
+        .bypass_alu_1(analysis_port_output_transaction.bypass_alu_1),
+        .bypass_alu_2(analysis_port_output_transaction.bypass_alu_2),
+        .bypass_mem_1(analysis_port_output_transaction.bypass_mem_1),
+        .bypass_mem_2(analysis_port_output_transaction.bypass_mem_2),
+        .mem_state(analysis_port_output_transaction.mem_state),
+        .br_taken(analysis_port_output_transaction.br_taken)
+    );
     // Code for sending output transaction out through analysis_port
     // Please note that each broadcasted transaction should be a different object than previously 
     // broadcasted transactions.  Creation of a different object is done by constructing the transaction 
