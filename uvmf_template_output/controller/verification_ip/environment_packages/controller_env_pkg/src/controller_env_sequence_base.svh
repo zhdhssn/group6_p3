@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------
-// Created with uvmf_gen version 2023.4_2
+// Created with uvmf_gen version 2023.4
 //----------------------------------------------------------------------
 // pragma uvmf custom header begin
 // pragma uvmf custom header end
@@ -40,6 +40,8 @@ class controller_env_sequence_base #(
     typedef controller_in_random_sequence controller_in_agent_random_sequence_t;
     controller_in_agent_random_sequence_t controller_in_agent_rand_seq;
 
+    typedef controller_out_random_sequence controller_out_agent_random_sequence_t;
+    controller_out_agent_random_sequence_t controller_out_agent_rand_seq;
 
 
 // This example shows how to use the environment sequence base for sub-environments
@@ -54,6 +56,7 @@ class controller_env_sequence_base #(
   function new(string name = "" );
     super.new(name);
     controller_in_agent_rand_seq = controller_in_agent_random_sequence_t::type_id::create("controller_in_agent_rand_seq");
+    controller_out_agent_rand_seq = controller_out_agent_random_sequence_t::type_id::create("controller_out_agent_rand_seq");
 
 
   endfunction
@@ -63,7 +66,8 @@ class controller_env_sequence_base #(
   
     if ( configuration.controller_in_agent_config.sequencer != null )
        repeat (25) controller_in_agent_rand_seq.start(configuration.controller_in_agent_config.sequencer);
-   
+    if ( configuration.controller_out_agent_config.sequencer != null )
+       repeat (25) controller_out_agent_rand_seq.start(configuration.controller_out_agent_config.sequencer);
 
 
   endtask
