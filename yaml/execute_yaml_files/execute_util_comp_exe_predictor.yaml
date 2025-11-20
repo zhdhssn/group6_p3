@@ -1,0 +1,11 @@
+uvmf:
+  util_components:
+    exe_predictor:
+      analysis_exports:
+      - name: execute_ae
+        type: execute_in_transaction
+      analysis_ports:
+      - name: execute_ap
+        type: execute_out_transaction
+      type: predictor
+

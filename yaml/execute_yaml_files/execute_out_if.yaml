@@ -1,0 +1,132 @@
+uvmf:
+  interfaces:
+    execute_out:
+      clock: clock
+      reset: reset
+      reset_assertion_level: "True"
+
+      hdl_typedefs:
+      - name: w_control_out_t
+        type: bit [1:0]
+      - name: mem_control_out_t
+        type: bit
+      - name: aluout_t
+        type: bit [15:0]
+      - name: pcout_t
+        type: bit [15:0]
+      - name: dr_t
+        type: bit [2:0]
+      - name: sr1_t
+        type: bit [2:0]
+      - name: sr2_t
+        type: bit [2:0]
+      - name: ir_exec_t
+        type: bit [15:0]
+      - name: nzp_t
+        type: bit [2:0]
+      - name: m_data_t
+        type: bit [15:0]
+      - name: enable_execute_t
+        type: bit
+
+      ports:
+      - dir: input
+        name: w_control_out
+        reset_value: "'b0"
+        width: "2"
+      - dir: input
+        name: mem_control_out
+        reset_value: "'b0"
+        width: "1"
+      - dir: input
+        name: aluout
+        reset_value: "'b0"
+        width: "16"
+      - dir: input
+        name: pcout
+        reset_value: "'b0"
+        width: "16"
+      - dir: input
+        name: dr
+        reset_value: "'b0"
+        width: "3"
+      - dir: input
+        name: sr1
+        reset_value: "'b0"
+        width: "3"
+      - dir: input
+        name: sr2
+        reset_value: "'b0"
+        width: "3"
+      - dir: input
+        name: ir_exec
+        reset_value: "'b0"
+        width: "16"
+      - dir: input
+        name: nzp
+        reset_value: "'b0"
+        width: "3"
+      - dir: input
+        name: m_data
+        reset_value: "'b0"
+        width: "16"
+      - dir: input
+        name: enable_execute
+        reset_value: "'b0"
+        width: "1"
+
+      transaction_vars:
+      - name: w_control_out
+        type: w_control_out_t
+        isrand: "False"
+        iscompare: "True"
+
+      - name: mem_control_out
+        type: mem_control_out_t
+        isrand: "False"
+        iscompare: "True"
+
+      - name: aluout
+        type: aluout_t
+        isrand: "False"
+        iscompare: "True"
+
+      - name: pcout
+        type: pcout_t
+        isrand: "False"
+        iscompare: "True"
+
+      - name: dr
+        type: dr_t
+        isrand: "False"
+        iscompare: "True"
+
+      - name: sr1
+        type: sr1_t
+        isrand: "False"
+        iscompare: "True"
+
+      - name: sr2
+        type: sr2_t
+        isrand: "False"
+        iscompare: "True"
+
+      - name: ir_exec
+        type: ir_exec_t
+        isrand: "False"
+        iscompare: "True"
+
+      - name: nzp
+        type: nzp_t
+        isrand: "False"
+        iscompare: "True"
+
+      - name: m_data
+        type: m_data_t
+        isrand: "False"
+        iscompare: "True"
+      
+      - name: enable_execute
+        type: enable_execute_t
+        isrand: "False"
+        iscompare: "True"

@@ -1,0 +1,175 @@
+uvmf:
+  interfaces:
+    execute_in:
+      clock: clock
+      config_constraints: []
+      config_vars: []
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs:
+      - name: e_control_t
+        type: bit [5:0]
+      - name: ir_t
+        type: bit [15:0]
+      - name: npc_in_t
+        type: bit [15:0]
+      - name: bypass_alu_1_t
+        type: bit
+      - name: bypass_alu_2_t
+        type: bit
+      - name: bypass_mem_1_t
+        type: bit
+      - name: bypass_mem_2_t
+        type: bit
+      - name: vsr1_t
+        type: bit [15:0]
+      - name: vsr2_t
+        type: bit [15:0]
+      - name: w_control_in_t
+        type: bit [1:0]
+      - name: mem_control_in_t
+        type: bit
+      - name: enable_execute_t
+        type: bit
+      - name: mem_bypass_val_t
+        type: bit [15:0]
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters: []
+      ports:
+      - dir: output
+        name: e_control
+        reset_value: '''b0'
+        width: '6'
+      - dir: output
+        name: ir
+        reset_value: '''b0'
+        width: '16'
+      - dir: output
+        name: npc_in
+        reset_value: '''b0'
+        width: '16'
+      - dir: output
+        name: bypass_alu_1
+        reset_value: '''b0'
+        width: '1'
+      - dir: output
+        name: bypass_alu_2
+        reset_value: '''b0'
+        width: '1'
+      - dir: output
+        name: bypass_mem_1
+        reset_value: '''b0'
+        width: '1'
+      - dir: output
+        name: bypass_mem_2
+        reset_value: '''b0'
+        width: '1'
+      - dir: output
+        name: vsr1
+        reset_value: '''b0'
+        width: '16'
+      - dir: output
+        name: vsr2
+        reset_value: '''b0'
+        width: '16'
+      - dir: output
+        name: w_control_in
+        reset_value: '''b0'
+        width: '2'
+      - dir: output
+        name: mem_control_in
+        reset_value: '''b0'
+        width: '1'
+      - dir: output
+        name: enable_execute
+        reset_value: '''b0'
+        width: '1'
+      - dir: output
+        name: mem_bypass_val
+        reset_value: '''b0'
+        width: '16'
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: e_control
+        type: e_control_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: ir
+        type: ir_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: npc_in
+        type: npc_in_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: bypass_alu_1
+        type: bypass_alu_1_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: bypass_alu_2
+        type: bypass_alu_2_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: bypass_mem_1
+        type: bypass_mem_1_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: bypass_mem_2
+        type: bypass_mem_2_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: vsr1
+        type: vsr1_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: vsr2
+        type: vsr2_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: w_control_in
+        type: w_control_in_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: mem_control_in
+        type: mem_control_in_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: enable_execute
+        type: enable_execute_t
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: mem_bypass_val
+        type: mem_bypass_val_t
+        unpacked_dimension: ''
+      use_dpi_link: 'False'
