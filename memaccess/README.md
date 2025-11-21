@@ -28,7 +28,7 @@ nano ~/.bashrc
 
 Put the following lines at the end the bashrc
 ```
-export UVMF_HOME=/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/group6_p3/UVMF_2023.4_2
+export UVMF_HOME=/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2
 export PATH=$UVMF_HOME/scripts:$PATH
 ```
 

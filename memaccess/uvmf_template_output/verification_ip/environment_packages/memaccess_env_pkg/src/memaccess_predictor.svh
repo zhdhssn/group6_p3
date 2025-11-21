@@ -26,15 +26,13 @@
 class memaccess_predictor #(
   type CONFIG_T,
   type BASE_T = uvm_component
-  )
- extends BASE_T;
+  ) extends BASE_T;
 
   // Factory registration of this class
   `uvm_component_param_utils( memaccess_predictor #(
                               CONFIG_T,
                               BASE_T
-                              )
-)
+                              ))
 
 
   // Instantiate a handle to the configuration of the environment in which this component resides
@@ -45,8 +43,7 @@ class memaccess_predictor #(
   uvm_analysis_imp_memaccess_analysis_predictor_export #(memaccess_in_transaction, memaccess_predictor #(
                               .CONFIG_T(CONFIG_T),
                               .BASE_T(BASE_T)
-                              )
-) memaccess_analysis_predictor_export;
+                              )) memaccess_analysis_predictor_export;
 
   
   // Instantiate the analysis ports
@@ -96,9 +93,11 @@ class memaccess_predictor #(
     // Construct one of each output transaction type.
     memaccess_analysis_predictor_port_output_transaction = memaccess_analysis_predictor_port_output_transaction_t::type_id::create("memaccess_analysis_predictor_port_output_transaction");
     //  UVMF_CHANGE_ME: Implement predictor model here.  
-    `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
-    `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "UVMF_CHANGE_ME: The memaccess_predictor::write_memaccess_analysis_predictor_export function needs to be completed with DUT prediction model",UVM_NONE)
-    `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
+    // `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
+    // `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "UVMF_CHANGE_ME: The memaccess_predictor::write_memaccess_analysis_predictor_export function needs to be completed with DUT prediction model",UVM_NONE)
+    // `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
+
+    mem_access_model(t.M_Data, t.M_Addr, t.M_Control, t.mem_state, t.DMem_dout, memaccess_analysis_predictor_port_output_transaction.DMem_addr, memaccess_analysis_predictor_port_output_transaction.DMem_din, memaccess_analysis_predictor_port_output_transaction.memout, memaccess_analysis_predictor_port_output_transaction.DMem_rd);
  
     // Code for sending output transaction out through memaccess_analysis_predictor_port
     // Please note that each broadcasted transaction should be a different object than previously 
