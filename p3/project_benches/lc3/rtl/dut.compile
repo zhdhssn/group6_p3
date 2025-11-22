@@ -1,0 +1,16 @@
+src:
+# pragma uvmf custom src_additional begin
+# pragma uvmf custom src_additional end
+# pragma uvmf custom dut_compile_info begin
+  - ./Controller_Pipeline.v
+  - ./data_defs.v
+  - ./Decode_Pipelined.v
+  - ./Execute.v
+  - ./Fetch.v
+  - ./Mem_Access.v
+  - ./TopLevelLC3.v
+  - ./WriteBack.v
+# pragma uvmf custom dut_compile_info end
+
+# pragma uvmf custom compile_additional begin
+# pragma uvmf custom compile_additional end
