@@ -6,13 +6,13 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //     
-// DESCRIPTION: This interface performs the memaccess_in signal monitoring.
-//      It is accessed by the uvm memaccess_in monitor through a virtual
-//      interface handle in the memaccess_in configuration.  It monitors the
+// DESCRIPTION: This interface performs the imem signal monitoring.
+//      It is accessed by the uvm imem monitor through a virtual
+//      interface handle in the imem configuration.  It monitors the
 //      signals passed in through the port connection named bus of
-//      type memaccess_in_if.
+//      type imem_if.
 //
-//     Input signals from the memaccess_in_if are assigned to an internal input
+//     Input signals from the imem_if are assigned to an internal input
 //     signal with a _i suffix.  The _i signal should be used for sampling.
 //
 //     The input signal connections are as follows:
@@ -23,20 +23,20 @@
 //                   This task receives the transaction, txn, from the
 //                   UVM monitor and then populates variables in txn
 //                   from values observed on bus activity.  This task
-//                   blocks until an operation on the memaccess_in bus is complete.
+//                   blocks until an operation on the imem bus is complete.
 //
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
 import uvmf_base_pkg_hdl::*;
-import memaccess_in_pkg_hdl::*;
-`include "src/memaccess_in_macros.svh"
+import imem_pkg_hdl::*;
+`include "src/imem_macros.svh"
 
 
-interface memaccess_in_monitor_bfm 
-  ( memaccess_in_if  bus );
+interface imem_monitor_bfm 
+  ( imem_if  bus );
   // The pragma below and additional ones in-lined further down are for running this BFM on Veloce
-  // pragma attribute memaccess_in_monitor_bfm partition_interface_xif                                  
+  // pragma attribute imem_monitor_bfm partition_interface_xif                                  
 
 `ifndef XRTL
 // This code is to aid in debugging parameter mismatches between the BFM and its corresponding agent.
@@ -55,11 +55,11 @@ end
 
 
   // Structure used to pass transaction data from monitor BFM to monitor class in agent.
-`memaccess_in_MONITOR_STRUCT
-  memaccess_in_monitor_s memaccess_in_monitor_struct;
+`imem_MONITOR_STRUCT
+  imem_monitor_s imem_monitor_struct;
 
   // Structure used to pass configuration data from monitor class to monitor BFM.
- `memaccess_in_CONFIGURATION_STRUCT
+ `imem_CONFIGURATION_STRUCT
  
 
   // Config value to determine if this is an initiator or a responder 
@@ -69,21 +69,19 @@ end
 
   tri clock_i;
   tri reset_i;
-  tri [15:0] M_Data_i;
-  tri [15:0] M_Addr_i;
-  tri  M_Control_i;
-  tri [1:0] mem_state_i;
-  tri [15:0] DMem_dout_i;
+  tri  complete_instr_i;
+  tri [15:0] Instr_dout_i;
+  tri [15:0] PC_i;
+  tri  instrmem_rd_i;
   assign clock_i = bus.clock;
   assign reset_i = bus.reset;
-  assign M_Data_i = bus.M_Data;
-  assign M_Addr_i = bus.M_Addr;
-  assign M_Control_i = bus.M_Control;
-  assign mem_state_i = bus.mem_state;
-  assign DMem_dout_i = bus.DMem_dout;
+  assign complete_instr_i = bus.complete_instr;
+  assign Instr_dout_i = bus.Instr_dout;
+  assign PC_i = bus.PC;
+  assign instrmem_rd_i = bus.instrmem_rd;
 
   // Proxy handle to UVM monitor
-  memaccess_in_pkg::memaccess_in_monitor  proxy;
+  imem_pkg::imem_monitor  proxy;
   // pragma tbx oneway proxy.notify_transaction                 
 
   // pragma uvmf custom interface_item_additional begin
@@ -122,10 +120,10 @@ end
     @go;                                                                                   
     forever begin                                                                        
       @(posedge clock_i);  
-      do_monitor( memaccess_in_monitor_struct );
+      do_monitor( imem_monitor_struct );
                                                                  
  
-      proxy.notify_transaction( memaccess_in_monitor_struct );
+      proxy.notify_transaction( imem_monitor_struct );
  
     end                                                                                    
   end                                                                                       
@@ -138,8 +136,8 @@ end
   // and the monitor BFM needs to be aware of the new configuration 
   // variables.
   //
-    function void configure(memaccess_in_configuration_s memaccess_in_configuration_arg); // pragma tbx xtf  
-    initiator_responder = memaccess_in_configuration_arg.initiator_responder;
+    function void configure(imem_configuration_s imem_configuration_arg); // pragma tbx xtf  
+    initiator_responder = imem_configuration_arg.initiator_responder;
   // pragma uvmf custom configure begin
   // pragma uvmf custom configure end
   endfunction   
@@ -147,14 +145,13 @@ end
 
   // ****************************************************************************  
             
-  task do_monitor(output memaccess_in_monitor_s memaccess_in_monitor_struct);
+  task do_monitor(output imem_monitor_s imem_monitor_struct);
     //
     // Available struct members:
-    //     //    memaccess_in_monitor_struct.M_Data
-    //     //    memaccess_in_monitor_struct.M_Addr
-    //     //    memaccess_in_monitor_struct.DMem_dout
-    //     //    memaccess_in_monitor_struct.mem_state
-    //     //    memaccess_in_monitor_struct.M_Control
+    //     //    imem_monitor_struct.complete_instr
+    //     //    imem_monitor_struct.Instr_dout
+    //     //    imem_monitor_struct.PC
+    //     //    imem_monitor_struct.instrmem_rd
     //     //
     // Reference code;
     //    How to wait for signal value
@@ -162,11 +159,10 @@ end
     //    
     //    How to assign a struct member, named xyz, from a signal.   
     //    All available input signals listed.
-    //      memaccess_in_monitor_struct.xyz = M_Data_i;  //    [15:0] 
-    //      memaccess_in_monitor_struct.xyz = M_Addr_i;  //    [15:0] 
-    //      memaccess_in_monitor_struct.xyz = M_Control_i;  //     
-    //      memaccess_in_monitor_struct.xyz = mem_state_i;  //    [1:0] 
-    //      memaccess_in_monitor_struct.xyz = DMem_dout_i;  //    [15:0] 
+    //      imem_monitor_struct.xyz = complete_instr_i;  //     
+    //      imem_monitor_struct.xyz = Instr_dout_i;  //    [15:0] 
+    //      imem_monitor_struct.xyz = PC_i;  //    [15:0] 
+    //      imem_monitor_struct.xyz = instrmem_rd_i;  //     
     // pragma uvmf custom do_monitor begin
     // UVMF_CHANGE_ME : Implement protocol monitoring.  The commented reference code 
     // below are examples of how to capture signal values and assign them to 
@@ -175,12 +171,10 @@ end
     // task should return when a complete transfer has been observed.  Once this task is
     // exited with captured values, it is then called again to wait for and observe 
     // the next transfer. One clock cycle is consumed between calls to do_monitor.
-    while(reset_i) @(posedge clock_i);
-    memaccess_in_monitor_struct.M_Data = M_Data_i;  //    [15:0] 
-    memaccess_in_monitor_struct.M_Addr = M_Addr_i;  //    [15:0] 
-    memaccess_in_monitor_struct.M_Control = M_Control_i;  //     
-    memaccess_in_monitor_struct.mem_state = mem_state_i;  //    [1:0] 
-    memaccess_in_monitor_struct.DMem_dout = DMem_dout_i;  //    [15:0] 
+    @(posedge clock_i);
+    @(posedge clock_i);
+    @(posedge clock_i);
+    @(posedge clock_i);
     // pragma uvmf custom do_monitor end
   endtask         
   
