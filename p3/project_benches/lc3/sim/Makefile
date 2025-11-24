@@ -132,8 +132,28 @@ $(UVMF_PROJECT_DIR)/tb/tests/LC3_tests_pkg.sv
 
 # pragma uvmf custom dut_files begin
 # UVMF_CHANGE_ME : Reference Verilog DUT source.
-LC3_VERILOG_DUT ?=\
-$(UVMF_PROJECT_DIR)/rtl/verilog/verilog_dut.v
+# LC3_VERILOG_DUT ?=\
+# $(UVMF_PROJECT_DIR)/rtl/verilog/verilog_dut.v
+# $(UVMF_PROJECT_DIR)/rtl/verilog/Controller_Pipeline.v
+# $(UVMF_PROJECT_DIR)/rtl/verilog/data_defs.v
+# $(UVMF_PROJECT_DIR)/rtl/verilog/Decode_Pipelined.v
+# $(UVMF_PROJECT_DIR)/rtl/verilog/Execute.v 
+# $(UVMF_PROJECT_DIR)/rtl/verilog/Fetch.v 
+# $(UVMF_PROJECT_DIR)/rtl/verilog/Mem_Access.v 
+# $(UVMF_PROJECT_DIR)/rtl/verilog/TopLevelLC3.v 
+# $(UVMF_PROJECT_DIR)/rtl/verilog/Writeback.v 
+
+LC3_VERILOG_DUT ?= \
+    $(UVMF_PROJECT_DIR)/rtl/verilog/verilog_dut.v \
+    $(UVMF_PROJECT_DIR)/rtl/verilog/Controller_Pipeline.v \
+    $(UVMF_PROJECT_DIR)/rtl/verilog/data_defs.v \
+    $(UVMF_PROJECT_DIR)/rtl/verilog/Decode_Pipelined.v \
+    $(UVMF_PROJECT_DIR)/rtl/verilog/Execute.v \
+    $(UVMF_PROJECT_DIR)/rtl/verilog/Fetch.v \
+    $(UVMF_PROJECT_DIR)/rtl/verilog/Mem_Access.v \
+    $(UVMF_PROJECT_DIR)/rtl/verilog/TopLevelLC3.v \
+    $(UVMF_PROJECT_DIR)/rtl/verilog/Writeback.v
+
 
 # UVMF_CHANGE_ME : Reference VHDL DUT source.
 LC3_VHDL_DUT ?=\
