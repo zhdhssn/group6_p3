@@ -224,12 +224,8 @@ end
        //      instrmem_rd_o <= imem_initiator_struct.xyz;  //     
        //    Initiator inout signals
     // Initiate a transfer using the data received.
-    @(posedge clock_i);
-    @(posedge clock_i);
     // Wait for the responder to complete the transfer then place the responder data into 
     // imem_responder_struct.
-    @(posedge clock_i);
-    @(posedge clock_i);
     responder_struct = imem_responder_struct;
   endtask        
 // pragma uvmf custom initiate_and_get_response end
@@ -279,20 +275,30 @@ bit first_transfer=1;
        //      complete_instr_o <= imem_responder_struct.xyz;  //     
        //      Instr_dout_o <= imem_responder_struct.xyz;  //    [15:0] 
        //    Responder inout signals
+        @(posedge clock_i)
+        while(instrmem_rd_i != 1'b1)@(posedge clock_i);
+
+        if(imem_responder_struct.complete_instr ===1) begin
+          Instr_dout_o <= imem_responder_struct.Instr_dout;
+          complete_instr_o <= 1'b1;
+        end else begin
+          Instr_dout_o <= 0;
+          complete_instr_o <= 1'b0; 
+        end 
     
-  @(posedge clock_i);
-  if (!first_transfer) begin
-    // Perform transfer response here.   
-    // Reply using data recieved in the imem_responder_struct.
-    @(posedge clock_i);
-    // Reply using data recieved in the transaction handle.
-    @(posedge clock_i);
-  end
-    // Wait for next transfer then gather info from intiator about the transfer.
-    // Place the data into the imem_initiator_struct.
-    @(posedge clock_i);
-    @(posedge clock_i);
-    first_transfer = 0;
+  // @(posedge clock_i);
+  // if (!first_transfer) begin
+  //   // Perform transfer response here.   
+  //   // Reply using data recieved in the imem_responder_struct.
+  //   @(posedge clock_i);
+  //   // Reply using data recieved in the transaction handle.
+  //   @(posedge clock_i);
+  // end
+  //   // Wait for next transfer then gather info from intiator about the transfer.
+  //   // Place the data into the imem_initiator_struct.
+  //   @(posedge clock_i);
+  //   @(posedge clock_i);
+  //   first_transfer = 0;
   endtask
 // pragma uvmf custom respond_and_wait_for_next_transfer end
 

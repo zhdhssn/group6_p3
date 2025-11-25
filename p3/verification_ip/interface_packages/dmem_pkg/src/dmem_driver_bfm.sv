@@ -291,19 +291,19 @@ bit first_transfer=1;
        //      Data_dout_o <= dmem_responder_struct.xyz;  //    [15:0] 
        //    Responder inout signals
     
-  @(posedge clock_i);
-  if (!first_transfer) begin
-    // Perform transfer response here.   
-    // Reply using data recieved in the dmem_responder_struct.
-    @(posedge clock_i);
-    // Reply using data recieved in the transaction handle.
-    @(posedge clock_i);
-  end
-    // Wait for next transfer then gather info from intiator about the transfer.
-    // Place the data into the dmem_initiator_struct.
-    @(posedge clock_i);
-    @(posedge clock_i);
-    first_transfer = 0;
+      @(posedge clock_i);
+      while(Data_rd_i === 1'bx) @(posedge clock_i);
+  
+      if(Data_rd_i === 1) begin
+        Data_dout_o <= dmem_responder_struct.Data_dout;
+        complete_data_o <= 1'b1 ;
+      end else if(Data_rd_i === 0) begin
+        complete_data_o <= 1'b1 ;
+      end
+      
+      @(posedge clock_i);
+      complete_data_o <= 1'b0 ;
+
   endtask
 // pragma uvmf custom respond_and_wait_for_next_transfer end
 

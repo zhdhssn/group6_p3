@@ -175,10 +175,11 @@ end
     // task should return when a complete transfer has been observed.  Once this task is
     // exited with captured values, it is then called again to wait for and observe 
     // the next transfer. One clock cycle is consumed between calls to do_monitor.
-    @(posedge clock_i);
-    @(posedge clock_i);
-    @(posedge clock_i);
-    @(posedge clock_i);
+    dmem_monitor_struct.complete_data = complete_data_i;  //     
+    dmem_monitor_struct.Data_dout = Data_dout_i;  //    [15:0] 
+    dmem_monitor_struct.Data_din = Data_din_i;  //    [15:0] 
+    dmem_monitor_struct.Data_addr = Data_addr_i;  //    [15:0] 
+    dmem_monitor_struct.Data_rd = Data_rd_i;  //   
     // pragma uvmf custom do_monitor end
   endtask         
   
