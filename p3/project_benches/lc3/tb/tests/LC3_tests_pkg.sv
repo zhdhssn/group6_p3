@@ -49,6 +49,8 @@ package LC3_tests_pkg;
    import controller_in_pkg_hdl::*;
    import controller_out_pkg::*;
    import controller_out_pkg_hdl::*;
+   import imem_pkg::*;
+   import imem_pkg_hdl::*;
    import dmem_pkg::*;
    import dmem_pkg_hdl::*;
 
