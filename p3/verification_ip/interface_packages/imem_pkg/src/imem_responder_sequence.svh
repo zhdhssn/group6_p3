@@ -29,8 +29,15 @@ class imem_responder_sequence
   task body();
     req=imem_transaction::type_id::create("req");
     forever begin
+
+//Harry: tmp hardcoded instruction for integration testing
       start_item(req);
+      req.PC = 16'h3000;  // Starting PC address
+      req.Instr_dout = 16'b0001_001_010_000_011;  // ADD R1, R2, R3 = 0x14A3
+      req.complete_instr = 1'b1;
       finish_item(req);
+
+      
       // pragma uvmf custom body begin
       // UVMF_CHANGE_ME : Do something here with the resulting req item.  The
       // finish_item() call above will block until the req transaction is ready
