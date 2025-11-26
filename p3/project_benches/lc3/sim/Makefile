@@ -20,6 +20,9 @@
 # export UVMF_HOME ?= /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/UVMF_2023.4_2
 export UVMF_HOME ?= ../../../UVMF_2023.4_2 #Harry update -> relative path
 
+# Harry's UVMF_2023.4_2 path
+# export UVMF_HOME=/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2
+
 # pragma uvmf custom exports begin
 #
 # Project(s) specific verification IP library:

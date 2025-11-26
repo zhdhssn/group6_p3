@@ -119,7 +119,7 @@ import uvmf_base_pkg_hdl::*;
      .clock(clk), .reset(rst)
      // pragma uvmf custom controller_env_controller_out_agent_bus_connections end
      );
-  fetch_out_if  imem_agent_bus(
+  imem_if  imem_agent_bus(
      // pragma uvmf custom imem_agent_bus_connections begin
      .clock(clk), .reset(rst)
      // pragma uvmf custom imem_agent_bus_connections end
