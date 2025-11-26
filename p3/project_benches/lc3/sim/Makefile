@@ -223,10 +223,19 @@ BUILD_TGT = $(BUILD_TGT_$(USE_VINFO))
 comp_hvl : comp_hvl_core
 
 
+# comp_hvl_core :   \
+# 	 comp_fetch_in_pkg  comp_fetch_out_pkg  comp_decode_in_pkg  comp_decode_out_pkg  comp_execute_in_pkg  comp_execute_out_pkg  comp_memaccess_in_pkg  comp_memaccess_out_pkg  comp_writeback_in_pkg  comp_writeback_out_pkg  comp_controller_in_pkg  comp_controller_out_pkg  comp_dmem_pkg  \
+# 	comp_lc3_prediction_pkg comp_lc3_env_pkg \
+# 	comp_LC3_parameters_pkg comp_LC3_sequence_pkg comp_LC3_tests_pkg 
+
 comp_hvl_core :   \
-	 comp_fetch_in_pkg  comp_fetch_out_pkg  comp_decode_in_pkg  comp_decode_out_pkg  comp_execute_in_pkg  comp_execute_out_pkg  comp_memaccess_in_pkg  comp_memaccess_out_pkg  comp_writeback_in_pkg  comp_writeback_out_pkg  comp_controller_in_pkg  comp_controller_out_pkg  comp_dmem_pkg  \
-	comp_lc3_prediction_pkg comp_lc3_env_pkg \
-	comp_LC3_parameters_pkg comp_LC3_sequence_pkg comp_LC3_tests_pkg 
+   comp_fetch_in_pkg  comp_fetch_out_pkg comp_imem_pkg \
+   comp_decode_in_pkg comp_decode_out_pkg comp_execute_in_pkg comp_execute_out_pkg \
+   comp_memaccess_in_pkg comp_memaccess_out_pkg comp_writeback_in_pkg \
+   comp_writeback_out_pkg comp_controller_in_pkg comp_controller_out_pkg comp_dmem_pkg \
+   comp_lc3_prediction_pkg comp_lc3_env_pkg \
+   comp_LC3_parameters_pkg comp_LC3_sequence_pkg comp_LC3_tests_pkg
+
 
 comp_uvmf_core : comp_uvm_pkg comp_uvmf_base_pkg 
 
