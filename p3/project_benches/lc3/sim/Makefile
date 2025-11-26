@@ -17,7 +17,8 @@
 # This variable points to release code that is not user modified.
 # This variable allows for UVMF release directories to reside independent of project related verification IP and project bench directories.
 # This code below looks "upward" for directory starting with UVMF_* and returns first match for use with the release examples.
-export UVMF_HOME ?= /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/UVMF_2023.4_2
+# export UVMF_HOME ?= /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/UVMF_2023.4_2
+export UVMF_HOME ?= ../../../UVMF_2023.4_2 #Harry update -> relative path
 
 # pragma uvmf custom exports begin
 #
