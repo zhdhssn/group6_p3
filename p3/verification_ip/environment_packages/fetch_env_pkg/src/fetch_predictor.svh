@@ -91,18 +91,21 @@ class fetch_predictor #(
   // This function performs prediction of DUT output values based on DUT input, configuration and state
   virtual function void write_analysis_export(fetch_in_transaction t);
     // pragma uvmf custom analysis_export_predictor begin
+    bit [15:0] pc, npc;
+    bit instrmem_rd;
+    bit status;
+
     analysis_export_debug = t;
+
     `uvm_info("PRED", $sformatf("Received fetch_in: %s", t.convert2string()), UVM_MEDIUM)
     // `uvm_info("PRED", "Transaction Received through analysis_export", UVM_MEDIUM)
     // `uvm_info("PRED", {"            Data: ",t.convert2string()}, UVM_FULL)
     // Construct one of each output transaction type.
     analysis_port_output_transaction = analysis_port_output_transaction_t::type_id::create("analysis_port_output_transaction");
     //  UVMF_CHANGE_ME: Implement predictor model here.  
-    bit [15:0] pc, npc;
-    bit instrmem_rd;
-
+    
     //Call Lc3 fetch model
-    bit status = fetch_model(
+    status = fetch_model(
       t.enable_updatePC,   // input bit enable_updatePC
       t.enable_fetch,      // input bit enable_fetch
       t.br_taken,          // input bit br_taken
