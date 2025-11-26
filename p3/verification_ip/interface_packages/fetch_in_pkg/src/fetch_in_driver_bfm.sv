@@ -82,8 +82,8 @@ end
   // Custom configuration variables.  
   // These are set using the configure function which is called during the UVM connect_phase
 
-  tri clock_i;
-  tri reset_i;
+  // tri clock_i;
+  // tri reset_i;
 
   // Signal list (all signals are capable of being inputs and outputs for the sake
   // of supporting both INITIATOR and RESPONDER mode operation. Expectation is that 

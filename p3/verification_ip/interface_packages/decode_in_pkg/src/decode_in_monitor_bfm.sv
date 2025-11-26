@@ -177,7 +177,7 @@ end
     // @(posedge clock_i);
     // @(posedge clock_i);
     // @(posedge clock_i);
-    while(enable_decode_i ==1'b0) @(posedge clk_i);
+    while(enable_decode_i ==1'b0) @(posedge clock_i);
 
       decode_in_monitor_struct.enable_decode = enable_decode_i;  //     
       decode_in_monitor_struct.instr_dout = instr_dout_i;  //    [15:0] 
