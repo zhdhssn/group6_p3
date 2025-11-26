@@ -86,6 +86,7 @@ include $(UVMF_VIP_LIBRARY_HOME)/interface_packages/writeback_in_pkg/Makefile
 include $(UVMF_VIP_LIBRARY_HOME)/interface_packages/writeback_out_pkg/Makefile
 include $(UVMF_VIP_LIBRARY_HOME)/interface_packages/controller_in_pkg/Makefile
 include $(UVMF_VIP_LIBRARY_HOME)/interface_packages/controller_out_pkg/Makefile
+include $(UVMF_VIP_LIBRARY_HOME)/interface_packages/imem_pkg/Makefile
 include $(UVMF_VIP_LIBRARY_HOME)/interface_packages/dmem_pkg/Makefile
 
 # Include all requisite environment package targets for this bench
