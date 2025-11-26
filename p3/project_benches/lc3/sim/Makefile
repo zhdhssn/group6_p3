@@ -20,6 +20,9 @@
 # export UVMF_HOME ?= /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/UVMF_2023.4_2
 export UVMF_HOME ?= ../../../UVMF_2023.4_2 #Harry update -> relative path
 
+# Harry's UVMF_2023.4_2 path
+# export UVMF_HOME=/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2
+
 # pragma uvmf custom exports begin
 #
 # Project(s) specific verification IP library:
@@ -220,10 +223,19 @@ BUILD_TGT = $(BUILD_TGT_$(USE_VINFO))
 comp_hvl : comp_hvl_core
 
 
+# comp_hvl_core :   \
+# 	 comp_fetch_in_pkg  comp_fetch_out_pkg  comp_decode_in_pkg  comp_decode_out_pkg  comp_execute_in_pkg  comp_execute_out_pkg  comp_memaccess_in_pkg  comp_memaccess_out_pkg  comp_writeback_in_pkg  comp_writeback_out_pkg  comp_controller_in_pkg  comp_controller_out_pkg  comp_dmem_pkg  \
+# 	comp_lc3_prediction_pkg comp_lc3_env_pkg \
+# 	comp_LC3_parameters_pkg comp_LC3_sequence_pkg comp_LC3_tests_pkg 
+
 comp_hvl_core :   \
-	 comp_fetch_in_pkg  comp_fetch_out_pkg  comp_decode_in_pkg  comp_decode_out_pkg  comp_execute_in_pkg  comp_execute_out_pkg  comp_memaccess_in_pkg  comp_memaccess_out_pkg  comp_writeback_in_pkg  comp_writeback_out_pkg  comp_controller_in_pkg  comp_controller_out_pkg  comp_dmem_pkg  \
-	comp_lc3_prediction_pkg comp_lc3_env_pkg \
-	comp_LC3_parameters_pkg comp_LC3_sequence_pkg comp_LC3_tests_pkg 
+   comp_fetch_in_pkg  comp_fetch_out_pkg comp_imem_pkg \
+   comp_decode_in_pkg comp_decode_out_pkg comp_execute_in_pkg comp_execute_out_pkg \
+   comp_memaccess_in_pkg comp_memaccess_out_pkg comp_writeback_in_pkg \
+   comp_writeback_out_pkg comp_controller_in_pkg comp_controller_out_pkg comp_dmem_pkg \
+   comp_lc3_prediction_pkg comp_lc3_env_pkg \
+   comp_LC3_parameters_pkg comp_LC3_sequence_pkg comp_LC3_tests_pkg
+
 
 comp_uvmf_core : comp_uvm_pkg comp_uvmf_base_pkg 
 

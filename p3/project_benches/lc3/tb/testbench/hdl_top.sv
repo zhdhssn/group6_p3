@@ -119,7 +119,7 @@ import uvmf_base_pkg_hdl::*;
      .clock(clk), .reset(rst)
      // pragma uvmf custom controller_env_controller_out_agent_bus_connections end
      );
-  fetch_out_if  imem_agent_bus(
+  imem_if  imem_agent_bus(
      // pragma uvmf custom imem_agent_bus_connections begin
      .clock(clk), .reset(rst)
      // pragma uvmf custom imem_agent_bus_connections end
@@ -180,8 +180,11 @@ LC3 dut (
   .instrmem_rd(imem_agent_bus.instrmem_rd),
   
   // Instruction memory response (from controller_in, which receives from imem)
-  .Instr_dout(controller_env_controller_in_agent_bus.IMem_dout),
-  .complete_instr(controller_env_controller_in_agent_bus.complete_instr),
+  //   .Instr_dout(controller_env_controller_in_agent_bus.IMem_dout),
+  //   .complete_instr(controller_env_controller_in_agent_bus.complete_instr),
+  //Harry change the code above to the following:
+  .Instr_dout(imem_agent_bus.Instr_dout),              
+  .complete_instr(imem_agent_bus.complete_instr),  
   
   // Data memory interface (dmem_agent)
   .Data_addr(dmem_agent_bus.Data_addr),
@@ -190,7 +193,10 @@ LC3 dut (
   
   // Data memory response (dmem_agent)
   .Data_dout(dmem_agent_bus.Data_dout),
-  .complete_data(controller_env_controller_in_agent_bus.complete_data)
+
+  //.complete_data(controller_env_controller_in_agent_bus.complete_data)
+  //Harry change the code above to the following:
+  .complete_data(dmem_agent_bus.complete_data)
 );
 // pragma uvmf custom dut_instantiation end
 
