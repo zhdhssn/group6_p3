@@ -74,7 +74,7 @@ end
   tri [15:0] npc_out_i;
   tri  mem_control_i;
   tri [1:0] w_control_i;
-  tri [1:0] enable_decode_latch_i;
+  tri [1:0] enable_decode_i;
   assign clock_i = bus.clock;
   assign reset_i = bus.reset;
   assign ir_i = bus.ir;
@@ -82,7 +82,7 @@ end
   assign npc_out_i = bus.npc_out;
   assign mem_control_i = bus.mem_control;
   assign w_control_i = bus.w_control;
-  assign enable_decode_latch_i = bus.enable_decode_latch;
+  assign enable_decode_i = bus.enable_decode;
 
   // Proxy handle to UVM monitor
   decode_out_pkg::decode_out_monitor  proxy;
@@ -183,7 +183,7 @@ end
     // @(posedge clock_i);
     // @(posedge clock_i);
     // @(posedge clock_i);
-    while(enable_decode_latch_i !== 1'b1 ) @(posedge clock_i);
+    while(enable_decode_i !== 1'b1 ) @(posedge clock_i);
  
       decode_out_monitor_struct.ir = ir_i;
       decode_out_monitor_struct.e_control = e_control_i;

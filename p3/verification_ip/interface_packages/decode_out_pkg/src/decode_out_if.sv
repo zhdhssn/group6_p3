@@ -38,7 +38,7 @@ interface  decode_out_if
   inout tri [15:0] npc_out,
   inout tri  mem_control,
   inout tri [1:0] w_control,
-  inout tri enable_decode_latch
+  inout tri enable_decode
   );
 
 modport monitor_port 
@@ -50,7 +50,7 @@ modport monitor_port
   input npc_out,
   input mem_control,
   input w_control,
-  input enable_decode_latch
+  input enable_decode
   );
 
 modport initiator_port 
@@ -62,7 +62,7 @@ modport initiator_port
   input npc_out,
   input mem_control,
   input w_control,
-  input enable_decode_latch
+  input enable_decode
   );
 
 modport responder_port 
@@ -74,7 +74,7 @@ modport responder_port
   output npc_out,
   output mem_control,
   output w_control,
-  output enable_decode_latch
+  output enable_decode
   );
   
 
