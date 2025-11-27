@@ -122,7 +122,7 @@ import uvmf_base_pkg_hdl::*;
      .dr(dut.dr),
      .sr1(dut.sr1),
      .sr2(dut.sr2),
-     .ir_exec(dut.IR_exec),
+     .ir_exec(dut.IR_Exec),
      .nzp(dut.NZP),
      .m_data(dut.M_Data),
      .enable_execute(dut.enable_execute)
@@ -176,7 +176,7 @@ import uvmf_base_pkg_hdl::*;
      .IR(dut.IR),
      .NZP(dut.NZP),
      .psr(dut.psr),
-     .IR_Exec(dut.IR_exec),
+     .IR_Exec(dut.IR_Exec),
      .IMem_dout(dut.Instr_dout)
      // pragma uvmf custom controller_env_controller_in_agent_bus_connections end
      );
@@ -303,7 +303,6 @@ LC3 dut (
     uvm_config_db #( virtual controller_in_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , controller_env_controller_in_agent_BFM , controller_env_controller_in_agent_mon_bfm ); 
     uvm_config_db #( virtual controller_out_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , controller_env_controller_out_agent_BFM , controller_env_controller_out_agent_mon_bfm ); 
     uvm_config_db #( virtual imem_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , imem_agent_BFM , imem_agent_mon_bfm );
-    uvm_config_db #( virtual dmem_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , dmem_agent_BFM , dmem_agent_mon_bfm );
     uvm_config_db #( virtual imem_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , imem_agent_BFM , imem_agent_drv_bfm );
     uvm_config_db #( virtual dmem_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , dmem_agent_BFM , dmem_agent_drv_bfm );		 
     /* 
