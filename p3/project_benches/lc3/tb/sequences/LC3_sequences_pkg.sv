@@ -46,6 +46,8 @@ package LC3_sequences_pkg;
   import controller_in_pkg_hdl::*;
   import controller_out_pkg::*;
   import controller_out_pkg_hdl::*;
+  import imem_pkg::*;              // Harry added this
+  import imem_pkg_hdl::*;          // Harry added this
   import dmem_pkg::*;
   import dmem_pkg_hdl::*;
   import LC3_parameters_pkg::*;

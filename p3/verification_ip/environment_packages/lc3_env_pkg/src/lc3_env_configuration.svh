@@ -47,7 +47,10 @@ typedef controller_env_configuration controller_env_config_t;
 rand controller_env_config_t controller_env_config;
 
 
-    typedef fetch_out_configuration imem_agent_config_t;
+    // typedef fetch_out_configuration imem_agent_config_t;
+    // rand imem_agent_config_t imem_agent_config;
+    //Harry: comment out the code above and uncomment the code below
+    typedef imem_configuration imem_agent_config_t;
     rand imem_agent_config_t imem_agent_config;
 
     typedef dmem_configuration dmem_agent_config_t;

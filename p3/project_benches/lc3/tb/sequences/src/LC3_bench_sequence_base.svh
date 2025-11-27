@@ -18,6 +18,12 @@
 
 typedef lc3_env_configuration  lc3_env_configuration_t;
 
+//Harry's note: this is centralized control, we place all the sequences and coordinators here
+//it acts as a virtual sequence that
+// Coordinates sequences for all pipeline stages
+// Manages instruction memory (imem) and data memory (dmem) sequences
+// Controls test flow and timing
+// Allows testing the full pipeline or individual stages
 class LC3_bench_sequence_base extends uvmf_sequence_base #(uvm_sequence_item);
 
   `uvm_object_utils( LC3_bench_sequence_base );
@@ -62,7 +68,10 @@ class LC3_bench_sequence_base extends uvmf_sequence_base #(uvm_sequence_item);
   controller_env_controller_in_agent_random_seq_t controller_env_controller_in_agent_random_seq;
   typedef controller_out_random_sequence  controller_env_controller_out_agent_random_seq_t;
   controller_env_controller_out_agent_random_seq_t controller_env_controller_out_agent_random_seq;
-  typedef fetch_out_responder_sequence  imem_agent_responder_seq_t;
+  // typedef fetch_out_responder_sequence  imem_agent_responder_seq_t;
+  // imem_agent_responder_seq_t imem_agent_responder_seq;
+  //Harry: comment out the code above and uncomment the code below
+  typedef imem_responder_sequence  imem_agent_responder_seq_t;
   imem_agent_responder_seq_t imem_agent_responder_seq;
   typedef dmem_responder_sequence  dmem_agent_responder_seq_t;
   dmem_agent_responder_seq_t dmem_agent_responder_seq;
@@ -93,8 +102,11 @@ class LC3_bench_sequence_base extends uvmf_sequence_base #(uvm_sequence_item);
   uvm_sequencer #(controller_env_controller_in_agent_transaction_t)  controller_env_controller_in_agent_sequencer; 
   typedef controller_out_transaction  controller_env_controller_out_agent_transaction_t;
   uvm_sequencer #(controller_env_controller_out_agent_transaction_t)  controller_env_controller_out_agent_sequencer; 
-  typedef fetch_out_transaction  imem_agent_transaction_t;
-  uvm_sequencer #(imem_agent_transaction_t)  imem_agent_sequencer; 
+  // typedef fetch_out_transaction  imem_agent_transaction_t;
+  // uvm_sequencer #(imem_agent_transaction_t)  imem_agent_sequencer; 
+  //Harry: comment out the code above and uncomment the code below
+  typedef imem_transaction  imem_agent_transaction_t;
+  uvm_sequencer #(imem_agent_transaction_t)  imem_agent_sequencer;
   typedef dmem_transaction  dmem_agent_transaction_t;
   uvm_sequencer #(dmem_agent_transaction_t)  dmem_agent_sequencer; 
 
@@ -115,12 +127,14 @@ class LC3_bench_sequence_base extends uvmf_sequence_base #(uvm_sequence_item);
   writeback_out_configuration  writeback_env_writeback_out_agent_config;
   controller_in_configuration  controller_env_controller_in_agent_config;
   controller_out_configuration  controller_env_controller_out_agent_config;
-  fetch_out_configuration  imem_agent_config;
+  //fetch_out_configuration  imem_agent_config;
+  //Harry comment the code above and change to the below one
+  imem_configuration imem_agent_config;
   dmem_configuration  dmem_agent_config;
 
   // pragma uvmf custom class_item_additional begin
   // pragma uvmf custom class_item_additional end
-
+ 
   // ****************************************************************************
   function new( string name = "" );
     super.new( name );
@@ -157,8 +171,11 @@ class LC3_bench_sequence_base extends uvmf_sequence_base #(uvm_sequence_item);
       `uvm_fatal("CFG" , "uvm_config_db #( controller_in_configuration )::get cannot find resource controller_env_controller_in_agent_BFM" )
     if( !uvm_config_db #( controller_out_configuration )::get( null , UVMF_CONFIGURATIONS , controller_env_controller_out_agent_BFM , controller_env_controller_out_agent_config ) ) 
       `uvm_fatal("CFG" , "uvm_config_db #( controller_out_configuration )::get cannot find resource controller_env_controller_out_agent_BFM" )
-    if( !uvm_config_db #( fetch_out_configuration )::get( null , UVMF_CONFIGURATIONS , imem_agent_BFM , imem_agent_config ) ) 
-      `uvm_fatal("CFG" , "uvm_config_db #( fetch_out_configuration )::get cannot find resource imem_agent_BFM" )
+    // if( !uvm_config_db #( fetch_out_configuration )::get( null , UVMF_CONFIGURATIONS , imem_agent_BFM , imem_agent_config ) ) 
+    //   `uvm_fatal("CFG" , "uvm_config_db #( fetch_out_configuration )::get cannot find resource imem_agent_BFM" )
+    //Harry: comment out the code above and uncomment the code below
+    if( !uvm_config_db #( imem_configuration )::get( null , UVMF_CONFIGURATIONS , imem_agent_BFM , imem_agent_config ) ) 
+      `uvm_fatal("CFG" , "uvm_config_db #( imem_configuration )::get cannot find resource imem_agent_BFM" )
     if( !uvm_config_db #( dmem_configuration )::get( null , UVMF_CONFIGURATIONS , dmem_agent_BFM , dmem_agent_config ) ) 
       `uvm_fatal("CFG" , "uvm_config_db #( dmem_configuration )::get cannot find resource dmem_agent_BFM" )
 
