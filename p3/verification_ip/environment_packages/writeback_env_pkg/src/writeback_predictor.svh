@@ -105,8 +105,8 @@ class writeback_predictor #(
     
     // Call the writeback_model from lc3_prediction_pkg
     
-    // Call writeback_model with transaction inputs (except npc, which isn't used)
-    model_status = lc3_prediction_pkg::writeback_model(
+    // Call LC3 writeback model
+    model_status = writeback_model(
       t.aluout,
       t.W_Control,
       16'h0,  // npc - not used in model
@@ -132,6 +132,9 @@ class writeback_predictor #(
     // using either new() or create().  Broadcasting a transaction object more than once to either the 
     // same subscriber or multiple subscribers will result in unexpected and incorrect behavior.
     writeback_sb_ap.write(writeback_sb_ap_output_transaction);
+    `uvm_info("PRED", $sformatf("Prediction sent from writeback_model: vsr1=0x%0h vsr2=0x%0h psr=0x%0h",
+                            vsr1_model, vsr2_model, psr_model),
+          UVM_LOW)
     // pragma uvmf custom writeback_in_agent_ae_predictor end
   endfunction
 

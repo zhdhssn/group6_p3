@@ -130,11 +130,11 @@ end
       @(posedge clock_i);  
       do_monitor( writeback_in_monitor_struct );
                                                                  
- 
+
       proxy.notify_transaction( writeback_in_monitor_struct );
- 
+
     end                                                                                    
-  end                                                                                       
+  end
 
   //******************************************************************
   // The configure() function is used to pass agent configuration
@@ -154,10 +154,7 @@ end
   // ****************************************************************************  
             
   task do_monitor(output writeback_in_monitor_s writeback_in_monitor_struct);
-    // Wait for enable_writeback to be active (high) before sampling
-    while (enable_writeback_i !== 1'b1) @(posedge clock_i);
-    
-    // Sample all input signals on the clock edge when enable_writeback is active
+    // Sample all input signals on each clock edge
     @(posedge clock_i);
     writeback_in_monitor_struct.enable_writeback = enable_writeback_i;
     writeback_in_monitor_struct.W_Control = W_Control_i;
