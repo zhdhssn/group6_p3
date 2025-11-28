@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------
-// Created with uvmf_gen version 2023.4_2
+// Created with uvmf_gen version 2023.4
 //----------------------------------------------------------------------
 // pragma uvmf custom header begin
 // pragma uvmf custom header end
@@ -23,9 +23,8 @@ package controller_env_pkg;
   import uvm_pkg::*;
   `include "uvm_macros.svh"
   import uvmf_base_pkg::*;
-  
-  import controller_in_pkg::*;
   import lc3_prediction_pkg::*;
+  import controller_in_pkg::*;
   import controller_in_pkg_hdl::*;
   import controller_out_pkg::*;
   import controller_out_pkg_hdl::*;
