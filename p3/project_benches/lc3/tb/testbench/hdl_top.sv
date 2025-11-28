@@ -111,6 +111,7 @@ import uvmf_base_pkg_hdl::*;
      .vsr1(dut.VSR1),
      .vsr2(dut.VSR2),
      .w_control_in(dut.W_Control),
+     .e_control(dut.E_Control), //Harry added missing e_control port connection, notice there is no "_in" suffix for the e_control
      .mem_control_in(dut.Mem_Control),
      .enable_execute(dut.enable_execute),
      .mem_bypass_val(dut.memout)
@@ -148,7 +149,8 @@ import uvmf_base_pkg_hdl::*;
      .DMem_addr(dut.Data_addr),
      .DMem_din(dut.Data_din),
      .DMem_rd(dut.Data_rd),
-     .memout(dut.memout)
+     .memout(dut.memout),
+     .mem_state(dut.mem_state) //Harry added missing mem_state port connection
      // pragma uvmf custom memaccess_env_memaccess_out_agt_bus_connections end
      );
   writeback_in_if  writeback_env_writeback_in_agent_bus(
@@ -202,12 +204,23 @@ import uvmf_base_pkg_hdl::*;
      );
   imem_if  imem_agent_bus(
      // pragma uvmf custom imem_agent_bus_connections begin
-     .clock(clk), .reset(rst)
+     .clock(clk), .reset(rst),
+//Harry added the following missing ports connections
+      .PC(dut.pc), 
+      .instrmem_rd(dut.instrmem_rd),
+      .Instr_dout(dut.Instr_dout),
+      .complete_instr(dut.complete_instr)
      // pragma uvmf custom imem_agent_bus_connections end
      );
   dmem_if  dmem_agent_bus(
      // pragma uvmf custom dmem_agent_bus_connections begin
-     .clock(clk), .reset(rst)
+     .clock(clk), .reset(rst),
+//Harry added the following missing ports connections
+     .Data_addr(dut.Data_addr),
+     .Data_rd(dut.Data_rd),
+     .Data_din(dut.Data_din),
+     .Data_dout(dut.Data_dout),
+     .complete_data(dut.complete_data)
      // pragma uvmf custom dmem_agent_bus_connections end
      );
 

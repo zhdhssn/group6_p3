@@ -3,20 +3,20 @@ echo "Compile your vhdl DUT here"
 Compile your vhdl DUT here
 vcom -covermultiuserenv  /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/vhdl/vhdl_dut.vhd
 QuestaSim-64 vcom 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:23 on Nov 28,2025
+Start time: 17:57:25 on Nov 28,2025
 vcom -covermultiuserenv /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/vhdl/vhdl_dut.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Compiling entity vhdl_dut
 -- Compiling architecture rtl of vhdl_dut
-End time: 16:42:24 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:25 on Nov 28,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 echo "Compile your verilog DUT here"
 Compile your verilog DUT here
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/verilog_dut.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/Controller_Pipeline.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/data_defs.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/Decode_Pipelined.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/Execute.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/Fetch.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/Mem_Access.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/TopLevelLC3.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/WriteBack.v
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:24 on Nov 28,2025
+Start time: 17:57:25 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/verilog_dut.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/Controller_Pipeline.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/data_defs.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/Decode_Pipelined.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/Execute.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/Fetch.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/Mem_Access.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/TopLevelLC3.v /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../rtl/verilog/WriteBack.v 
 -- Compiling module verilog_dut
 -- Compiling module Controller_Pipeline
@@ -33,21 +33,21 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 Top level modules:
 	verilog_dut
 	LC3
-End time: 16:42:25 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:26 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE   +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2/uvmf_base_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2/uvmf_base_pkg/uvmf_base_pkg_filelist_hdl.f
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:25 on Nov 28,2025
+Start time: 17:57:27 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2/uvmf_base_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2/uvmf_base_pkg/uvmf_base_pkg_filelist_hdl.f 
 -- Compiling package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:25 on Nov 28,2025, Elapsed time: 0:00:00
+End time: 17:57:27 on Nov 28,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE   +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2/uvmf_base_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2/uvmf_base_pkg/uvmf_base_pkg_filelist_hvl.f
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:25 on Nov 28,2025
+Start time: 17:57:27 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2/uvmf_base_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/UVMF_2023.4_2/uvmf_base_pkg/uvmf_base_pkg_filelist_hvl.f 
 -- Compiling package uvmf_base_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -55,22 +55,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:27 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:57:28 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg/fetch_in_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:27 on Nov 28,2025
+Start time: 17:57:28 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg/fetch_in_filelist_hdl.f 
 -- Compiling package fetch_in_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:27 on Nov 28,2025, Elapsed time: 0:00:00
+End time: 17:57:29 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg/fetch_in_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:27 on Nov 28,2025
+Start time: 17:57:29 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg/fetch_in_filelist_hvl.f 
 -- Compiling package fetch_in_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -80,11 +80,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:28 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:30 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg/fetch_in_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:28 on Nov 28,2025
+Start time: 17:57:30 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_in_pkg/fetch_in_filelist_xrtl.f 
 -- Compiling package fetch_in_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -100,22 +100,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:30 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:57:32 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg/fetch_out_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:30 on Nov 28,2025
+Start time: 17:57:32 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg/fetch_out_filelist_hdl.f 
 -- Compiling package fetch_out_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:31 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:32 on Nov 28,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg/fetch_out_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:31 on Nov 28,2025
+Start time: 17:57:32 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg/fetch_out_filelist_hvl.f 
 -- Compiling package fetch_out_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -125,11 +125,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:32 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:33 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg/fetch_out_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:32 on Nov 28,2025
+Start time: 17:57:33 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/fetch_out_pkg/fetch_out_filelist_xrtl.f 
 -- Compiling package fetch_out_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -145,22 +145,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:33 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:35 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg/imem_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:33 on Nov 28,2025
+Start time: 17:57:35 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg/imem_filelist_hdl.f 
 -- Compiling package imem_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:34 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:36 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg/imem_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:34 on Nov 28,2025
+Start time: 17:57:36 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg/imem_filelist_hvl.f 
 -- Compiling package imem_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -170,11 +170,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:35 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:37 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg/imem_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:35 on Nov 28,2025
+Start time: 17:57:37 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/imem_pkg/imem_filelist_xrtl.f 
 -- Compiling package imem_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -190,22 +190,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:37 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:57:38 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg/decode_in_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:37 on Nov 28,2025
+Start time: 17:57:38 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg/decode_in_filelist_hdl.f 
 -- Compiling package decode_in_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:37 on Nov 28,2025, Elapsed time: 0:00:00
+End time: 17:57:39 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg/decode_in_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:37 on Nov 28,2025
+Start time: 17:57:39 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg/decode_in_filelist_hvl.f 
 -- Compiling package decode_in_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -215,11 +215,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:38 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:40 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg/decode_in_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:38 on Nov 28,2025
+Start time: 17:57:40 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_in_pkg/decode_in_filelist_xrtl.f 
 -- Compiling package decode_in_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -235,22 +235,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:40 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:57:42 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg/decode_out_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:40 on Nov 28,2025
+Start time: 17:57:42 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg/decode_out_filelist_hdl.f 
 -- Compiling package decode_out_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:41 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:42 on Nov 28,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg/decode_out_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:41 on Nov 28,2025
+Start time: 17:57:42 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg/decode_out_filelist_hvl.f 
 -- Compiling package decode_out_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -260,11 +260,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:42 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:43 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg/decode_out_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:42 on Nov 28,2025
+Start time: 17:57:44 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/decode_out_pkg/decode_out_filelist_xrtl.f 
 -- Compiling package decode_out_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -280,22 +280,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:43 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:45 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg/execute_in_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:43 on Nov 28,2025
+Start time: 17:57:45 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg/execute_in_filelist_hdl.f 
 -- Compiling package execute_in_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:44 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:46 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg/execute_in_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:44 on Nov 28,2025
+Start time: 17:57:46 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg/execute_in_filelist_hvl.f 
 -- Compiling package execute_in_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -305,11 +305,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:45 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:47 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg/execute_in_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:45 on Nov 28,2025
+Start time: 17:57:47 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_in_pkg/execute_in_filelist_xrtl.f 
 -- Compiling package execute_in_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -325,22 +325,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:47 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:57:48 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg/execute_out_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:47 on Nov 28,2025
+Start time: 17:57:48 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg/execute_out_filelist_hdl.f 
 -- Compiling package execute_out_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:47 on Nov 28,2025, Elapsed time: 0:00:00
+End time: 17:57:49 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg/execute_out_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:47 on Nov 28,2025
+Start time: 17:57:49 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg/execute_out_filelist_hvl.f 
 -- Compiling package execute_out_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -350,11 +350,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:49 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:57:50 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg/execute_out_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:49 on Nov 28,2025
+Start time: 17:57:50 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/execute_out_pkg/execute_out_filelist_xrtl.f 
 -- Compiling package execute_out_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -370,22 +370,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:50 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:52 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg/memaccess_in_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:50 on Nov 28,2025
+Start time: 17:57:52 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg/memaccess_in_filelist_hdl.f 
 -- Compiling package memaccess_in_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:51 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:52 on Nov 28,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg/memaccess_in_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:51 on Nov 28,2025
+Start time: 17:57:52 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg/memaccess_in_filelist_hvl.f 
 -- Compiling package memaccess_in_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -395,11 +395,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:52 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:54 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg/memaccess_in_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:52 on Nov 28,2025
+Start time: 17:57:54 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_in_pkg/memaccess_in_filelist_xrtl.f 
 -- Compiling package memaccess_in_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -415,22 +415,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:53 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:55 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg/memaccess_out_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:54 on Nov 28,2025
+Start time: 17:57:55 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg/memaccess_out_filelist_hdl.f 
 -- Compiling package memaccess_out_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:54 on Nov 28,2025, Elapsed time: 0:00:00
+End time: 17:57:56 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg/memaccess_out_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:54 on Nov 28,2025
+Start time: 17:57:56 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg/memaccess_out_filelist_hvl.f 
 -- Compiling package memaccess_out_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -440,11 +440,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:55 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:57:57 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg/memaccess_out_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:55 on Nov 28,2025
+Start time: 17:57:57 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/memaccess_out_pkg/memaccess_out_filelist_xrtl.f 
 -- Compiling package memaccess_out_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -460,22 +460,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:57 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:57:58 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg/writeback_in_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:57 on Nov 28,2025
+Start time: 17:57:59 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg/writeback_in_filelist_hdl.f 
 -- Compiling package writeback_in_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:42:57 on Nov 28,2025, Elapsed time: 0:00:00
+End time: 17:57:59 on Nov 28,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg/writeback_in_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:57 on Nov 28,2025
+Start time: 17:57:59 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg/writeback_in_filelist_hvl.f 
 -- Compiling package writeback_in_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -485,11 +485,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:42:59 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:58:00 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg/writeback_in_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:42:59 on Nov 28,2025
+Start time: 17:58:00 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_in_pkg/writeback_in_filelist_xrtl.f 
 -- Compiling package writeback_in_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -505,22 +505,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:00 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:02 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg/writeback_out_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:00 on Nov 28,2025
+Start time: 17:58:02 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg/writeback_out_filelist_hdl.f 
 -- Compiling package writeback_out_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:43:01 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:02 on Nov 28,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg/writeback_out_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:01 on Nov 28,2025
+Start time: 17:58:02 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg/writeback_out_filelist_hvl.f 
 -- Compiling package writeback_out_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -530,11 +530,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:02 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:04 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg/writeback_out_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:02 on Nov 28,2025
+Start time: 17:58:04 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/writeback_out_pkg/writeback_out_filelist_xrtl.f 
 -- Compiling package writeback_out_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -550,22 +550,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:04 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:58:05 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg/controller_in_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:04 on Nov 28,2025
+Start time: 17:58:05 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg/controller_in_filelist_hdl.f 
 -- Compiling package controller_in_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:43:04 on Nov 28,2025, Elapsed time: 0:00:00
+End time: 17:58:06 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg/controller_in_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:04 on Nov 28,2025
+Start time: 17:58:06 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg/controller_in_filelist_hvl.f 
 -- Compiling package controller_in_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -575,11 +575,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:05 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:07 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg/controller_in_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:05 on Nov 28,2025
+Start time: 17:58:07 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_in_pkg/controller_in_filelist_xrtl.f 
 -- Compiling package controller_in_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -595,22 +595,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:07 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:58:09 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg/controller_out_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:07 on Nov 28,2025
+Start time: 17:58:09 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg/controller_out_filelist_hdl.f 
 -- Compiling package controller_out_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:43:07 on Nov 28,2025, Elapsed time: 0:00:00
+End time: 17:58:09 on Nov 28,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg/controller_out_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:08 on Nov 28,2025
+Start time: 17:58:09 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg/controller_out_filelist_hvl.f 
 -- Compiling package controller_out_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -620,11 +620,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:09 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:10 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg/controller_out_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:09 on Nov 28,2025
+Start time: 17:58:10 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/controller_out_pkg/controller_out_filelist_xrtl.f 
 -- Compiling package controller_out_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -640,22 +640,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:10 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:12 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg/dmem_filelist_hdl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:10 on Nov 28,2025
+Start time: 17:58:12 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg/dmem_filelist_hdl.f 
 -- Compiling package dmem_pkg_hdl
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:43:11 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:13 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg/dmem_filelist_hvl.f 
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:11 on Nov 28,2025
+Start time: 17:58:13 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg/dmem_filelist_hvl.f 
 -- Compiling package dmem_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -665,11 +665,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:12 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:14 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg/dmem_filelist_xrtl.f  
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:12 on Nov 28,2025
+Start time: 17:58:14 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/interface_packages/dmem_pkg/dmem_filelist_xrtl.f 
 -- Compiling package dmem_if_sv_unit
 -- Importing package uvmf_base_pkg_hdl
@@ -685,23 +685,23 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:14 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:58:16 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv +incdir+../../../verification_ip/environment_packages/lc3_prediction_pkg \
 ../../../verification_ip/environment_packages/lc3_prediction_pkg/lc3_prediction_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:14 on Nov 28,2025
+Start time: 17:58:16 on Nov 28,2025
 vlog -sv "+incdir+../../../verification_ip/environment_packages/lc3_prediction_pkg" ../../../verification_ip/environment_packages/lc3_prediction_pkg/lc3_prediction_pkg.sv 
 -- Compiling package lc3_prediction_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 
 Top level modules:
 	--none--
-End time: 16:43:15 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:17 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/fetch_env_pkg /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/fetch_env_pkg/fetch_env_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:15 on Nov 28,2025
+Start time: 17:58:17 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/fetch_env_pkg" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/fetch_env_pkg/fetch_env_pkg.sv 
 -- Compiling package fetch_env_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -715,11 +715,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:16 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:18 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/decode_env_pkg /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/decode_env_pkg/decode_env_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:16 on Nov 28,2025
+Start time: 17:58:18 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/decode_env_pkg" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/decode_env_pkg/decode_env_pkg.sv 
 -- Compiling package decode_env_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -733,11 +733,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:17 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:19 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/execute_env_pkg /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/execute_env_pkg/execute_env_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:17 on Nov 28,2025
+Start time: 17:58:19 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/execute_env_pkg" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/execute_env_pkg/execute_env_pkg.sv 
 -- Compiling package execute_env_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -751,11 +751,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:19 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:58:20 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/memaccess_env_pkg /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/memaccess_env_pkg/memaccess_env_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:19 on Nov 28,2025
+Start time: 17:58:21 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/memaccess_env_pkg" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/memaccess_env_pkg/memaccess_env_pkg.sv 
 -- Compiling package memaccess_env_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -770,11 +770,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:20 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:22 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 1
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/writeback_env_pkg /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/writeback_env_pkg/writeback_env_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:20 on Nov 28,2025
+Start time: 17:58:22 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/writeback_env_pkg" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/writeback_env_pkg/writeback_env_pkg.sv 
 -- Compiling package writeback_env_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -788,11 +788,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:21 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:23 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/controller_env_pkg /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/controller_env_pkg/controller_env_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:21 on Nov 28,2025
+Start time: 17:58:23 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/controller_env_pkg" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/controller_env_pkg/controller_env_pkg.sv 
 -- Compiling package controller_env_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -806,11 +806,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:23 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:58:24 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/lc3_env_pkg /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/lc3_env_pkg/lc3_env_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:23 on Nov 28,2025
+Start time: 17:58:24 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/lc3_env_pkg" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../../../verification_ip/environment_packages/lc3_env_pkg/lc3_env_pkg.sv 
 -- Compiling package lc3_env_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -854,22 +854,22 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:24 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:26 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/parameters /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/parameters/LC3_parameters_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:24 on Nov 28,2025
+Start time: 17:58:26 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/parameters" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/parameters/LC3_parameters_pkg.sv 
 -- Compiling package LC3_parameters_pkg
 -- Importing package uvmf_base_pkg_hdl
 
 Top level modules:
 	--none--
-End time: 16:43:25 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:26 on Nov 28,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/sequences /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/sequences/LC3_sequences_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:25 on Nov 28,2025
+Start time: 17:58:26 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/sequences" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/sequences/LC3_sequences_pkg.sv 
 -- Compiling package LC3_sequences_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -915,11 +915,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:26 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:28 on Nov 28,2025, Elapsed time: 0:00:02
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/tests /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/tests/LC3_tests_pkg.sv
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:26 on Nov 28,2025
+Start time: 17:58:28 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/tests" /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/tests/LC3_tests_pkg.sv 
 -- Compiling package LC3_tests_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -966,11 +966,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	--none--
-End time: 16:43:28 on Nov 28,2025, Elapsed time: 0:00:02
+End time: 17:58:29 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/questa_mvc_src/sv +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/testbench -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/testbench/top_filelist_hvl.f
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:28 on Nov 28,2025
+Start time: 17:58:29 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/questa_mvc_src/sv" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/testbench" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/testbench/top_filelist_hvl.f 
 -- Compiling module hvl_top
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -1018,11 +1018,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	hvl_top
-End time: 16:43:29 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:30 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv   +define+UVM_REPORT_DISABLE_FILE_LINE +define+UVM_REPORT_DISABLE_FILE_LINE  +incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/testbench -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/testbench/top_filelist_hdl.f
 QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:29 on Nov 28,2025
+Start time: 17:58:30 on Nov 28,2025
 vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DISABLE_FILE_LINE" "+define+UVM_REPORT_DISABLE_FILE_LINE" "+incdir+/mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/testbench" -F /mnt/ncsudrive/c/chsiao4/Fall2025/UVM/UVM_group_project/group6_p3/p3/project_benches/lc3/sim/../tb/testbench/top_filelist_hdl.f 
 -- Compiling module hdl_top
 -- Importing package LC3_parameters_pkg
@@ -1031,11 +1031,11 @@ vlog -sv -suppress 2223 -suppress 2286 -covermultiuserenv "+define+UVM_REPORT_DI
 
 Top level modules:
 	hdl_top
-End time: 16:43:30 on Nov 28,2025, Elapsed time: 0:00:01
+End time: 17:58:31 on Nov 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 vopt      hvl_top hdl_top    -o optimized_batch_top_tb
 QuestaSim-64 vopt 2025.1_1 Compiler 2025.02 Feb 13 2025
-Start time: 16:43:30 on Nov 28,2025
+Start time: 17:58:32 on Nov 28,2025
 vopt hvl_top hdl_top -o optimized_batch_top_tb 
 
 Top level modules:
@@ -1141,7 +1141,6 @@ Analyzing design...
 -- Loading module RegFile
 -- Loading module Controller_Pipeline
 Optimizing 169 design-units (inlining 10/42 module instances):
--- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
 -- Optimizing interface fetch_in_driver_bfm(fast)
 -- Optimizing interface dmem_if(fast)
 -- Optimizing interface imem_if(fast)
@@ -1207,6 +1206,7 @@ Optimizing 169 design-units (inlining 10/42 module instances):
 -- Optimizing package imem_pkg(fast)
 -- Inlining interface decode_in_if(fast__1)
 -- Optimizing module hdl_top(fast)
+-- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
 -- Optimizing package writeback_in_monitor_bfm_sv_unit(fast)
 -- Optimizing package writeback_in_driver_bfm_sv_unit(fast)
 -- Optimizing package writeback_out_monitor_bfm_sv_unit(fast)
@@ -1313,12 +1313,12 @@ Optimizing 169 design-units (inlining 10/42 module instances):
 -- Inlining module Controller_Pipeline(fast)
 -- Optimizing module LC3(fast)
 Optimized design name is optimized_batch_top_tb
-End time: 16:43:48 on Nov 28,2025, Elapsed time: 0:00:18
+End time: 17:58:49 on Nov 28,2025, Elapsed time: 0:00:17
 Errors: 0, Warnings: 2
 vopt    +acc   hvl_top hdl_top    -o optimized_debug_top_tb
 QuestaSim-64 vopt 2025.1_1 Compiler 2025.02 Feb 13 2025
 ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-Start time: 16:43:48 on Nov 28,2025
+Start time: 17:58:49 on Nov 28,2025
 vopt "+acc" hvl_top hdl_top -o optimized_debug_top_tb 
 
 Top level modules:
@@ -1424,54 +1424,37 @@ Analyzing design...
 -- Loading module RegFile
 -- Loading module Controller_Pipeline
 Optimizing 169 design-units (inlining 0/42 module instances):
--- Optimizing package LC3_parameters_pkg(fast)
--- Optimizing package fetch_in_pkg_hdl(fast)
--- Optimizing package fetch_in_if_sv_unit(fast)
--- Optimizing package fetch_out_pkg_hdl(fast)
--- Optimizing package fetch_out_if_sv_unit(fast)
--- Optimizing package decode_in_if_sv_unit(fast)
--- Optimizing package decode_out_if_sv_unit(fast)
--- Optimizing package execute_in_pkg_hdl(fast)
--- Optimizing package execute_in_if_sv_unit(fast)
--- Optimizing package execute_out_pkg_hdl(fast)
--- Optimizing package execute_out_if_sv_unit(fast)
--- Optimizing package memaccess_in_pkg_hdl(fast)
--- Optimizing package memaccess_in_if_sv_unit(fast)
--- Optimizing package memaccess_out_pkg_hdl(fast)
--- Optimizing package memaccess_out_if_sv_unit(fast)
--- Optimizing package writeback_in_pkg_hdl(fast)
--- Optimizing package writeback_in_if_sv_unit(fast)
--- Optimizing package writeback_out_pkg_hdl(fast)
--- Optimizing package writeback_out_if_sv_unit(fast)
--- Optimizing package controller_in_pkg_hdl(fast)
--- Optimizing package controller_in_if_sv_unit(fast)
--- Optimizing package controller_out_pkg_hdl(fast)
--- Optimizing package controller_out_if_sv_unit(fast)
--- Optimizing package imem_pkg_hdl(fast)
--- Optimizing package imem_if_sv_unit(fast)
--- Optimizing package dmem_pkg_hdl(fast)
--- Optimizing package dmem_if_sv_unit(fast)
--- Optimizing package fetch_in_monitor_bfm_sv_unit(fast)
--- Optimizing interface decode_out_if(fast__1)
--- Optimizing interface memaccess_in_if(fast__1)
--- Optimizing interface memaccess_out_if(fast__1)
--- Optimizing interface dmem_if(fast__1)
--- Optimizing interface decode_in_if(fast__1)
--- Optimizing interface imem_if(fast__1)
--- Optimizing interface fetch_in_if(fast__1)
--- Optimizing interface writeback_out_if(fast__1)
--- Optimizing interface fetch_out_if(fast__1)
--- Optimizing module hvl_top(fast)
--- Optimizing package mtiUvm.questa_uvm_pkg(fast)
--- Optimizing package uvmf_base_pkg(fast)
--- Optimizing package fetch_in_pkg(fast)
--- Optimizing package execute_in_pkg(fast)
--- Optimizing package execute_out_pkg(fast)
--- Optimizing package writeback_in_pkg(fast)
--- Optimizing package controller_in_pkg(fast)
--- Optimizing package controller_out_pkg(fast)
--- Optimizing package imem_pkg(fast)
--- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+-- Optimizing interface writeback_in_driver_bfm(fast)
+-- Optimizing interface memaccess_out_monitor_bfm(fast)
+-- Optimizing interface memaccess_out_driver_bfm(fast)
+-- Optimizing interface memaccess_in_monitor_bfm(fast)
+-- Optimizing interface memaccess_in_driver_bfm(fast)
+-- Optimizing interface execute_out_monitor_bfm(fast)
+-- Optimizing interface execute_out_driver_bfm(fast)
+-- Optimizing interface execute_in_monitor_bfm(fast)
+-- Optimizing interface execute_in_driver_bfm(fast)
+-- Optimizing interface decode_out_monitor_bfm(fast)
+-- Optimizing interface decode_out_driver_bfm(fast)
+-- Optimizing interface decode_in_monitor_bfm(fast)
+-- Optimizing interface decode_in_driver_bfm(fast)
+-- Optimizing interface fetch_out_monitor_bfm(fast)
+-- Optimizing interface fetch_out_driver_bfm(fast)
+-- Optimizing interface fetch_in_monitor_bfm(fast)
+-- Optimizing interface fetch_in_driver_bfm(fast)
+-- Optimizing interface dmem_if(fast)
+-- Optimizing interface imem_if(fast)
+-- Optimizing interface controller_out_if(fast)
+-- Optimizing interface controller_in_if(fast)
+-- Optimizing interface writeback_out_if(fast)
+-- Optimizing interface writeback_in_if(fast)
+-- Optimizing interface memaccess_out_if(fast)
+-- Optimizing interface memaccess_in_if(fast)
+-- Optimizing interface execute_out_if(fast)
+-- Optimizing interface execute_in_if(fast)
+-- Optimizing interface decode_out_if(fast)
+-- Optimizing interface decode_in_if(fast)
+-- Optimizing interface fetch_out_if(fast)
+-- Optimizing interface fetch_in_if(fast)
 -- Optimizing package fetch_in_driver_bfm_sv_unit(fast)
 -- Optimizing package fetch_out_monitor_bfm_sv_unit(fast)
 -- Optimizing package fetch_out_driver_bfm_sv_unit(fast)
@@ -1510,37 +1493,44 @@ Optimizing 169 design-units (inlining 0/42 module instances):
 -- Optimizing interface writeback_out_monitor_bfm(fast)
 -- Optimizing interface writeback_out_driver_bfm(fast)
 -- Optimizing interface writeback_in_monitor_bfm(fast)
--- Optimizing interface writeback_in_driver_bfm(fast)
--- Optimizing interface memaccess_out_monitor_bfm(fast)
--- Optimizing interface memaccess_out_driver_bfm(fast)
--- Optimizing interface memaccess_in_monitor_bfm(fast)
--- Optimizing interface memaccess_in_driver_bfm(fast)
--- Optimizing interface execute_out_monitor_bfm(fast)
--- Optimizing interface execute_out_driver_bfm(fast)
--- Optimizing interface execute_in_monitor_bfm(fast)
--- Optimizing interface execute_in_driver_bfm(fast)
--- Optimizing interface decode_out_monitor_bfm(fast)
--- Optimizing interface decode_out_driver_bfm(fast)
--- Optimizing interface decode_in_monitor_bfm(fast)
--- Optimizing interface decode_in_driver_bfm(fast)
--- Optimizing interface fetch_out_monitor_bfm(fast)
--- Optimizing interface fetch_out_driver_bfm(fast)
--- Optimizing interface fetch_in_monitor_bfm(fast)
--- Optimizing interface fetch_in_driver_bfm(fast)
--- Optimizing interface dmem_if(fast)
--- Optimizing interface imem_if(fast)
--- Optimizing interface controller_out_if(fast)
--- Optimizing interface controller_in_if(fast)
--- Optimizing interface writeback_out_if(fast)
--- Optimizing interface writeback_in_if(fast)
--- Optimizing interface memaccess_out_if(fast)
--- Optimizing interface memaccess_in_if(fast)
--- Optimizing interface execute_out_if(fast)
--- Optimizing interface execute_in_if(fast)
--- Optimizing interface decode_out_if(fast)
--- Optimizing interface decode_in_if(fast)
--- Optimizing interface fetch_out_if(fast)
--- Optimizing interface fetch_in_if(fast)
+-- Optimizing package LC3_parameters_pkg(fast)
+-- Optimizing package fetch_in_pkg_hdl(fast)
+-- Optimizing package fetch_in_if_sv_unit(fast)
+-- Optimizing package fetch_out_pkg_hdl(fast)
+-- Optimizing package fetch_out_if_sv_unit(fast)
+-- Optimizing package decode_in_if_sv_unit(fast)
+-- Optimizing package decode_out_if_sv_unit(fast)
+-- Optimizing package execute_in_pkg_hdl(fast)
+-- Optimizing package execute_in_if_sv_unit(fast)
+-- Optimizing package execute_out_pkg_hdl(fast)
+-- Optimizing package execute_out_if_sv_unit(fast)
+-- Optimizing package memaccess_in_pkg_hdl(fast)
+-- Optimizing package memaccess_in_if_sv_unit(fast)
+-- Optimizing package memaccess_out_pkg_hdl(fast)
+-- Optimizing package memaccess_out_if_sv_unit(fast)
+-- Optimizing package writeback_in_pkg_hdl(fast)
+-- Optimizing package writeback_in_if_sv_unit(fast)
+-- Optimizing package writeback_out_pkg_hdl(fast)
+-- Optimizing package writeback_out_if_sv_unit(fast)
+-- Optimizing package controller_in_pkg_hdl(fast)
+-- Optimizing package controller_in_if_sv_unit(fast)
+-- Optimizing package controller_out_pkg_hdl(fast)
+-- Optimizing package controller_out_if_sv_unit(fast)
+-- Optimizing package imem_pkg_hdl(fast)
+-- Optimizing package imem_if_sv_unit(fast)
+-- Optimizing package dmem_pkg_hdl(fast)
+-- Optimizing package dmem_if_sv_unit(fast)
+-- Optimizing package fetch_in_monitor_bfm_sv_unit(fast)
+-- Optimizing interface decode_out_if(fast__1)
+-- Optimizing interface memaccess_in_if(fast__1)
+-- Optimizing interface memaccess_out_if(fast__1)
+-- Optimizing interface dmem_if(fast__1)
+-- Optimizing interface decode_in_if(fast__1)
+-- Optimizing interface imem_if(fast__1)
+-- Optimizing interface fetch_in_if(fast__1)
+-- Optimizing interface writeback_out_if(fast__1)
+-- Optimizing interface fetch_out_if(fast__1)
+-- Optimizing module hvl_top(fast)
 -- Optimizing package uvmf_base_pkg_hdl(fast)
 -- Optimizing package decode_in_pkg_hdl(fast)
 -- Optimizing package decode_out_pkg_hdl(fast)
@@ -1595,8 +1585,18 @@ Optimizing 169 design-units (inlining 0/42 module instances):
 -- Optimizing package lc3_env_pkg(fast)
 -- Optimizing package LC3_sequences_pkg(fast)
 -- Optimizing module Execute(fast)
+-- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+-- Optimizing package uvmf_base_pkg(fast)
+-- Optimizing package fetch_in_pkg(fast)
+-- Optimizing package execute_in_pkg(fast)
+-- Optimizing package execute_out_pkg(fast)
+-- Optimizing package writeback_in_pkg(fast)
+-- Optimizing package controller_in_pkg(fast)
+-- Optimizing package controller_out_pkg(fast)
+-- Optimizing package imem_pkg(fast)
+-- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
 Optimized design name is optimized_debug_top_tb
-End time: 16:44:04 on Nov 28,2025, Elapsed time: 0:00:16
+End time: 17:59:03 on Nov 28,2025, Elapsed time: 0:00:14
 Errors: 0, Warnings: 3
 vsim -c    -sv_seed random +UVM_TESTNAME=lc3_alu_test  -permit_unmatched_virtual_intf +notimingchecks -suppress 8887 -solvefaildebug -solvefailtestcase  -uvmcontrol=none  -printsimstats    -do " coverage save -onexit lc3_alu_test.ucdb; set IterationLimit 140000; set NoQuitOnFinish 1;   run -all; quit -f;"  optimized_batch_top_tb  
 Reading pref.tcl
@@ -1604,7 +1604,7 @@ Reading pref.tcl
 # 2025.1_1
 
 # vsim -c -sv_seed random "+UVM_TESTNAME=lc3_alu_test" -permit_unmatched_virtual_intf "+notimingchecks" -suppress 8887 -solvefaildebug -solvefailtestcase -uvmcontrol=none -printsimstats -do " coverage save -onexit lc3_alu_test.ucdb; set IterationLimit 140000; set NoQuitOnFinish 1;   run -all; quit -f;" optimized_batch_top_tb 
-# Start time: 16:44:10 on Nov 28,2025
+# Start time: 17:59:09 on Nov 28,2025
 # //  Questa Sim-64
 # //  Version 2025.1_1 linux_x86_64 Feb 13 2025
 # //
@@ -1754,7 +1754,7 @@ Reading pref.tcl
 # Loading work.dmem_driver_bfm(fast__1)
 # Loading work.LC3(fast)
 # Loading /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
-# Sv_Seed = 495285959
+# Sv_Seed = 144871852
 #  coverage save -onexit lc3_alu_test.ucdb
 #  set IterationLimit 140000
 # 140000
@@ -2442,18 +2442,18 @@ Reading pref.tcl
 #     mem: size after elab (VSZ)                 395.42 Mb
 #     mem: size during sim (VSZ)                 395.42 Mb
 # Elaboration Time                          
-#    elab: wall time                               6.94 s
-#    elab: cpu time                                3.45 s
+#    elab: wall time                               6.90 s
+#    elab: cpu time                                3.49 s
 # Simulation Time                           
 #     sim: wall time                               0.42 s
-#     sim: cpu time                                0.13 s
+#     sim: cpu time                                0.12 s
 # Coverage Save Time                        
-#    save: wall time                               1.00 s
-#    save: cpu time                                0.16 s
+#    save: wall time                               0.92 s
+#    save: cpu time                                0.15 s
 # Total Time                                
-#   total: wall time                               8.36 s
-#   total: cpu time                                3.74 s
+#   total: wall time                               8.24 s
+#   total: cpu time                                3.76 s
 # HDL Simulation time                              1 us
 # 
-# End time: 16:44:18 on Nov 28,2025, Elapsed time: 0:00:08
+# End time: 17:59:17 on Nov 28,2025, Elapsed time: 0:00:08
 # Errors: 0, Warnings: 0
