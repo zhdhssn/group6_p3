@@ -1,0 +1,6 @@
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=79 MATCHES=1 MISMATCHES=78
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=100 MATCHES=0 MISMATCHES=0
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.execute_env.exe_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=0 MATCHES=0 MISMATCHES=0
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=33 MATCHES=33 MISMATCHES=0
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=80 MATCHES=16 MISMATCHES=0
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=0 MATCHES=0 MISMATCHES=0
