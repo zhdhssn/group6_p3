@@ -13,6 +13,7 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
+import imem_pkg::*;
 class lc3_env_configuration 
 extends uvmf_environment_configuration_base;
 

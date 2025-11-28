@@ -63,14 +63,14 @@ package LC3_tests_pkg;
    `include "src/test_top.svh"
    `include "src/register_test.svh"
    `include "src/example_derived_test.svh"
-   `include "src/lc3_alu_imem_txn.svh"
-   `include "src/lc3_alu_test.svh"
 
   // pragma uvmf custom package_item_additional begin
   // UVMF_CHANGE_ME : When adding new tests to the src directory
   //    be sure to add the test file here so that it will be
   //    compiled as part of the test package.  Be sure to place
   //    the new test after any base tests of the new test.
+     `include "src/lc3_alu_test.svh"
+
   // pragma uvmf custom package_item_additional end
 
 endpackage

@@ -17,8 +17,13 @@ class lc3_alu_test extends test_top;
 
     uvm_factory::get().set_type_override_by_type(
       imem_transaction::get_type(),
-      lc3_alu_imem_txn::get_type()
+      imem_alu_transaction::get_type()
     );
+
+    uvm_factory::get().set_type_override_by_type(
+    imem_pkg::imem_responder_sequence::get_type(),
+    imem_pkg::imem_alu_sequence::get_type()
+  );
   endfunction
 
   virtual task run_phase(uvm_phase phase);
