@@ -80,7 +80,9 @@ import uvmf_base_pkg_hdl::*;
      // pragma uvmf custom decode_env_dec_in_agent_bus_connections begin
      .clock(clk), .reset(rst),
      .instr_dout(dut.Instr_dout),
-     .npc_in(dut.npc_out_fetch)
+     .npc_in(dut.npc_out_fetch),
+     .enable_decode(dut.enable_decode),//Harry enable decode stage
+     .psr()//Harry just leave the psr port open as 1. we cant access the internal signals psr from the DUT 2. can't put all zeros as it will cause errors
    //   .psr(dut.psr) // psr commented out in TopLevelLC3.v
      // pragma uvmf custom decode_env_dec_in_agent_bus_connections end
      );
