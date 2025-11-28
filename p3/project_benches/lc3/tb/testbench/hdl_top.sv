@@ -91,7 +91,8 @@ import uvmf_base_pkg_hdl::*;
      .e_control(dut.E_Control),
      .w_control(dut.W_Control),
      .ir(dut.IR),
-     .npc_out(npc_out_dec),
+   //   .npc_out(npc_out_dec),
+     .npc_out(dut.npc_out_dec), //Harry fixed port mismatch issue
      .enable_decode(dut.enable_decode)
      // pragma uvmf custom decode_env_dec_out_agent_bus_connections end
      );
@@ -99,7 +100,8 @@ import uvmf_base_pkg_hdl::*;
      // pragma uvmf custom execute_env_exe_in_agent_bus_connections begin
      .clock(clk), .reset(rst),
      .ir(dut.IR),
-     .npc_in(npc_out_dec),
+   //   .npc_in(npc_out_dec),
+     .npc_in(dut.npc_out_dec), //Harry fixed port mismatch issue
      .bypass_alu_1(dut.bypass_alu_1),
      .bypass_alu_2(dut.bypass_alu_2),
      .bypass_mem_1(dut.bypass_mem_1),
