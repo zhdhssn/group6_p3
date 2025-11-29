@@ -27,7 +27,7 @@ class lc3_alu_add_test extends test_top;
     `uvm_info("ALU_ADD_TEST", "===== LC3 ALU ADD TEST START =====", UVM_LOW)
     //Harry: debug -> reduce one error by creating virtual sequence: add test -> test_top -> created virtual sequence
     super.run_phase(phase); // let uvmf_test_base start LC3_bench_sequence_base
-    #1us; //Harry->question: how should should we run the simulation?
+    #1us; //Harry->question: how long should we run the simulation?
     `uvm_info("ALU_ADD_TEST", "===== LC3 ALU ADD TEST COMPLETE =====", UVM_LOW)
     phase.drop_objection(this);
 

@@ -210,18 +210,19 @@ class LC3_bench_sequence_base extends uvmf_sequence_base #(uvm_sequence_item);
 
     // lc3_env_seq = lc3_env_sequence_base_t::type_id::create("lc3_env_seq");
 
-    fetch_env_fetch_in_agent_random_seq     = fetch_env_fetch_in_agent_random_seq_t::type_id::create("fetch_env_fetch_in_agent_random_seq");
-    fetch_env_fetch_out_agent_responder_seq  = fetch_env_fetch_out_agent_responder_seq_t::type_id::create("fetch_env_fetch_out_agent_responder_seq");
-    decode_env_dec_in_agent_random_seq     = decode_env_dec_in_agent_random_seq_t::type_id::create("decode_env_dec_in_agent_random_seq");
-    decode_env_dec_out_agent_responder_seq  = decode_env_dec_out_agent_responder_seq_t::type_id::create("decode_env_dec_out_agent_responder_seq");
-    execute_env_exe_in_agent_random_seq     = execute_env_exe_in_agent_random_seq_t::type_id::create("execute_env_exe_in_agent_random_seq");
-    execute_env_exe_out_agent_responder_seq  = execute_env_exe_out_agent_responder_seq_t::type_id::create("execute_env_exe_out_agent_responder_seq");
-    memaccess_env_memaccess_in_agt_random_seq     = memaccess_env_memaccess_in_agt_random_seq_t::type_id::create("memaccess_env_memaccess_in_agt_random_seq");
-    memaccess_env_memaccess_out_agt_responder_seq  = memaccess_env_memaccess_out_agt_responder_seq_t::type_id::create("memaccess_env_memaccess_out_agt_responder_seq");
-    writeback_env_writeback_in_agent_responder_seq  = writeback_env_writeback_in_agent_responder_seq_t::type_id::create("writeback_env_writeback_in_agent_responder_seq");
-    writeback_env_writeback_out_agent_responder_seq  = writeback_env_writeback_out_agent_responder_seq_t::type_id::create("writeback_env_writeback_out_agent_responder_seq");
-    controller_env_controller_in_agent_random_seq     = controller_env_controller_in_agent_random_seq_t::type_id::create("controller_env_controller_in_agent_random_seq");
-    controller_env_controller_out_agent_random_seq     = controller_env_controller_out_agent_random_seq_t::type_id::create("controller_env_controller_out_agent_random_seq");
+//Harry: comment these seq out as we dont need to gen random sequence for each stage
+    // fetch_env_fetch_in_agent_random_seq     = fetch_env_fetch_in_agent_random_seq_t::type_id::create("fetch_env_fetch_in_agent_random_seq");
+    // fetch_env_fetch_out_agent_responder_seq  = fetch_env_fetch_out_agent_responder_seq_t::type_id::create("fetch_env_fetch_out_agent_responder_seq");
+    // decode_env_dec_in_agent_random_seq     = decode_env_dec_in_agent_random_seq_t::type_id::create("decode_env_dec_in_agent_random_seq");
+    // decode_env_dec_out_agent_responder_seq  = decode_env_dec_out_agent_responder_seq_t::type_id::create("decode_env_dec_out_agent_responder_seq");
+    // execute_env_exe_in_agent_random_seq     = execute_env_exe_in_agent_random_seq_t::type_id::create("execute_env_exe_in_agent_random_seq");
+    // execute_env_exe_out_agent_responder_seq  = execute_env_exe_out_agent_responder_seq_t::type_id::create("execute_env_exe_out_agent_responder_seq");
+    // memaccess_env_memaccess_in_agt_random_seq     = memaccess_env_memaccess_in_agt_random_seq_t::type_id::create("memaccess_env_memaccess_in_agt_random_seq");
+    // memaccess_env_memaccess_out_agt_responder_seq  = memaccess_env_memaccess_out_agt_responder_seq_t::type_id::create("memaccess_env_memaccess_out_agt_responder_seq");
+    // writeback_env_writeback_in_agent_responder_seq  = writeback_env_writeback_in_agent_responder_seq_t::type_id::create("writeback_env_writeback_in_agent_responder_seq");
+    // writeback_env_writeback_out_agent_responder_seq  = writeback_env_writeback_out_agent_responder_seq_t::type_id::create("writeback_env_writeback_out_agent_responder_seq");
+    // controller_env_controller_in_agent_random_seq     = controller_env_controller_in_agent_random_seq_t::type_id::create("controller_env_controller_in_agent_random_seq");
+    // controller_env_controller_out_agent_random_seq     = controller_env_controller_out_agent_random_seq_t::type_id::create("controller_env_controller_out_agent_random_seq");
 
     //Harry: debug message
     `uvm_info("LC3_BENCH_SEQUENCE_BASE", "Harry-> creating imem_agent_responder_seq...", UVM_HIGH)
@@ -229,6 +230,8 @@ class LC3_bench_sequence_base extends uvmf_sequence_base #(uvm_sequence_item);
     `uvm_info("LC3_BENCH_SEQUENCE_BASE", "Harry-> created imem_agent_responder_seq...", UVM_HIGH)
 
     dmem_agent_responder_seq  = dmem_agent_responder_seq_t::type_id::create("dmem_agent_responder_seq");
+
+
     fork
       fetch_env_fetch_in_agent_config.wait_for_reset();
       fetch_env_fetch_out_agent_config.wait_for_reset();
@@ -245,26 +248,30 @@ class LC3_bench_sequence_base extends uvmf_sequence_base #(uvm_sequence_item);
       imem_agent_config.wait_for_reset();
       dmem_agent_config.wait_for_reset();
     join
+
     // Start RESPONDER sequences here
     fork
-      fetch_env_fetch_out_agent_responder_seq.start(fetch_env_fetch_out_agent_sequencer);
-      decode_env_dec_out_agent_responder_seq.start(decode_env_dec_out_agent_sequencer);
-      execute_env_exe_out_agent_responder_seq.start(execute_env_exe_out_agent_sequencer);
-      memaccess_env_memaccess_out_agt_responder_seq.start(memaccess_env_memaccess_out_agt_sequencer);
-      writeback_env_writeback_in_agent_responder_seq.start(writeback_env_writeback_in_agent_sequencer);
-      writeback_env_writeback_out_agent_responder_seq.start(writeback_env_writeback_out_agent_sequencer);
+      //Harry comment out the code below as we dont need to start the sequences for the fetch, decode, execute, memaccess, writeback stages
+      // fetch_env_fetch_out_agent_responder_seq.start(fetch_env_fetch_out_agent_sequencer);
+      // decode_env_dec_out_agent_responder_seq.start(decode_env_dec_out_agent_sequencer);
+      // execute_env_exe_out_agent_responder_seq.start(execute_env_exe_out_agent_sequencer);
+      // memaccess_env_memaccess_out_agt_responder_seq.start(memaccess_env_memaccess_out_agt_sequencer);
+      // writeback_env_writeback_in_agent_responder_seq.start(writeback_env_writeback_in_agent_sequencer);
+      // writeback_env_writeback_out_agent_responder_seq.start(writeback_env_writeback_out_agent_sequencer);
       imem_agent_responder_seq.start(imem_agent_sequencer);
       dmem_agent_responder_seq.start(dmem_agent_sequencer);
     join_none
+
+    //Harry: comment out the code below as we dont need to start the sequences for the fetch, decode, execute, memaccess, writeback stages
     // Start INITIATOR sequences here
-    fork
-      repeat (25) fetch_env_fetch_in_agent_random_seq.start(fetch_env_fetch_in_agent_sequencer);
-      repeat (25) decode_env_dec_in_agent_random_seq.start(decode_env_dec_in_agent_sequencer);
-      repeat (25) execute_env_exe_in_agent_random_seq.start(execute_env_exe_in_agent_sequencer);
-      repeat (25) memaccess_env_memaccess_in_agt_random_seq.start(memaccess_env_memaccess_in_agt_sequencer);
-      repeat (25) controller_env_controller_in_agent_random_seq.start(controller_env_controller_in_agent_sequencer);
-      repeat (25) controller_env_controller_out_agent_random_seq.start(controller_env_controller_out_agent_sequencer);
-    join
+    // fork
+    //   repeat (25) fetch_env_fetch_in_agent_random_seq.start(fetch_env_fetch_in_agent_sequencer);
+    //   repeat (25) decode_env_dec_in_agent_random_seq.start(decode_env_dec_in_agent_sequencer);
+    //   repeat (25) execute_env_exe_in_agent_random_seq.start(execute_env_exe_in_agent_sequencer);
+    //   repeat (25) memaccess_env_memaccess_in_agt_random_seq.start(memaccess_env_memaccess_in_agt_sequencer);
+    //   repeat (25) controller_env_controller_in_agent_random_seq.start(controller_env_controller_in_agent_sequencer);
+    //   repeat (25) controller_env_controller_out_agent_random_seq.start(controller_env_controller_out_agent_sequencer);
+    // join
 
 // lc3_env_seq.start(top_configuration.vsqr);
 
