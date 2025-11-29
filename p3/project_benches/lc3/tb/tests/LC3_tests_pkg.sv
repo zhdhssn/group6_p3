@@ -71,6 +71,7 @@ package LC3_tests_pkg;
   //    the new test after any base tests of the new test.
      `include "src/lc3_alu_test.svh"
      `include "src/lc3_ldr_test.svh" //Harry added this test for load testing
+     `include "src/lc3_alu_add_test.svh" //Harry: deterministic ADD regression
 
   // pragma uvmf custom package_item_additional end
 
