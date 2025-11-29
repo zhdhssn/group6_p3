@@ -68,8 +68,9 @@ package imem_pkg;
    //    be sure to add the sequence file here so that it will be
    //    compiled as part of the interface package.  Be sure to place
    //    the new sequence after any base sequences of the new sequence.
-      `include "src/imem_alu_transaction.svh"
-      `include "src/imem_alu_sequence.svh"
+     `include "src/imem_alu_transaction.svh"
+     `include "src/imem_alu_sequence.svh"
+     `include "src/imem_responder_mem_ldr_sequence.svh" //Harry added this sequence for load testing
 
 
 

@@ -70,6 +70,7 @@ package LC3_tests_pkg;
   //    compiled as part of the test package.  Be sure to place
   //    the new test after any base tests of the new test.
      `include "src/lc3_alu_test.svh"
+     `include "src/lc3_ldr_test.svh" //Harry added this test for load testing
 
   // pragma uvmf custom package_item_additional end
 
