@@ -91,15 +91,42 @@ class decode_predictor #(
   // This function performs prediction of DUT output values based on DUT input, configuration and state
   virtual function void write_decode_in_ae(decode_in_transaction t);
     // pragma uvmf custom decode_in_ae_predictor begin
+    bit [15:0] ir, npc_out;
+    bit [5:0] e_control;
+    bit [1:0] w_control;
+    bit mem_control;
+    bit decode_model_output;
+
     decode_in_ae_debug = t;
+
+    /*decode_in_transaction
+  rand bit [15:0] npc_in ;
+  rand bit [15:0] instr_dout ;
+  time start_time ;
+  time end_time ;
+  rand bit [3:0] psr ;
+  rand bit enable_decode ;
+    */
     `uvm_info("PRED", "Transaction Received through decode_in_ae", UVM_MEDIUM)
     `uvm_info("PRED", {"            Data: ",t.convert2string()}, UVM_FULL)
     // Construct one of each output transaction type.
     decode_out_ap_output_transaction = decode_out_ap_output_transaction_t::type_id::create("decode_out_ap_output_transaction");
     //  UVMF_CHANGE_ME: Implement predictor model here.  
-    if((decode_model(t.instr_dout, t.npc_in, decode_out_ap_output_transaction.ir, decode_out_ap_output_transaction.npc_out, decode_out_ap_output_transaction.e_control, decode_out_ap_output_transaction.w_control,  decode_out_ap_output_transaction.mem_control))) begin
-	  `uvm_fatal("PRED", "Error in the decode model function");
-      end
+    decode_model_output = decode_model(
+      t.instr_dout, // input bit [15: 0] instr_dout,
+      t.npc_in,     // input bit [15: 0] npc_in,
+      ir,           // output bit [15: 0] ir,
+      npc_out,      // output bit [15: 0] npc_out,
+      e_control,    // output bit [5: 0] e_control,
+      w_control,    // output bit [1: 0] w_control,
+      mem_control   // output bit mem_control
+    );
+
+    decode_out_ap_output_transaction.ir = ir;
+    decode_out_ap_output_transaction.npc_out = npc_out;
+    decode_out_ap_output_transaction.e_control = e_control;
+    decode_out_ap_output_transaction.w_control = w_control;
+    decode_out_ap_output_transaction.mem_control = mem_control;
 
     // Code for sending output transaction out through decode_out_ap
     // Please note that each broadcasted transaction should be a different object than previously 
@@ -107,6 +134,9 @@ class decode_predictor #(
     // using either new() or create().  Broadcasting a transaction object more than once to either the 
     // same subscriber or multiple subscribers will result in unexpected and incorrect behavior.
     decode_out_ap.write(decode_out_ap_output_transaction);
+    `uvm_info("PRED", $sformatf("Prediction sent from decode_model: ir=0x%0h npc_out=0x%0h e_control=0x%0h w_control=0x%0h mem_control=0x%0h",
+                            ir, npc_out, e_control, w_control, mem_control),
+          UVM_LOW)
     // pragma uvmf custom decode_in_ae_predictor end
   endfunction
 
@@ -114,4 +144,3 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-

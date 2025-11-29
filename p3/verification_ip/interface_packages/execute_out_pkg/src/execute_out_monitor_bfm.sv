@@ -79,11 +79,7 @@ end
   tri [15:0] ir_exec_i;
   tri [2:0] nzp_i;
   tri [15:0] m_data_i;
-  tri  enable_execute;
-
-  logic delayed_enable_exec;
-  logic [2:0] flopped_sr1_i;
-  logic [2:0] flopped_sr2_i;
+  tri  enable_execute_i;
 
   assign clock_i = bus.clock;
   assign reset_i = bus.reset;
@@ -101,22 +97,7 @@ end
 
   // Proxy handle to UVM monitor
   execute_out_pkg::execute_out_monitor  proxy;
-  // pragma tbx oneway proxy.notify_transaction                 
-
-  always@(posedge clock_i)
-  begin
-    if(reset_i)
-    begin
-      delayed_enable_exec <= delayed_enable_exec;
-      flopped_sr1_i <= flopped_sr1_i;
-      flopped_sr2_i <= flopped_sr2_i;
-    end
-    else begin
-      delayed_enable_exec <= enable_execute;
-      flopped_sr1_i <= sr1_i;
-      flopped_sr2_i <= sr2_i;
-    end
-  end
+  // pragma tbx oneway proxy.notify_transaction
 
   // pragma uvmf custom interface_item_additional begin
   // pragma uvmf custom interface_item_additional end
@@ -224,19 +205,18 @@ end
     // @(posedge clock_i);
     // @(posedge clock_i);
 
-    if(reset_i) wait_for_reset();
-    while (delayed_enable_exec!= 1) @(posedge clock_i);
+    while (enable_execute_i == 0) @(posedge clock_i);
 
+    execute_out_monitor_struct.sr1 = sr1_i;   
+    execute_out_monitor_struct.sr2 = sr2_i;   
     execute_out_monitor_struct.w_control_out = w_control_out_i;   
     execute_out_monitor_struct.mem_control_out = mem_control_out_i;    
+    execute_out_monitor_struct.dr = dr_i; 
+    execute_out_monitor_struct.nzp = nzp_i;  
     execute_out_monitor_struct.aluout = aluout_i; 
     execute_out_monitor_struct.pcout = pcout_i;  
-    execute_out_monitor_struct.dr = dr_i; 
-    execute_out_monitor_struct.sr1 = flopped_sr1_i;   
-    execute_out_monitor_struct.sr2 = flopped_sr2_i;   
-    execute_out_monitor_struct.ir_exec = ir_exec_i;   
-    execute_out_monitor_struct.nzp = nzp_i;  
     execute_out_monitor_struct.m_data = m_data_i; 
+    execute_out_monitor_struct.ir_exec = ir_exec_i;   
 
     // pragma uvmf custom do_monitor end
   endtask         

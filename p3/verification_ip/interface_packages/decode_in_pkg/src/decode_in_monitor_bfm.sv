@@ -177,12 +177,12 @@ end
     // @(posedge clock_i);
     // @(posedge clock_i);
     // @(posedge clock_i);
-    while(enable_decode_i ==1'b0) @(posedge clock_i);
-
-      decode_in_monitor_struct.enable_decode = enable_decode_i;  //     
+    while(enable_decode_i == 1'b0) @(posedge clock_i);
+      
+      decode_in_monitor_struct.enable_decode = enable_decode_i;
       decode_in_monitor_struct.instr_dout = instr_dout_i;  //    [15:0] 
-      decode_in_monitor_struct.npc_in = npc_in_i;  //    [15:0] 
-      decode_in_monitor_struct.psr = psr_i;
+      decode_in_monitor_struct.npc_in = npc_in_i;  //    [15:0]
+
     // pragma uvmf custom do_monitor end
   endtask
  

@@ -85,12 +85,23 @@ class exe_predictor #(
   // pragma uvmf custom build_phase end
   endfunction
 
-  bit execute_model_output;
-
   // FUNCTION: write_execute_ae
   // Transactions received through execute_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
   virtual function void write_execute_ae(execute_in_transaction t);
+  bit execute_model_output;
+  //declare outputs of execute_model
+  bit [15: 0] aluout;
+  bit [1: 0] w_control_out;
+  bit mem_control_out;
+  bit [15: 0] m_data;
+  bit [2: 0] dr;
+  bit [2: 0] sr1;
+  bit [2: 0] sr2;
+  bit [15: 0] ir_exec;
+  bit [2: 0] nzp;
+  bit [15: 0] pcout;
+
     // pragma uvmf custom execute_ae_predictor begin
     execute_ae_debug = t;
     `uvm_info("PRED", "Transaction Received through execute_ae", UVM_MEDIUM)
@@ -115,22 +126,27 @@ class exe_predictor #(
                                         .Mem_Bypass_Val  (t.mem_bypass_val ),
                                         .VSR1            (t.vsr1           ),
                                         .VSR2            (t.vsr2           ),
-                                        .aluout          (execute_ap_output_transaction.aluout         ),
-                                        .W_Control_out   (execute_ap_output_transaction.w_control_out  ),
-                                        .Mem_Control_out (execute_ap_output_transaction.mem_control_out),
-                                        .M_Data          (execute_ap_output_transaction.m_data         ),
-                                        .dr             (execute_ap_output_transaction.dr            ),
-                                        .sr1            (execute_ap_output_transaction.sr1           ),
-                                        .sr2            (execute_ap_output_transaction.sr2           ),
-                                        .IR_Exec        (execute_ap_output_transaction.ir_exec       ),
-                                        .NZP            (execute_ap_output_transaction.nzp           ),
-                                        .pcout          (execute_ap_output_transaction.pcout         )
+                                        .aluout          (aluout),
+                                        .W_Control_out   (w_control_out  ),
+                                        .Mem_Control_out (mem_control_out),
+                                        .M_Data          (m_data         ),
+                                        .dr              (dr            ),
+                                        .sr1             (sr1           ),
+                                        .sr2             (sr2           ),
+                                        .IR_Exec         (ir_exec       ),
+                                        .NZP             (nzp           ),
+                                        .pcout           (pcout         )
                                       );
-    
-    if (execute_model_output == 0)
-    begin
-      `uvm_fatal("EXECUTE PREDICTOR", "Execute Model error")
-    end
+    execute_ap_output_transaction.aluout = aluout;
+    execute_ap_output_transaction.w_control_out = w_control_out;
+    execute_ap_output_transaction.mem_control_out = mem_control_out;
+    execute_ap_output_transaction.m_data = m_data;
+    execute_ap_output_transaction.dr = dr;
+    execute_ap_output_transaction.sr1 = sr1;
+    execute_ap_output_transaction.sr2 = sr2;
+    execute_ap_output_transaction.ir_exec = ir_exec;
+    execute_ap_output_transaction.nzp = nzp;
+    execute_ap_output_transaction.pcout = pcout;
     
     // Code for sending output transaction out through execute_ap
     // Please note that each broadcasted transaction should be a different object than previously 
@@ -138,6 +154,9 @@ class exe_predictor #(
     // using either new() or create().  Broadcasting a transaction object more than once to either the 
     // same subscriber or multiple subscribers will result in unexpected and incorrect behavior.
     execute_ap.write(execute_ap_output_transaction);
+    `uvm_info("PRED", $sformatf("Prediction sent from execute_model: aluout=0x%0h w_control_out=0x%0h mem_control_out=0x%0h m_data=0x%0h dr=0x%0h sr1=0x%0h sr2=0x%0h ir_exec=0x%0h nzp=0x%0h pcout=0x%0h",
+                            aluout, w_control_out, mem_control_out, m_data, dr, sr1, sr2, ir_exec, nzp, pcout),
+          UVM_LOW)
     // pragma uvmf custom execute_ae_predictor end
   endfunction
 

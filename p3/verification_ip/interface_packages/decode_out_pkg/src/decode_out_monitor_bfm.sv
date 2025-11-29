@@ -183,7 +183,7 @@ end
     // @(posedge clock_i);
     // @(posedge clock_i);
     // @(posedge clock_i);
-    while(enable_decode_i !== 1'b1 ) @(posedge clock_i);
+    while(enable_decode_i == 1'b0 ) @(posedge clock_i);
  
       decode_out_monitor_struct.ir = ir_i;
       decode_out_monitor_struct.e_control = e_control_i;
