@@ -150,7 +150,7 @@ end
     //     //    fetch_out_monitor_struct.pc
     //     //    fetch_out_monitor_struct.npc
     //     //    fetch_out_monitor_struct.start_time
-    //     //    fetch_out_monitor_struct.stop_time
+    //     //    fetch_out_monitor_struct.end_time
     //     //    fetch_out_monitor_struct.transaction_view_h
     //     //
     // Reference code;
@@ -180,7 +180,7 @@ end
     fetch_out_monitor_struct.pc          = pc_i;
     fetch_out_monitor_struct.npc         = npc_i;
     @(posedge clock_i);
-    fetch_out_monitor_struct.stop_time   = $time;
+    fetch_out_monitor_struct.end_time   = $time;
     // pragma uvmf custom do_monitor end
   endtask         
   

@@ -210,7 +210,7 @@ end
        //   bit enable_updatePC ;
        //   bit enable_fetch ;
        //   bit start_time ;
-       //   bit stop_time ;
+       //   bit end_time ;
        //   bit transaction_view_h ;
        // Members within the fetch_in_responder_struct:
        //   bit br_taken ;
@@ -218,7 +218,7 @@ end
        //   bit enable_updatePC ;
        //   bit enable_fetch ;
        //   bit start_time ;
-       //   bit stop_time ;
+       //   bit end_time ;
        //   bit transaction_view_h ;
        initiator_struct = fetch_in_initiator_struct;
        //
@@ -276,7 +276,7 @@ bit first_transfer=1;
   //   bit enable_updatePC ;
   //   bit enable_fetch ;
   //   bit start_time ;
-  //   bit stop_time ;
+  //   bit end_time ;
   //   bit transaction_view_h ;
   // Variables within the fetch_in_responder_struct:
   //   bit br_taken ;
@@ -284,7 +284,7 @@ bit first_transfer=1;
   //   bit enable_updatePC ;
   //   bit enable_fetch ;
   //   bit start_time ;
-  //   bit stop_time ;
+  //   bit end_time ;
   //   bit transaction_view_h ;
        // Reference code;
        //    How to wait for signal value

@@ -53,7 +53,7 @@ typedef struct packed  { \
   bit[15:0] pc ; \
   bit[15:0] npc ; \
   bit start_time ; \
-  bit stop_time ; \
+  bit end_time ; \
   bit transaction_view_h ; \
      } fetch_out_monitor_s;
 
@@ -65,7 +65,7 @@ typedef struct packed  { \
             this.pc , \
             this.npc , \
             this.start_time , \
-            this.stop_time , \
+            this.end_time , \
             this.transaction_view_h  \
             };\
     return ( fetch_out_monitor_struct);\
@@ -78,7 +78,7 @@ typedef struct packed  { \
             this.pc , \
             this.npc , \
             this.start_time , \
-            this.stop_time , \
+            this.end_time , \
             this.transaction_view_h  \
             } = fetch_out_monitor_struct;\
   endfunction
@@ -93,7 +93,7 @@ typedef struct packed  { \
   bit[15:0] pc ; \
   bit[15:0] npc ; \
   bit start_time ; \
-  bit stop_time ; \
+  bit end_time ; \
   bit transaction_view_h ; \
      } fetch_out_initiator_s;
 
@@ -105,7 +105,7 @@ typedef struct packed  { \
            this.pc , \
            this.npc , \
            this.start_time , \
-           this.stop_time , \
+           this.end_time , \
            this.transaction_view_h  \
            };\
     return ( fetch_out_initiator_struct);\
@@ -118,7 +118,7 @@ typedef struct packed  { \
            this.pc , \
            this.npc , \
            this.start_time , \
-           this.stop_time , \
+           this.end_time , \
            this.transaction_view_h  \
            } = fetch_out_initiator_struct;\
   endfunction
@@ -133,7 +133,7 @@ typedef struct packed  { \
   bit[15:0] pc ; \
   bit[15:0] npc ; \
   bit start_time ; \
-  bit stop_time ; \
+  bit end_time ; \
   bit transaction_view_h ; \
      } fetch_out_responder_s;
 
@@ -145,7 +145,7 @@ typedef struct packed  { \
            this.pc , \
            this.npc , \
            this.start_time , \
-           this.stop_time , \
+           this.end_time , \
            this.transaction_view_h  \
            };\
     return ( fetch_out_responder_struct);\
@@ -158,7 +158,7 @@ typedef struct packed  { \
            this.pc , \
            this.npc , \
            this.start_time , \
-           this.stop_time , \
+           this.end_time , \
            this.transaction_view_h  \
            } = fetch_out_responder_struct;\
   endfunction

@@ -22,7 +22,7 @@ class fetch_out_transaction  extends uvmf_transaction_base;
   rand bit[15:0] pc ;
   rand bit[15:0] npc ;
   bit start_time ;
-  bit stop_time ;
+  bit end_time ;
   bit transaction_view_h ;
 
   //Constraints for the transaction variables:
@@ -106,7 +106,7 @@ class fetch_out_transaction  extends uvmf_transaction_base;
   virtual function string convert2string();
     // pragma uvmf custom convert2string begin
     // UVMF_CHANGE_ME : Customize format if desired.
-    return $sformatf("instrmem_rd:0x%x pc:0x%x npc:0x%x start_time:0x%x stop_time:0x%x transaction_view_h:0x%x ",instrmem_rd,pc,npc,start_time,stop_time,transaction_view_h);
+    return $sformatf("instrmem_rd:0x%x pc:0x%x npc:0x%x start_time:0x%x end_time:0x%x transaction_view_h:0x%x ",instrmem_rd,pc,npc,start_time,end_time,transaction_view_h);
     // pragma uvmf custom convert2string end
   endfunction
 
@@ -157,7 +157,7 @@ class fetch_out_transaction  extends uvmf_transaction_base;
     this.pc = RHS.pc;
     this.npc = RHS.npc;
     this.start_time = RHS.start_time;
-    this.stop_time = RHS.stop_time;
+    this.end_time = RHS.end_time;
     this.transaction_view_h = RHS.transaction_view_h;
     // pragma uvmf custom do_copy end
   endfunction
@@ -186,7 +186,7 @@ class fetch_out_transaction  extends uvmf_transaction_base;
     $add_attribute(transaction_view_h,pc,"pc");
     $add_attribute(transaction_view_h,npc,"npc");
     $add_attribute(transaction_view_h,start_time,"start_time");
-    $add_attribute(transaction_view_h,stop_time,"stop_time");
+    $add_attribute(transaction_view_h,end_time,"end_time");
     $add_attribute(transaction_view_h,transaction_view_h,"transaction_view_h");
     // pragma uvmf custom add_to_wave end
     $end_transaction(transaction_view_h,end_time);

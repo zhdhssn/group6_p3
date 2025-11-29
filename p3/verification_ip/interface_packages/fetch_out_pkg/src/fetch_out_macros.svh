@@ -52,9 +52,6 @@ typedef struct packed  { \
   bit instrmem_rd ; \
   bit[15:0] pc ; \
   bit[15:0] npc ; \
-  bit start_time ; \
-  bit stop_time ; \
-  bit transaction_view_h ; \
      } fetch_out_monitor_s;
 
   `define fetch_out_TO_MONITOR_STRUCT_FUNCTION \
@@ -63,10 +60,7 @@ typedef struct packed  { \
             { \
             this.instrmem_rd , \
             this.pc , \
-            this.npc , \
-            this.start_time , \
-            this.stop_time , \
-            this.transaction_view_h  \
+            this.npc  \
             };\
     return ( fetch_out_monitor_struct);\
   endfunction\
@@ -76,10 +70,7 @@ typedef struct packed  { \
             {\
             this.instrmem_rd , \
             this.pc , \
-            this.npc , \
-            this.start_time , \
-            this.stop_time , \
-            this.transaction_view_h  \
+            this.npc  \
             } = fetch_out_monitor_struct;\
   endfunction
 
@@ -92,9 +83,6 @@ typedef struct packed  { \
   bit instrmem_rd ; \
   bit[15:0] pc ; \
   bit[15:0] npc ; \
-  bit start_time ; \
-  bit stop_time ; \
-  bit transaction_view_h ; \
      } fetch_out_initiator_s;
 
   `define fetch_out_TO_INITIATOR_STRUCT_FUNCTION \
@@ -103,10 +91,7 @@ typedef struct packed  { \
            {\
            this.instrmem_rd , \
            this.pc , \
-           this.npc , \
-           this.start_time , \
-           this.stop_time , \
-           this.transaction_view_h  \
+           this.npc  \
            };\
     return ( fetch_out_initiator_struct);\
   endfunction
@@ -116,10 +101,7 @@ typedef struct packed  { \
            {\
            this.instrmem_rd , \
            this.pc , \
-           this.npc , \
-           this.start_time , \
-           this.stop_time , \
-           this.transaction_view_h  \
+           this.npc  \
            } = fetch_out_initiator_struct;\
   endfunction
 
@@ -132,9 +114,6 @@ typedef struct packed  { \
   bit instrmem_rd ; \
   bit[15:0] pc ; \
   bit[15:0] npc ; \
-  bit start_time ; \
-  bit stop_time ; \
-  bit transaction_view_h ; \
      } fetch_out_responder_s;
 
   `define fetch_out_TO_RESPONDER_STRUCT_FUNCTION \
@@ -143,10 +122,7 @@ typedef struct packed  { \
            {\
            this.instrmem_rd , \
            this.pc , \
-           this.npc , \
-           this.start_time , \
-           this.stop_time , \
-           this.transaction_view_h  \
+           this.npc  \
            };\
     return ( fetch_out_responder_struct);\
   endfunction
@@ -156,10 +132,7 @@ typedef struct packed  { \
            {\
            this.instrmem_rd , \
            this.pc , \
-           this.npc , \
-           this.start_time , \
-           this.stop_time , \
-           this.transaction_view_h  \
+           this.npc  \
            } = fetch_out_responder_struct;\
   endfunction
 // pragma uvmf custom additional begin

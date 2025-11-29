@@ -53,9 +53,6 @@ typedef struct packed  { \
   bit[15:0] taddr ; \
   bit enable_updatePC ; \
   bit enable_fetch ; \
-  bit start_time ; \
-  bit stop_time ; \
-  bit transaction_view_h ; \
      } fetch_in_monitor_s;
 
   `define fetch_in_TO_MONITOR_STRUCT_FUNCTION \
@@ -65,10 +62,7 @@ typedef struct packed  { \
             this.br_taken , \
             this.taddr , \
             this.enable_updatePC , \
-            this.enable_fetch , \
-            this.start_time , \
-            this.stop_time , \
-            this.transaction_view_h  \
+            this.enable_fetch  \
             };\
     return ( fetch_in_monitor_struct);\
   endfunction\
@@ -79,10 +73,7 @@ typedef struct packed  { \
             this.br_taken , \
             this.taddr , \
             this.enable_updatePC , \
-            this.enable_fetch , \
-            this.start_time , \
-            this.stop_time , \
-            this.transaction_view_h  \
+            this.enable_fetch  \
             } = fetch_in_monitor_struct;\
   endfunction
 
@@ -96,9 +87,6 @@ typedef struct packed  { \
   bit[15:0] taddr ; \
   bit enable_updatePC ; \
   bit enable_fetch ; \
-  bit start_time ; \
-  bit stop_time ; \
-  bit transaction_view_h ; \
      } fetch_in_initiator_s;
 
   `define fetch_in_TO_INITIATOR_STRUCT_FUNCTION \
@@ -108,10 +96,7 @@ typedef struct packed  { \
            this.br_taken , \
            this.taddr , \
            this.enable_updatePC , \
-           this.enable_fetch , \
-           this.start_time , \
-           this.stop_time , \
-           this.transaction_view_h  \
+           this.enable_fetch  \
            };\
     return ( fetch_in_initiator_struct);\
   endfunction
@@ -122,10 +107,7 @@ typedef struct packed  { \
            this.br_taken , \
            this.taddr , \
            this.enable_updatePC , \
-           this.enable_fetch , \
-           this.start_time , \
-           this.stop_time , \
-           this.transaction_view_h  \
+           this.enable_fetch  \
            } = fetch_in_initiator_struct;\
   endfunction
 
@@ -139,9 +121,6 @@ typedef struct packed  { \
   bit[15:0] taddr ; \
   bit enable_updatePC ; \
   bit enable_fetch ; \
-  bit start_time ; \
-  bit stop_time ; \
-  bit transaction_view_h ; \
      } fetch_in_responder_s;
 
   `define fetch_in_TO_RESPONDER_STRUCT_FUNCTION \
@@ -151,10 +130,7 @@ typedef struct packed  { \
            this.br_taken , \
            this.taddr , \
            this.enable_updatePC , \
-           this.enable_fetch , \
-           this.start_time , \
-           this.stop_time , \
-           this.transaction_view_h  \
+           this.enable_fetch  \
            };\
     return ( fetch_in_responder_struct);\
   endfunction
@@ -165,10 +141,7 @@ typedef struct packed  { \
            this.br_taken , \
            this.taddr , \
            this.enable_updatePC , \
-           this.enable_fetch , \
-           this.start_time , \
-           this.stop_time , \
-           this.transaction_view_h  \
+           this.enable_fetch  \
            } = fetch_in_responder_struct;\
   endfunction
 // pragma uvmf custom additional begin

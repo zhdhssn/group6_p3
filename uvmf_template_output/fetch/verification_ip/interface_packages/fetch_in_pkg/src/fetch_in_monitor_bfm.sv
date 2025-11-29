@@ -153,7 +153,7 @@ end
     //     //    fetch_in_monitor_struct.enable_updatePC
     //     //    fetch_in_monitor_struct.enable_fetch
     //     //    fetch_in_monitor_struct.start_time
-    //     //    fetch_in_monitor_struct.stop_time
+    //     //    fetch_in_monitor_struct.end_time
     //     //    fetch_in_monitor_struct.transaction_view_h
     //     //
     // Reference code;
@@ -192,7 +192,7 @@ end
     @(posedge clock_i);
 
     //Record stop time for waveform viewing
-    fetch_in_monitor_struct.stop_time = $time;
+    fetch_in_monitor_struct.end_time = $time;
     // pragma uvmf custom do_monitor end
   endtask         
   

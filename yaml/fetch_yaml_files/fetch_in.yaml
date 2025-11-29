@@ -33,35 +33,26 @@ uvmf:
 #        - name: "typedef_name"
 #          type: "typedef_definition"
       ports: # Specify the port direction from the perspective of the INITIATOR or MASTER
-#          Valid values for dir include input, output, and inout.
-        - name: "clock"   
-          width: "1"        
-          dir: "input" 
-          reset_value: "'b0"
-
-        - name: "reset"   
-          width: "1"        
-          dir: "input" 
-          reset_value: "'b0"
+#          Valid values for dir include output, output, and inout.
 
         - name: "br_taken"   
           width: "1"        
-          dir: "input" 
+          dir: "output" 
           reset_value: "'b0"
 
         - name: "taddr"   
           width: "16"        
-          dir: "input" 
+          dir: "output" 
           reset_value: "'h0000"
 
         - name: "enable_updatePC"   
           width: "1"        
-          dir: "input" 
+          dir: "output" 
           reset_value: "'b0"
 
         - name: "enable_fetch"   
           width: "1"        
-          dir: "input" 
+          dir: "output" 
           reset_value: "'b0"
 
       transaction_vars:
@@ -84,21 +75,6 @@ uvmf:
           type: "bit" # transaction_variable_type
           isrand: "True"
           iscompare: "True" 
-
-        - name: "start_time"  
-          type: "bit" # transaction_variable_type
-          isrand: "False"
-          iscompare: "False" 
-
-        - name: "stop_time"  
-          type: "bit" # transaction_variable_type
-          isrand: "False"
-          iscompare: "False" 
-
-        - name: "transaction_view_h"  
-          type: "bit" # transaction_variable_type
-          isrand: "False"
-          iscompare: "False" 
 
 
 #      transaction_constraints:
@@ -127,7 +103,7 @@ uvmf:
 #            sv_args: 
 #              - name: "variable1"
 #                type: "int unsigned"
-#                dir: "input"
+#                dir: "output"
 #              - name: "variable2"
 #                type: "int unsigned"
-#                dir: "input"
+#                dir: "output"

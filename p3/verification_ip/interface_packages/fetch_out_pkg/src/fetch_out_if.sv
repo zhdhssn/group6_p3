@@ -19,11 +19,9 @@
 //
 // This template can be used to connect a DUT to these signals
 //
-// .dut_signal_port(fetch_out_bus.clock), // Agent input 
-// .dut_signal_port(fetch_out_bus.reset), // Agent input 
-// .dut_signal_port(fetch_out_bus.instrmem_rd), // Agent output 
-// .dut_signal_port(fetch_out_bus.pc), // Agent output 
-// .dut_signal_port(fetch_out_bus.npc), // Agent output 
+// .dut_signal_port(fetch_out_bus.instrmem_rd), // Agent input 
+// .dut_signal_port(fetch_out_bus.pc), // Agent input 
+// .dut_signal_port(fetch_out_bus.npc), // Agent input 
 
 import uvmf_base_pkg_hdl::*;
 import fetch_out_pkg_hdl::*;
@@ -51,19 +49,19 @@ modport initiator_port
   (
   input clock,
   input reset,
+  input instrmem_rd,
+  input pc,
+  input npc
+  );
+
+modport responder_port 
+  (
+  input clock,
+  input reset,  
   output instrmem_rd,
   output pc,
   output npc
   );
-
-// modport responder_port 
-//   (
-//   input clock,
-//   input reset,  
-//   input instrmem_rd,
-//   input pc,
-//   input npc
-//   );
   
 
 // pragma uvmf custom interface_item_additional begin

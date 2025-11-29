@@ -33,7 +33,7 @@ class fetch_out_transaction_coverage  extends uvm_subscriber #(.T(fetch_out_tran
     pc: coverpoint coverage_trans.pc;
     npc: coverpoint coverage_trans.npc;
     start_time: coverpoint coverage_trans.start_time;
-    stop_time: coverpoint coverage_trans.stop_time;
+    end_time: coverpoint coverage_trans.end_time;
     transaction_view_h: coverpoint coverage_trans.transaction_view_h;
     // pragma uvmf custom covergroup end
   endgroup

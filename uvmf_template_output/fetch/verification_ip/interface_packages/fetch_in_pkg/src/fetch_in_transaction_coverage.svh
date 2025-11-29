@@ -34,7 +34,7 @@ class fetch_in_transaction_coverage  extends uvm_subscriber #(.T(fetch_in_transa
     enable_updatePC: coverpoint coverage_trans.enable_updatePC;
     enable_fetch: coverpoint coverage_trans.enable_fetch;
     start_time: coverpoint coverage_trans.start_time;
-    stop_time: coverpoint coverage_trans.stop_time;
+    end_time: coverpoint coverage_trans.end_time;
     transaction_view_h: coverpoint coverage_trans.transaction_view_h;
     // pragma uvmf custom covergroup end
   endgroup

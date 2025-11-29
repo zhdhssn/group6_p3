@@ -54,7 +54,7 @@ typedef struct packed  { \
   bit enable_updatePC ; \
   bit enable_fetch ; \
   bit start_time ; \
-  bit stop_time ; \
+  bit end_time ; \
   bit transaction_view_h ; \
      } fetch_in_monitor_s;
 
@@ -67,7 +67,7 @@ typedef struct packed  { \
             this.enable_updatePC , \
             this.enable_fetch , \
             this.start_time , \
-            this.stop_time , \
+            this.end_time , \
             this.transaction_view_h  \
             };\
     return ( fetch_in_monitor_struct);\
@@ -81,7 +81,7 @@ typedef struct packed  { \
             this.enable_updatePC , \
             this.enable_fetch , \
             this.start_time , \
-            this.stop_time , \
+            this.end_time , \
             this.transaction_view_h  \
             } = fetch_in_monitor_struct;\
   endfunction
@@ -97,7 +97,7 @@ typedef struct packed  { \
   bit enable_updatePC ; \
   bit enable_fetch ; \
   bit start_time ; \
-  bit stop_time ; \
+  bit end_time ; \
   bit transaction_view_h ; \
      } fetch_in_initiator_s;
 
@@ -110,7 +110,7 @@ typedef struct packed  { \
            this.enable_updatePC , \
            this.enable_fetch , \
            this.start_time , \
-           this.stop_time , \
+           this.end_time , \
            this.transaction_view_h  \
            };\
     return ( fetch_in_initiator_struct);\
@@ -124,7 +124,7 @@ typedef struct packed  { \
            this.enable_updatePC , \
            this.enable_fetch , \
            this.start_time , \
-           this.stop_time , \
+           this.end_time , \
            this.transaction_view_h  \
            } = fetch_in_initiator_struct;\
   endfunction
@@ -140,7 +140,7 @@ typedef struct packed  { \
   bit enable_updatePC ; \
   bit enable_fetch ; \
   bit start_time ; \
-  bit stop_time ; \
+  bit end_time ; \
   bit transaction_view_h ; \
      } fetch_in_responder_s;
 
@@ -153,7 +153,7 @@ typedef struct packed  { \
            this.enable_updatePC , \
            this.enable_fetch , \
            this.start_time , \
-           this.stop_time , \
+           this.end_time , \
            this.transaction_view_h  \
            };\
     return ( fetch_in_responder_struct);\
@@ -167,7 +167,7 @@ typedef struct packed  { \
            this.enable_updatePC , \
            this.enable_fetch , \
            this.start_time , \
-           this.stop_time , \
+           this.end_time , \
            this.transaction_view_h  \
            } = fetch_in_responder_struct;\
   endfunction

@@ -12,27 +12,19 @@ uvmf:
       hvl_typedefs: []
       parameters: []
       ports:
-      - dir: input
-        name: clock
-        reset_value: '''b0'
-        width: '1'
-      - dir: input
-        name: reset
-        reset_value: '''b0'
-        width: '1'
-      - dir: input
+      - dir: output
         name: br_taken
         reset_value: '''b0'
         width: '1'
-      - dir: input
+      - dir: output
         name: taddr
         reset_value: '''h0000'
         width: '16'
-      - dir: input
+      - dir: output
         name: enable_updatePC
         reset_value: '''b0'
         width: '1'
-      - dir: input
+      - dir: output
         name: enable_fetch
         reset_value: '''b0'
         width: '1'
@@ -62,24 +54,6 @@ uvmf:
         iscompare: 'True'
         isrand: 'True'
         name: enable_fetch
-        type: bit
-        unpacked_dimension: ''
-      - comment: ''
-        iscompare: 'False'
-        isrand: 'False'
-        name: start_time
-        type: bit
-        unpacked_dimension: ''
-      - comment: ''
-        iscompare: 'False'
-        isrand: 'False'
-        name: stop_time
-        type: bit
-        unpacked_dimension: ''
-      - comment: ''
-        iscompare: 'False'
-        isrand: 'False'
-        name: transaction_view_h
         type: bit
         unpacked_dimension: ''
       use_dpi_link: 'False'

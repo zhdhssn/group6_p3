@@ -19,12 +19,10 @@
 //
 // This template can be used to connect a DUT to these signals
 //
-// .dut_signal_port(fetch_in_bus.clock), // Agent input 
-// .dut_signal_port(fetch_in_bus.reset), // Agent input 
-// .dut_signal_port(fetch_in_bus.br_taken), // Agent input 
-// .dut_signal_port(fetch_in_bus.taddr), // Agent input 
-// .dut_signal_port(fetch_in_bus.enable_updatePC), // Agent input 
-// .dut_signal_port(fetch_in_bus.enable_fetch), // Agent input 
+// .dut_signal_port(fetch_in_bus.br_taken), // Agent output 
+// .dut_signal_port(fetch_in_bus.taddr), // Agent output 
+// .dut_signal_port(fetch_in_bus.enable_updatePC), // Agent output 
+// .dut_signal_port(fetch_in_bus.enable_fetch), // Agent output 
 
 import uvmf_base_pkg_hdl::*;
 import fetch_in_pkg_hdl::*;
@@ -54,23 +52,21 @@ modport initiator_port
   (
   input clock,
   input reset,
+  output br_taken,
+  output taddr,
+  output enable_updatePC,
+  output enable_fetch
+  );
+
+modport responder_port 
+  (
+  input clock,
+  input reset,  
   input br_taken,
   input taddr,
   input enable_updatePC,
   input enable_fetch
   );
-
-// modport responder_port 
-//   (
-//   input clock,
-//   input reset,  
-//   output clock,
-//   output reset,
-//   output br_taken,
-//   output taddr,
-//   output enable_updatePC,
-//   output enable_fetch
-//   );
   
 
 // pragma uvmf custom interface_item_additional begin

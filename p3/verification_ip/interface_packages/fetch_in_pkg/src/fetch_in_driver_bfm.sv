@@ -82,18 +82,16 @@ end
   // Custom configuration variables.  
   // These are set using the configure function which is called during the UVM connect_phase
 
-  // tri clock_i;
-  // tri reset_i;
+  tri clock_i;
+  tri reset_i;
 
   // Signal list (all signals are capable of being inputs and outputs for the sake
   // of supporting both INITIATOR and RESPONDER mode operation. Expectation is that 
   // directionality in the config file was from the point-of-view of the INITIATOR
 
   // INITIATOR mode input signals
-  tri  clock_i;
-  reg  clock_o = 'b0;
-  tri  reset_i;
-  reg  reset_o = 'b0;
+
+  // INITIATOR mode output signals
   tri  br_taken_i;
   reg  br_taken_o = 'b0;
   tri [15:0] taddr_i;
@@ -103,8 +101,6 @@ end
   tri  enable_fetch_i;
   reg  enable_fetch_o = 'b0;
 
-  // INITIATOR mode output signals
-
   // Bi-directional signals
   
 
@@ -113,22 +109,18 @@ end
 
   // These are signals marked as 'input' by the config file, but the signals will be
   // driven by this BFM if put into RESPONDER mode (flipping all signal directions around)
-  assign clock_i = bus.clock;
-  assign bus.clock = (initiator_responder == RESPONDER) ? clock_o : 'bz;
-  assign reset_i = bus.reset;
-  assign bus.reset = (initiator_responder == RESPONDER) ? reset_o : 'bz;
-  assign br_taken_i = bus.br_taken;
-  assign bus.br_taken = (initiator_responder == RESPONDER) ? br_taken_o : 'bz;
-  assign taddr_i = bus.taddr;
-  assign bus.taddr = (initiator_responder == RESPONDER) ? taddr_o : 'bz;
-  assign enable_updatePC_i = bus.enable_updatePC;
-  assign bus.enable_updatePC = (initiator_responder == RESPONDER) ? enable_updatePC_o : 'bz;
-  assign enable_fetch_i = bus.enable_fetch;
-  assign bus.enable_fetch = (initiator_responder == RESPONDER) ? enable_fetch_o : 'bz;
 
 
   // These are signals marked as 'output' by the config file, but the outputs will
   // not be driven by this BFM unless placed in INITIATOR mode.
+  assign bus.br_taken = (initiator_responder == INITIATOR) ? br_taken_o : 'bz;
+  assign br_taken_i = bus.br_taken;
+  assign bus.taddr = (initiator_responder == INITIATOR) ? taddr_o : 'bz;
+  assign taddr_i = bus.taddr;
+  assign bus.enable_updatePC = (initiator_responder == INITIATOR) ? enable_updatePC_o : 'bz;
+  assign enable_updatePC_i = bus.enable_updatePC;
+  assign bus.enable_fetch = (initiator_responder == INITIATOR) ? enable_fetch_o : 'bz;
+  assign enable_fetch_i = bus.enable_fetch;
 
   // Proxy handle to UVM driver
   fetch_in_pkg::fetch_in_driver   proxy;
@@ -159,8 +151,6 @@ end
   always @( posedge reset_i )
      begin
        // RESPONDER mode output signals
-       clock_o <= 'b0;
-       reset_o <= 'b0;
        br_taken_o <= 'b0;
        taddr_o <= 'h0000;
        enable_updatePC_o <= 'b0;
@@ -210,7 +200,7 @@ end
        //   bit enable_updatePC ;
        //   bit enable_fetch ;
        //   bit start_time ;
-       //   bit stop_time ;
+       //   bit end_time ;
        //   bit transaction_view_h ;
        // Members within the fetch_in_responder_struct:
        //   bit br_taken ;
@@ -218,7 +208,7 @@ end
        //   bit enable_updatePC ;
        //   bit enable_fetch ;
        //   bit start_time ;
-       //   bit stop_time ;
+       //   bit end_time ;
        //   bit transaction_view_h ;
        initiator_struct = fetch_in_initiator_struct;
        //
@@ -276,7 +266,7 @@ bit first_transfer=1;
   //   bit enable_updatePC ;
   //   bit enable_fetch ;
   //   bit start_time ;
-  //   bit stop_time ;
+  //   bit end_time ;
   //   bit transaction_view_h ;
   // Variables within the fetch_in_responder_struct:
   //   bit br_taken ;
@@ -284,7 +274,7 @@ bit first_transfer=1;
   //   bit enable_updatePC ;
   //   bit enable_fetch ;
   //   bit start_time ;
-  //   bit stop_time ;
+  //   bit end_time ;
   //   bit transaction_view_h ;
        // Reference code;
        //    How to wait for signal value

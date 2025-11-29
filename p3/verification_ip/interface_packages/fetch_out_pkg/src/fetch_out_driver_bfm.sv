@@ -82,26 +82,22 @@ end
   // Custom configuration variables.  
   // These are set using the configure function which is called during the UVM connect_phase
 
-  // tri clock_i;
-  // tri reset_i;
+  tri clock_i;
+  tri reset_i;
 
   // Signal list (all signals are capable of being inputs and outputs for the sake
   // of supporting both INITIATOR and RESPONDER mode operation. Expectation is that 
   // directionality in the config file was from the point-of-view of the INITIATOR
 
   // INITIATOR mode input signals
-  tri  clock_i;
-  reg  clock_o = 'b0;
-  tri  reset_i;
-  reg  reset_o = 'b0;
-
-  // INITIATOR mode output signals
   tri  instrmem_rd_i;
   reg  instrmem_rd_o = 'b0;
   tri [15:0] pc_i;
   reg [15:0] pc_o = 'h0000;
   tri [15:0] npc_i;
   reg [15:0] npc_o = 'h0000;
+
+  // INITIATOR mode output signals
 
   // Bi-directional signals
   
@@ -111,20 +107,16 @@ end
 
   // These are signals marked as 'input' by the config file, but the signals will be
   // driven by this BFM if put into RESPONDER mode (flipping all signal directions around)
-  assign clock_i = bus.clock;
-  assign bus.clock = (initiator_responder == RESPONDER) ? clock_o : 'bz;
-  assign reset_i = bus.reset;
-  assign bus.reset = (initiator_responder == RESPONDER) ? reset_o : 'bz;
+  assign instrmem_rd_i = bus.instrmem_rd;
+  assign bus.instrmem_rd = (initiator_responder == RESPONDER) ? instrmem_rd_o : 'bz;
+  assign pc_i = bus.pc;
+  assign bus.pc = (initiator_responder == RESPONDER) ? pc_o : 'bz;
+  assign npc_i = bus.npc;
+  assign bus.npc = (initiator_responder == RESPONDER) ? npc_o : 'bz;
 
 
   // These are signals marked as 'output' by the config file, but the outputs will
   // not be driven by this BFM unless placed in INITIATOR mode.
-  assign bus.instrmem_rd = (initiator_responder == INITIATOR) ? instrmem_rd_o : 'bz;
-  assign instrmem_rd_i = bus.instrmem_rd;
-  assign bus.pc = (initiator_responder == INITIATOR) ? pc_o : 'bz;
-  assign pc_i = bus.pc;
-  assign bus.npc = (initiator_responder == INITIATOR) ? npc_o : 'bz;
-  assign npc_i = bus.npc;
 
   // Proxy handle to UVM driver
   fetch_out_pkg::fetch_out_driver   proxy;
@@ -155,8 +147,6 @@ end
   always @( posedge reset_i )
      begin
        // RESPONDER mode output signals
-       clock_o <= 'b0;
-       reset_o <= 'b0;
        // INITIATOR mode output signals
        instrmem_rd_o <= 'b0;
        pc_o <= 'h0000;
@@ -204,14 +194,14 @@ end
        //   bit[15:0] pc ;
        //   bit[15:0] npc ;
        //   bit start_time ;
-       //   bit stop_time ;
+       //   bit end_time ;
        //   bit transaction_view_h ;
        // Members within the fetch_out_responder_struct:
        //   bit instrmem_rd ;
        //   bit[15:0] pc ;
        //   bit[15:0] npc ;
        //   bit start_time ;
-       //   bit stop_time ;
+       //   bit end_time ;
        //   bit transaction_view_h ;
        initiator_struct = fetch_out_initiator_struct;
        //
@@ -267,14 +257,14 @@ bit first_transfer=1;
   //   bit[15:0] pc ;
   //   bit[15:0] npc ;
   //   bit start_time ;
-  //   bit stop_time ;
+  //   bit end_time ;
   //   bit transaction_view_h ;
   // Variables within the fetch_out_responder_struct:
   //   bit instrmem_rd ;
   //   bit[15:0] pc ;
   //   bit[15:0] npc ;
   //   bit start_time ;
-  //   bit stop_time ;
+  //   bit end_time ;
   //   bit transaction_view_h ;
        // Reference code;
        //    How to wait for signal value

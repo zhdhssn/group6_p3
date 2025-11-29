@@ -152,9 +152,6 @@ end
     //     //    fetch_in_monitor_struct.taddr
     //     //    fetch_in_monitor_struct.enable_updatePC
     //     //    fetch_in_monitor_struct.enable_fetch
-    //     //    fetch_in_monitor_struct.start_time
-    //     //    fetch_in_monitor_struct.stop_time
-    //     //    fetch_in_monitor_struct.transaction_view_h
     //     //
     // Reference code;
     //    How to wait for signal value
@@ -162,8 +159,6 @@ end
     //    
     //    How to assign a struct member, named xyz, from a signal.   
     //    All available input signals listed.
-    //      fetch_in_monitor_struct.xyz = clock_i;  //     
-    //      fetch_in_monitor_struct.xyz = reset_i;  //     
     //      fetch_in_monitor_struct.xyz = br_taken_i;  //     
     //      fetch_in_monitor_struct.xyz = taddr_i;  //    [15:0] 
     //      fetch_in_monitor_struct.xyz = enable_updatePC_i;  //     
@@ -182,8 +177,7 @@ end
     wait (enable_fetch_i == 1'b1);
 
     //Record start time for wavefore viewing 
-    fetch_in_monitor_struct.start_time = $time;
-
+    
     //Sample all the signals of interest
     fetch_in_monitor_struct.br_taken        = br_taken_i;
     fetch_in_monitor_struct.taddr           = taddr_i;
@@ -192,7 +186,7 @@ end
     @(posedge clock_i);
 
     //Record stop time for waveform viewing
-    fetch_in_monitor_struct.stop_time = $time;
+
     // pragma uvmf custom do_monitor end
   endtask         
   

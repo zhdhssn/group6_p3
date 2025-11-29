@@ -149,9 +149,6 @@ end
     //     //    fetch_out_monitor_struct.instrmem_rd
     //     //    fetch_out_monitor_struct.pc
     //     //    fetch_out_monitor_struct.npc
-    //     //    fetch_out_monitor_struct.start_time
-    //     //    fetch_out_monitor_struct.stop_time
-    //     //    fetch_out_monitor_struct.transaction_view_h
     //     //
     // Reference code;
     //    How to wait for signal value
@@ -159,8 +156,6 @@ end
     //    
     //    How to assign a struct member, named xyz, from a signal.   
     //    All available input signals listed.
-    //      fetch_out_monitor_struct.xyz = clock_i;  //     
-    //      fetch_out_monitor_struct.xyz = reset_i;  //     
     //      fetch_out_monitor_struct.xyz = instrmem_rd_i;  //     
     //      fetch_out_monitor_struct.xyz = pc_i;  //    [15:0] 
     //      fetch_out_monitor_struct.xyz = npc_i;  //    [15:0] 
@@ -173,14 +168,12 @@ end
     // exited with captured values, it is then called again to wait for and observe 
     // the next transfer. One clock cycle is consumed between calls to do_monitor.
     @(posedge clock_i iff instrmem_rd_i == 1'b1);
-    fetch_out_monitor_struct.start_time = $time;
 
     //Sample signals 
     fetch_out_monitor_struct.instrmem_rd = instrmem_rd_i;
     fetch_out_monitor_struct.pc          = pc_i;
     fetch_out_monitor_struct.npc         = npc_i;
     @(posedge clock_i);
-    fetch_out_monitor_struct.stop_time   = $time;
     // pragma uvmf custom do_monitor end
   endtask         
   

@@ -63,7 +63,7 @@ uvmf:
       - comment: ''
         iscompare: 'False'
         isrand: 'False'
-        name: stop_time
+        name: end_time
         type: bit
         unpacked_dimension: ''
       - comment: ''

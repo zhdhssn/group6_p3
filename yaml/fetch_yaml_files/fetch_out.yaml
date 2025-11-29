@@ -34,29 +34,20 @@ uvmf:
 #          type: "typedef_definition"
       ports: # Specify the port direction from the perspective of the INITIATOR or MASTER
 #          Valid values for dir include input, output, and inout.
-        - name: "clock"   
-          width: "1"        
-          dir: "input" 
-          reset_value: "'b0"
-
-        - name: "reset"   
-          width: "1"        
-          dir: "input" 
-          reset_value: "'b0"
 
         - name: "instrmem_rd"   
           width: "1"        
-          dir: "output" 
+          dir: "input" 
           reset_value: "'b0"
 
         - name: "pc"   
           width: "16"        
-          dir: "output" 
+          dir: "input" 
           reset_value: "'h0000"
 
         - name: "npc"   
           width: "16"        
-          dir: "output" 
+          dir: "input" 
           reset_value: "'h0000"
 
       transaction_vars:
@@ -74,21 +65,6 @@ uvmf:
           type: "bit[15:0]" # transaction_variable_type
           isrand: "True"
           iscompare: "True" 
-
-        - name: "start_time"  
-          type: "bit" # transaction_variable_type
-          isrand: "False"
-          iscompare: "False" 
-
-        - name: "stop_time"  
-          type: "bit" # transaction_variable_type
-          isrand: "False"
-          iscompare: "False" 
-
-        - name: "transaction_view_h"  
-          type: "bit" # transaction_variable_type
-          isrand: "False"
-          iscompare: "False" 
 
 
 #      transaction_constraints:

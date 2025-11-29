@@ -13,22 +13,14 @@ uvmf:
       parameters: []
       ports:
       - dir: input
-        name: clock
-        reset_value: '''b0'
-        width: '1'
-      - dir: input
-        name: reset
-        reset_value: '''b0'
-        width: '1'
-      - dir: output
         name: instrmem_rd
         reset_value: '''b0'
         width: '1'
-      - dir: output
+      - dir: input
         name: pc
         reset_value: '''h0000'
         width: '16'
-      - dir: output
+      - dir: input
         name: npc
         reset_value: '''h0000'
         width: '16'
@@ -53,23 +45,5 @@ uvmf:
         isrand: 'True'
         name: npc
         type: bit[15:0]
-        unpacked_dimension: ''
-      - comment: ''
-        iscompare: 'False'
-        isrand: 'False'
-        name: start_time
-        type: bit
-        unpacked_dimension: ''
-      - comment: ''
-        iscompare: 'False'
-        isrand: 'False'
-        name: stop_time
-        type: bit
-        unpacked_dimension: ''
-      - comment: ''
-        iscompare: 'False'
-        isrand: 'False'
-        name: transaction_view_h
-        type: bit
         unpacked_dimension: ''
       use_dpi_link: 'False'
