@@ -222,7 +222,12 @@ class LC3_bench_sequence_base extends uvmf_sequence_base #(uvm_sequence_item);
     writeback_env_writeback_out_agent_responder_seq  = writeback_env_writeback_out_agent_responder_seq_t::type_id::create("writeback_env_writeback_out_agent_responder_seq");
     controller_env_controller_in_agent_random_seq     = controller_env_controller_in_agent_random_seq_t::type_id::create("controller_env_controller_in_agent_random_seq");
     controller_env_controller_out_agent_random_seq     = controller_env_controller_out_agent_random_seq_t::type_id::create("controller_env_controller_out_agent_random_seq");
+
+    //Harry: debug message
+    `uvm_info("LC3_BENCH_SEQUENCE_BASE", "Harry-> creating imem_agent_responder_seq...", UVM_HIGH)
     imem_agent_responder_seq  = imem_agent_responder_seq_t::type_id::create("imem_agent_responder_seq");
+    `uvm_info("LC3_BENCH_SEQUENCE_BASE", "Harry-> created imem_agent_responder_seq...", UVM_HIGH)
+
     dmem_agent_responder_seq  = dmem_agent_responder_seq_t::type_id::create("dmem_agent_responder_seq");
     fork
       fetch_env_fetch_in_agent_config.wait_for_reset();
