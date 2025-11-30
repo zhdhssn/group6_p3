@@ -71,7 +71,7 @@ class controller_in_monitor  extends uvmf_monitor_base #(
  virtual function void notify_transaction(input controller_in_monitor_s controller_in_monitor_struct);
  
  
-    trans = new("trans");
+    trans = TRANS_T::type_id::create("trans");
     trans.from_monitor_struct(controller_in_monitor_struct);
     trans.start_time = time_stamp;                                                          
     trans.end_time = $time;                                                                 
@@ -84,3 +84,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+

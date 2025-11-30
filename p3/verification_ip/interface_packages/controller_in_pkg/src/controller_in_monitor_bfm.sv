@@ -123,9 +123,8 @@ end
   
   // ****************************************************************************              
   initial begin                                                                             
-    @go;     
-    wait_for_reset();                                                                                                                                                   
-    forever begin   
+    @go;                                                                                   
+    forever begin                                                                        
       @(posedge clock_i);  
       do_monitor( controller_in_monitor_struct );
                                                                  
@@ -162,9 +161,6 @@ end
     //     //    controller_in_monitor_struct.psr
     //     //    controller_in_monitor_struct.IR_Exec
     //     //    controller_in_monitor_struct.IMem_dout
-    //     //    controller_in_monitor_struct.start_time
-    //     //    controller_in_monitor_struct.end_time
-    //     //    controller_in_monitor_struct.transaction_view_h
     //     //
     // Reference code;
     //    How to wait for signal value
@@ -207,3 +203,4 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+

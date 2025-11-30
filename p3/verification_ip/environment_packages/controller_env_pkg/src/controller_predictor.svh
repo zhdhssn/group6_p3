@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------
-// Created with uvmf_gen version 2023.4
+// Created with uvmf_gen version 2023.4_2
 //----------------------------------------------------------------------
 // pragma uvmf custom header begin
 // pragma uvmf custom header end
@@ -22,6 +22,7 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
+import lc3_prediction_pkg::*;
 
 class controller_predictor #(
   type CONFIG_T,
@@ -63,16 +64,16 @@ class controller_predictor #(
 
   // Define transaction handles for debug visibility 
   controller_in_transaction analysis_export_debug;
-  bit c_model_output;
 
-
+  
   // pragma uvmf custom class_item_additional begin
+  bit c_model_output;
   // pragma uvmf custom class_item_additional end
 
   // FUNCTION: new
   function new(string name, uvm_component parent);
      super.new(name,parent);
- //   `uvm_warning("PREDICTOR_REVIEW", "This predictor has been created either through generation or re-generation with merging.  Remove this warning after the predictor has been reviewed.")
+    `uvm_warning("PREDICTOR_REVIEW", "This predictor has been created either through generation or re-generation with merging.  Remove this warning after the predictor has been reviewed.")
   // pragma uvmf custom new begin
   // pragma uvmf custom new end
   endfunction
@@ -136,3 +137,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+

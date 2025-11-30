@@ -174,7 +174,7 @@ end
     
     //Wait for fetch enable to assert
     @(posedge clock_i);
-    wait (enable_fetch_i == 1'b1);
+    // wait (enable_fetch_i == 1'b1);
 
     //Record start time for wavefore viewing 
     

@@ -33,7 +33,7 @@ import uvmf_base_pkg_hdl::*;
   // tbx clkgen
   initial begin
     clk = 0;
-    #9ns;
+    #100ns;
     forever begin
       clk = ~clk;
       #5ns;

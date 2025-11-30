@@ -29,9 +29,6 @@ class controller_out_transaction  extends uvmf_transaction_base;
   bit bypass_mem_1 ;
   bit bypass_mem_2 ;
   bit [1:0] mem_state ;
-  time start_time ;
-  time end_time ;
-  int transaction_view_h ;
 
   //Constraints for the transaction variables:
 
@@ -230,3 +227,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+

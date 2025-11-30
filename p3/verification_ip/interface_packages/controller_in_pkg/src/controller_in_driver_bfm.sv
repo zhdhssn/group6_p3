@@ -93,19 +93,19 @@ end
 
   // INITIATOR mode output signals
   tri  complete_data_i;
-  reg  complete_data_o = 1'bz;
+  reg  complete_data_o = 1'b1;
   tri  complete_instr_i;
-  reg  complete_instr_o = 1'bz;
+  reg  complete_instr_o = 1'b1;
   tri [15:0] IR_i;
-  reg [15:0] IR_o = 16'bz;
+  reg [15:0] IR_o = 1'b1;
   tri [2:0] NZP_i;
-  reg [2:0] NZP_o = 3'bz;
+  reg [2:0] NZP_o = 1'b1;
   tri [2:0] psr_i;
-  reg [2:0] psr_o = 3'bz;
+  reg [2:0] psr_o = 1'b1;
   tri [15:0] IR_Exec_i;
-  reg [15:0] IR_Exec_o = 16'bz;
+  reg [15:0] IR_Exec_o = 1'b1;
   tri [15:0] IMem_dout_i;
-  reg [15:0] IMem_dout_o = 16'bz;
+  reg [15:0] IMem_dout_o = 1'b1;
 
   // Bi-directional signals
   
@@ -119,19 +119,19 @@ end
 
   // These are signals marked as 'output' by the config file, but the outputs will
   // not be driven by this BFM unless placed in INITIATOR mode.
-  assign bus.complete_data = (initiator_responder == INITIATOR) ? complete_data_o : 1'bz;
+  assign bus.complete_data = (initiator_responder == INITIATOR) ? complete_data_o : 'bz;
   assign complete_data_i = bus.complete_data;
-  assign bus.complete_instr = (initiator_responder == INITIATOR) ? complete_instr_o : 1'bz;
+  assign bus.complete_instr = (initiator_responder == INITIATOR) ? complete_instr_o : 'bz;
   assign complete_instr_i = bus.complete_instr;
-  assign bus.IR = (initiator_responder == INITIATOR) ? IR_o : 16'bz;
+  assign bus.IR = (initiator_responder == INITIATOR) ? IR_o : 'bz;
   assign IR_i = bus.IR;
-  assign bus.NZP = (initiator_responder == INITIATOR) ? NZP_o : 3'bz;
+  assign bus.NZP = (initiator_responder == INITIATOR) ? NZP_o : 'bz;
   assign NZP_i = bus.NZP;
-  assign bus.psr = (initiator_responder == INITIATOR) ? psr_o : 3'bz;
+  assign bus.psr = (initiator_responder == INITIATOR) ? psr_o : 'bz;
   assign psr_i = bus.psr;
-  assign bus.IR_Exec = (initiator_responder == INITIATOR) ? IR_Exec_o : 16'bz;
+  assign bus.IR_Exec = (initiator_responder == INITIATOR) ? IR_Exec_o : 'bz;
   assign IR_Exec_i = bus.IR_Exec;
-  assign bus.IMem_dout = (initiator_responder == INITIATOR) ? IMem_dout_o : 16'bz;
+  assign bus.IMem_dout = (initiator_responder == INITIATOR) ? IMem_dout_o : 'bz;
   assign IMem_dout_i = bus.IMem_dout;
 
   // Proxy handle to UVM driver
@@ -346,3 +346,4 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+

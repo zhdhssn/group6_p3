@@ -60,9 +60,6 @@ typedef struct packed  { \
   bit bypass_mem_1 ; \
   bit bypass_mem_2 ; \
   bit [1:0] mem_state ; \
-  time start_time ; \
-  time end_time ; \
-  int transaction_view_h ; \
      } controller_out_monitor_s;
 
   `define controller_out_TO_MONITOR_STRUCT_FUNCTION \
@@ -79,10 +76,7 @@ typedef struct packed  { \
             this.bypass_alu_2 , \
             this.bypass_mem_1 , \
             this.bypass_mem_2 , \
-            this.mem_state , \
-            this.start_time , \
-            this.end_time , \
-            this.transaction_view_h  \
+            this.mem_state  \
             };\
     return ( controller_out_monitor_struct);\
   endfunction\
@@ -100,10 +94,7 @@ typedef struct packed  { \
             this.bypass_alu_2 , \
             this.bypass_mem_1 , \
             this.bypass_mem_2 , \
-            this.mem_state , \
-            this.start_time , \
-            this.end_time , \
-            this.transaction_view_h  \
+            this.mem_state  \
             } = controller_out_monitor_struct;\
   endfunction
 
@@ -124,9 +115,6 @@ typedef struct packed  { \
   bit bypass_mem_1 ; \
   bit bypass_mem_2 ; \
   bit [1:0] mem_state ; \
-  time start_time ; \
-  time end_time ; \
-  int transaction_view_h ; \
      } controller_out_initiator_s;
 
   `define controller_out_TO_INITIATOR_STRUCT_FUNCTION \
@@ -143,10 +131,7 @@ typedef struct packed  { \
            this.bypass_alu_2 , \
            this.bypass_mem_1 , \
            this.bypass_mem_2 , \
-           this.mem_state , \
-           this.start_time , \
-           this.end_time , \
-           this.transaction_view_h  \
+           this.mem_state  \
            };\
     return ( controller_out_initiator_struct);\
   endfunction
@@ -164,10 +149,7 @@ typedef struct packed  { \
            this.bypass_alu_2 , \
            this.bypass_mem_1 , \
            this.bypass_mem_2 , \
-           this.mem_state , \
-           this.start_time , \
-           this.end_time , \
-           this.transaction_view_h  \
+           this.mem_state  \
            } = controller_out_initiator_struct;\
   endfunction
 
@@ -188,9 +170,6 @@ typedef struct packed  { \
   bit bypass_mem_1 ; \
   bit bypass_mem_2 ; \
   bit [1:0] mem_state ; \
-  time start_time ; \
-  time end_time ; \
-  int transaction_view_h ; \
      } controller_out_responder_s;
 
   `define controller_out_TO_RESPONDER_STRUCT_FUNCTION \
@@ -207,10 +186,7 @@ typedef struct packed  { \
            this.bypass_alu_2 , \
            this.bypass_mem_1 , \
            this.bypass_mem_2 , \
-           this.mem_state , \
-           this.start_time , \
-           this.end_time , \
-           this.transaction_view_h  \
+           this.mem_state  \
            };\
     return ( controller_out_responder_struct);\
   endfunction
@@ -228,10 +204,7 @@ typedef struct packed  { \
            this.bypass_alu_2 , \
            this.bypass_mem_1 , \
            this.bypass_mem_2 , \
-           this.mem_state , \
-           this.start_time , \
-           this.end_time , \
-           this.transaction_view_h  \
+           this.mem_state  \
            } = controller_out_responder_struct;\
   endfunction
 // pragma uvmf custom additional begin

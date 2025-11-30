@@ -91,27 +91,27 @@ end
 
   // INITIATOR mode input signals
   tri  enable_updatePC_i;
-  reg  enable_updatePC_o = 1'bz;
+  reg  enable_updatePC_o = 1'b1;
   tri  enable_fetch_i;
-  reg  enable_fetch_o = 1'bz;
+  reg  enable_fetch_o = 'b0;
   tri  enable_decode_i;
-  reg  enable_decode_o = 1'bz;
+  reg  enable_decode_o = 'b0;
   tri  enable_execute_i;
-  reg  enable_execute_o = 1'bz;
+  reg  enable_execute_o = 'b0;
   tri  enable_writeback_i;
-  reg  enable_writeback_o = 1'bz;
+  reg  enable_writeback_o = 'b0;
   tri  br_taken_i;
-  reg  br_taken_o = 1'bz;
+  reg  br_taken_o = 'b0;
   tri  bypass_alu_1_i;
-  reg  bypass_alu_1_o = 1'bz;
+  reg  bypass_alu_1_o = 'b0;
   tri  bypass_alu_2_i;
-  reg  bypass_alu_2_o = 1'bz;
+  reg  bypass_alu_2_o = 'b0;
   tri  bypass_mem_1_i;
-  reg  bypass_mem_1_o = 1'bz;
+  reg  bypass_mem_1_o = 'b0;
   tri  bypass_mem_2_i;
-  reg  bypass_mem_2_o = 1'bz;
+  reg  bypass_mem_2_o = 'b0;
   tri [1:0] mem_state_i;
-  reg [1:0] mem_state_o = 2'bz;
+  reg [1:0] mem_state_o = 'b0;
 
   // INITIATOR mode output signals
 
@@ -124,27 +124,27 @@ end
   // These are signals marked as 'input' by the config file, but the signals will be
   // driven by this BFM if put into RESPONDER mode (flipping all signal directions around)
   assign enable_updatePC_i = bus.enable_updatePC;
-  assign bus.enable_updatePC = (initiator_responder == RESPONDER) ? enable_updatePC_o : 1'bz;
+  assign bus.enable_updatePC = (initiator_responder == RESPONDER) ? enable_updatePC_o : 'bz;
   assign enable_fetch_i = bus.enable_fetch;
-  assign bus.enable_fetch = (initiator_responder == RESPONDER) ? enable_fetch_o : 1'bz;
+  assign bus.enable_fetch = (initiator_responder == RESPONDER) ? enable_fetch_o : 'bz;
   assign enable_decode_i = bus.enable_decode;
-  assign bus.enable_decode = (initiator_responder == RESPONDER) ? enable_decode_o : 1'bz;
+  assign bus.enable_decode = (initiator_responder == RESPONDER) ? enable_decode_o : 'bz;
   assign enable_execute_i = bus.enable_execute;
-  assign bus.enable_execute = (initiator_responder == RESPONDER) ? enable_execute_o : 1'bz;
+  assign bus.enable_execute = (initiator_responder == RESPONDER) ? enable_execute_o : 'bz;
   assign enable_writeback_i = bus.enable_writeback;
-  assign bus.enable_writeback = (initiator_responder == RESPONDER) ? enable_writeback_o : 1'bz;
+  assign bus.enable_writeback = (initiator_responder == RESPONDER) ? enable_writeback_o : 'bz;
   assign br_taken_i = bus.br_taken;
-  assign bus.br_taken = (initiator_responder == RESPONDER) ? br_taken_o : 1'bz;
+  assign bus.br_taken = (initiator_responder == RESPONDER) ? br_taken_o : 'bz;
   assign bypass_alu_1_i = bus.bypass_alu_1;
-  assign bus.bypass_alu_1 = (initiator_responder == RESPONDER) ? bypass_alu_1_o : 1'bz;
+  assign bus.bypass_alu_1 = (initiator_responder == RESPONDER) ? bypass_alu_1_o : 'bz;
   assign bypass_alu_2_i = bus.bypass_alu_2;
-  assign bus.bypass_alu_2 = (initiator_responder == RESPONDER) ? bypass_alu_2_o : 1'bz;
+  assign bus.bypass_alu_2 = (initiator_responder == RESPONDER) ? bypass_alu_2_o : 'bz;
   assign bypass_mem_1_i = bus.bypass_mem_1;
-  assign bus.bypass_mem_1 = (initiator_responder == RESPONDER) ? bypass_mem_1_o : 1'bz;
+  assign bus.bypass_mem_1 = (initiator_responder == RESPONDER) ? bypass_mem_1_o : 'bz;
   assign bypass_mem_2_i = bus.bypass_mem_2;
-  assign bus.bypass_mem_2 = (initiator_responder == RESPONDER) ? bypass_mem_2_o : 1'bz;
+  assign bus.bypass_mem_2 = (initiator_responder == RESPONDER) ? bypass_mem_2_o : 'bz;
   assign mem_state_i = bus.mem_state;
-  assign bus.mem_state = (initiator_responder == RESPONDER) ? mem_state_o : 2'bz;
+  assign bus.mem_state = (initiator_responder == RESPONDER) ? mem_state_o : 'bz;
 
 
   // These are signals marked as 'output' by the config file, but the outputs will
@@ -390,3 +390,4 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+

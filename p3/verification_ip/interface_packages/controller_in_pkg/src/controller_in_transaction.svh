@@ -25,9 +25,6 @@ class controller_in_transaction  extends uvmf_transaction_base;
   bit [2:0] psr ;
   bit [15:0] IR_Exec ;
   bit [15:0] IMem_dout ;
-  time start_time ;
-  time end_time ;
-  int transaction_view_h ;
 
   //Constraints for the transaction variables:
 
@@ -214,3 +211,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+

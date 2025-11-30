@@ -86,22 +86,4 @@ uvmf:
         name: IMem_dout
         type: bit [15:0]
         unpacked_dimension: ''
-      - comment: ''
-        iscompare: 'False'
-        isrand: 'False'
-        name: start_time
-        type: time
-        unpacked_dimension: ''
-      - comment: ''
-        iscompare: 'False'
-        isrand: 'False'
-        name: end_time
-        type: time
-        unpacked_dimension: ''
-      - comment: ''
-        iscompare: 'False'
-        isrand: 'False'
-        name: transaction_view_h
-        type: int
-        unpacked_dimension: ''
       use_dpi_link: 'False'

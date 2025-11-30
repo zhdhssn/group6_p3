@@ -167,7 +167,7 @@ end
     // task should return when a complete transfer has been observed.  Once this task is
     // exited with captured values, it is then called again to wait for and observe 
     // the next transfer. One clock cycle is consumed between calls to do_monitor.
-    @(posedge clock_i iff instrmem_rd_i == 1'b1);
+    @(posedge clock_i);
 
     //Sample signals 
     fetch_out_monitor_struct.instrmem_rd = instrmem_rd_i;

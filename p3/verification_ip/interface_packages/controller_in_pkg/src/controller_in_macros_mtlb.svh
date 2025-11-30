@@ -56,9 +56,6 @@ typedef struct packed  { \
   bit [2:0] _psr ; \
   bit [15:0] _IR_Exec ; \
   bit [15:0] _IMem_dout ; \
-  time _start_time ; \
-  time _end_time ; \
-  int _transaction_view_h ; \
      } controller_in_monitor_s;
 
   `define controller_in_TO_MONITOR_STRUCT_FUNCTION \
@@ -71,10 +68,7 @@ typedef struct packed  { \
             this._NZP , \
             this._psr , \
             this._IR_Exec , \
-            this._IMem_dout , \
-            this._start_time , \
-            this._end_time , \
-            this._transaction_view_h  \
+            this._IMem_dout  \
             };\
     return ( controller_in_monitor_struct);\
   endfunction\
@@ -88,10 +82,7 @@ typedef struct packed  { \
             this._NZP , \
             this._psr , \
             this._IR_Exec , \
-            this._IMem_dout , \
-            this._start_time , \
-            this._end_time , \
-            this._transaction_view_h  \
+            this._IMem_dout  \
             } = controller_in_monitor_struct;\
   endfunction
 
@@ -108,9 +99,6 @@ typedef struct packed  { \
   bit [2:0] _psr ; \
   bit [15:0] _IR_Exec ; \
   bit [15:0] _IMem_dout ; \
-  time _start_time ; \
-  time _end_time ; \
-  int _transaction_view_h ; \
      } controller_in_initiator_s;
 
   `define controller_in_TO_INITIATOR_STRUCT_FUNCTION \
@@ -123,10 +111,7 @@ typedef struct packed  { \
            this._NZP , \
            this._psr , \
            this._IR_Exec , \
-           this._IMem_dout , \
-           this._start_time , \
-           this._end_time , \
-           this._transaction_view_h  \
+           this._IMem_dout  \
            };\
     return ( controller_in_initiator_struct);\
   endfunction
@@ -140,10 +125,7 @@ typedef struct packed  { \
            this._NZP , \
            this._psr , \
            this._IR_Exec , \
-           this._IMem_dout , \
-           this._start_time , \
-           this._end_time , \
-           this._transaction_view_h  \
+           this._IMem_dout  \
            } = controller_in_initiator_struct;\
   endfunction
 
@@ -160,9 +142,6 @@ typedef struct packed  { \
   bit [2:0] _psr ; \
   bit [15:0] _IR_Exec ; \
   bit [15:0] _IMem_dout ; \
-  time _start_time ; \
-  time _end_time ; \
-  int _transaction_view_h ; \
      } controller_in_responder_s;
 
   `define controller_in_TO_RESPONDER_STRUCT_FUNCTION \
@@ -175,10 +154,7 @@ typedef struct packed  { \
            this._NZP , \
            this._psr , \
            this._IR_Exec , \
-           this._IMem_dout , \
-           this._start_time , \
-           this._end_time , \
-           this._transaction_view_h  \
+           this._IMem_dout  \
            };\
     return ( controller_in_responder_struct);\
   endfunction
@@ -192,10 +168,7 @@ typedef struct packed  { \
            this._NZP , \
            this._psr , \
            this._IR_Exec , \
-           this._IMem_dout , \
-           this._start_time , \
-           this._end_time , \
-           this._transaction_view_h  \
+           this._IMem_dout  \
            } = controller_in_responder_struct;\
   endfunction
 // pragma uvmf custom additional begin
