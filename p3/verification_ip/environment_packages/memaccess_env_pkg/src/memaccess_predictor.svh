@@ -111,6 +111,8 @@ class memaccess_predictor #(
       memaccess_analysis_predictor_port_output_transaction.memout,
       memaccess_analysis_predictor_port_output_transaction.DMem_rd
     );
+    //Harry print out the predicted data using uvm_info and sformat 
+    `uvm_info("memaccess_predictor", $sformatf("Predicted data: DMem_addr = 0x%0h, DMem_din = 0x%0h, memout = 0x%0h, DMem_rd = %0d", memaccess_analysis_predictor_port_output_transaction.DMem_addr, memaccess_analysis_predictor_port_output_transaction.DMem_din, memaccess_analysis_predictor_port_output_transaction.memout, memaccess_analysis_predictor_port_output_transaction.DMem_rd), UVM_HIGH)
  
     // Code for sending output transaction out through memaccess_analysis_predictor_port
     // Please note that each broadcasted transaction should be a different object than previously 

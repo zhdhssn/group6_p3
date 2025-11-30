@@ -37,7 +37,11 @@ class memaccess_environment  extends uvmf_environment_base #(
  memaccess_predictor_t;
   memaccess_predictor_t memaccess_predictor;
 
-  typedef uvmf_in_order_scoreboard #(.T(memaccess_out_transaction))  memaccess_sb_t;
+  //Harry changed the in_order scoreboard to a in_order_race scoreboard
+  //important note: in-order-race scoreboard will only compare when the there is predicted data
+  //so if the actual data is arrived first, the scoreboard will not compare the data immediately but wait for the predicted data to arrive 
+  //then compare the transaction
+  typedef uvmf_in_order_race_scoreboard #(.T(memaccess_out_transaction))  memaccess_sb_t;
   memaccess_sb_t memaccess_sb;
 
 
