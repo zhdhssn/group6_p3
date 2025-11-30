@@ -37,8 +37,13 @@ class execute_environment  extends uvmf_environment_base #(
  exe_pred_t;
   exe_pred_t exe_pred;
 
-  typedef uvmf_in_order_scoreboard #(.T(execute_out_transaction))  exe_scoreboard_t;
+  // typedef uvmf_in_order_scoreboard #(.T(execute_out_transaction))  exe_scoreboard_t;
+  // exe_scoreboard_t exe_scoreboard;
+  //Harry: change to uvmf_in_order_race_scoreboard to avoid the situation that
+  //the actual transaction arriving before expected transaction and compare issue
+  typedef uvmf_in_order_race_scoreboard #(.T(execute_out_transaction))  exe_scoreboard_t;
   exe_scoreboard_t exe_scoreboard;
+
 
 
 

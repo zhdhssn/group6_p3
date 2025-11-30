@@ -41,6 +41,11 @@ class memaccess_environment  extends uvmf_environment_base #(
   //important note: in-order-race scoreboard will only compare when the there is predicted data
   //so if the actual data is arrived first, the scoreboard will not compare the data immediately but wait for the predicted data to arrive 
   //then compare the transaction
+  /*
+  uvmf_in_order_scoreboard expects actual and expected transactions to arrive in strict FIFO lockstep. If the actual arrives first, it flags an error (“NO PREDICTED ENTRY”).
+  uvmf_in_order_race_scoreboard adds a holding buffer. If the actual arrives before the expected, it waits until the expected shows up, then compares them in order.
+  This "race" mode avoids false errors in designs where monitors see results before the predictor finishes—like your memaccess monitor situation.
+  */
   typedef uvmf_in_order_race_scoreboard #(.T(memaccess_out_transaction))  memaccess_sb_t;
   memaccess_sb_t memaccess_sb;
 

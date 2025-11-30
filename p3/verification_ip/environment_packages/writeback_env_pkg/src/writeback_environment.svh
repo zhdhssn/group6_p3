@@ -37,7 +37,11 @@ class writeback_environment  extends uvmf_environment_base #(
  writeback_pred_t;
   writeback_pred_t writeback_pred;
 
-  typedef uvmf_in_order_scoreboard #(.T(writeback_out_transaction))  writeback_sb_t;
+  // typedef uvmf_in_order_scoreboard #(.T(writeback_out_transaction))  writeback_sb_t;
+  // writeback_sb_t writeback_sb;
+  //Harry: change to uvmf_in_order_race_scoreboard to avoid the situation that
+  //the actual transaction arriving before expected transaction and compare issue
+  typedef uvmf_in_order_race_scoreboard #(.T(writeback_out_transaction))  writeback_sb_t;
   writeback_sb_t writeback_sb;
 
 

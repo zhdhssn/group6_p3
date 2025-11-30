@@ -37,9 +37,12 @@ class fetch_environment  extends uvmf_environment_base #(
  fetch_predictor_t;
   fetch_predictor_t fetch_predictor;
 
-  typedef uvmf_in_order_scoreboard #(.T(fetch_out_transaction))  fetch_scoreboard_t;
+  // typedef uvmf_in_order_scoreboard #(.T(fetch_out_transaction))  fetch_scoreboard_t;
+  // fetch_scoreboard_t fetch_scoreboard;
+  //Harry: change to uvmf_in_order_race_scoreboard to avoid the situation that
+  //the actual transaction arriving before expected transaction and compare issue
+  typedef uvmf_in_order_race_scoreboard #(.T(fetch_out_transaction))  fetch_scoreboard_t;
   fetch_scoreboard_t fetch_scoreboard;
-
 
 
   typedef uvmf_virtual_sequencer_base #(.CONFIG_T(fetch_env_configuration)) fetch_vsqr_t;

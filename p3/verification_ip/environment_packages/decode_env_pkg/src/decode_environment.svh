@@ -37,7 +37,11 @@ class decode_environment  extends uvmf_environment_base #(
  pred_t;
   pred_t pred;
 
-  typedef uvmf_in_order_scoreboard #(.T(decode_out_transaction))  scbd_t;
+  // typedef uvmf_in_order_scoreboard #(.T(decode_out_transaction))  scbd_t;
+  // scbd_t scbd;
+  //Harry: change to uvmf_in_order_race_scoreboard to avoid the situation that
+  //the actual transaction arriving before expected transaction and compare issue
+  typedef uvmf_in_order_race_scoreboard #(.T(decode_out_transaction))  scbd_t;
   scbd_t scbd;
 
 
