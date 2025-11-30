@@ -93,19 +93,19 @@ end
 
   // INITIATOR mode output signals
   tri  complete_data_i;
-  reg  complete_data_o = 1'b1;
+  reg  complete_data_o = 1'b0;
   tri  complete_instr_i;
-  reg  complete_instr_o = 1'b1;
+  reg  complete_instr_o = 1'b0;
   tri [15:0] IR_i;
-  reg [15:0] IR_o = 1'b1;
+  reg [15:0] IR_o = 1'b0;
   tri [2:0] NZP_i;
-  reg [2:0] NZP_o = 1'b1;
+  reg [2:0] NZP_o = 1'b0;
   tri [2:0] psr_i;
-  reg [2:0] psr_o = 1'b1;
+  reg [2:0] psr_o = 1'b0;
   tri [15:0] IR_Exec_i;
-  reg [15:0] IR_Exec_o = 1'b1;
+  reg [15:0] IR_Exec_o = 1'b0;
   tri [15:0] IMem_dout_i;
-  reg [15:0] IMem_dout_o = 1'b1;
+  reg [15:0] IMem_dout_o = 1'b0;
 
   // Bi-directional signals
   
@@ -164,13 +164,13 @@ end
      begin
        // RESPONDER mode output signals
        // INITIATOR mode output signals
-       complete_data_o <= 1'bz;
-       complete_instr_o <= 1'bz;
-       IR_o <= 16'bz;
-       NZP_o <= 3'bz;
-       psr_o <= 3'bz;
-       IR_Exec_o <= 16'bz;
-       IMem_dout_o <= 16'bz;
+       complete_data_o <= 1'b0;
+       complete_instr_o <= 1'b0;
+       IR_o <= 16'b0;
+       NZP_o <= 3'b0;
+       psr_o <= 3'b0;
+       IR_Exec_o <= 16'b0;
+       IMem_dout_o <= 16'b0;
        // Bi-directional signals
  
      end    

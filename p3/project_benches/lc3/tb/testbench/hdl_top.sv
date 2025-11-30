@@ -33,7 +33,7 @@ import uvmf_base_pkg_hdl::*;
   // tbx clkgen
   initial begin
     clk = 0;
-    #100ns;
+    #100ns; //Harry: wait the reset to be disasserted so the there wont be any early comparison 
     forever begin
       clk = ~clk;
       #5ns;
@@ -46,11 +46,40 @@ import uvmf_base_pkg_hdl::*;
   // Instantiate a rst driver
   // tbx clkgen
   initial begin
-    rst = 1; 
-    #200ns;
+    rst = 1; //Harry: asserr the reset immediately at time zero so that the monitors and predictors wont start comparing when initial reset value is 0(they will think the DUT is activiated)
+    #100ns;
+    //Harry: print out the timing when the reset is released
+    // `uvm_info("RESET_GENERATOR", $sformatf("Harry->Reset released at time %t -> DUT start running", $time), UVM_HIHG);
+    $display("-----------------------------------------------------------");
+    $display("Harry->Reset released at time %t -> DUT start running", $time);
+    $display("-----------------------------------------------------------");
     rst =  0; 
   end
 // pragma uvmf custom reset_generator end
+
+  //Harry: Latches to align DUT control signals with tri-state interface sampling
+  logic enable_fetch_latch_q;
+  logic enable_updatePC_latch_q;
+  logic enable_decode_latch_q;
+  logic enable_execute_latch_q;
+  logic instrmem_rd_latch_q;
+  logic [1:0] mem_state_latch_q;
+
+  always @(posedge clk) begin
+    enable_fetch_latch_q    <= dut.enable_fetch;
+    enable_updatePC_latch_q <= dut.enable_updatePC;
+    enable_decode_latch_q   <= dut.enable_decode;
+    enable_execute_latch_q  <= dut.enable_execute;
+    instrmem_rd_latch_q     <= dut.instrmem_rd;
+    mem_state_latch_q       <= dut.mem_state;
+  end
+
+  wire enable_fetch_latch    = enable_fetch_latch_q;    //Harry: expose registered values to BFMs
+  wire enable_updatePC_latch = enable_updatePC_latch_q; //Harry: expose registered values to BFMs
+  wire enable_decode_latch   = enable_decode_latch_q;
+  wire enable_execute_latch  = enable_execute_latch_q;
+  wire instrmem_rd_latch     = instrmem_rd_latch_q;
+  wire [1:0] mem_state_latch = mem_state_latch_q;
 
   // pragma uvmf custom module_item_additional begin
   // pragma uvmf custom module_item_additional end
@@ -73,7 +102,7 @@ import uvmf_base_pkg_hdl::*;
      .clock(clk), .reset(rst),
      .npc(dut.npc_out_fetch),
      .pc(dut.pc),
-     .instrmem_rd(dut.instrmem_rd)
+     .instrmem_rd(instrmem_rd_latch) //Harry: drive tri bus with latched instrmem_rd
      // pragma uvmf custom fetch_env_fetch_out_agent_bus_connections end
      );
   decode_in_if  decode_env_dec_in_agent_bus(
@@ -81,8 +110,9 @@ import uvmf_base_pkg_hdl::*;
      .clock(clk), .reset(rst),
      .instr_dout(dut.Instr_dout),
      .npc_in(dut.npc_out_fetch),
-     .enable_decode(dut.enable_decode),//Harry enable decode stage
-     .psr()//Harry just leave the psr port open as 1. we cant access the internal signals psr from the DUT 2. can't put all zeros as it will cause errors
+     .enable_decode(enable_decode_latch),//Harry: use latched enable_decode for clean sampling
+     .psr()
+     //.psr(3'b0)//Harry: psr is not exposed; tie off to avoid X propagation
    //   .psr(dut.psr) // psr commented out in TopLevelLC3.v
      // pragma uvmf custom decode_env_dec_in_agent_bus_connections end
      );
@@ -95,7 +125,7 @@ import uvmf_base_pkg_hdl::*;
      .ir(dut.IR),
    //   .npc_out(npc_out_dec),
      .npc_out(dut.npc_out_dec), //Harry fixed port mismatch issue
-     .enable_decode(dut.enable_decode)
+     .enable_decode(enable_decode_latch) //Harry: use latched enable_decode to align with monitor timing
      // pragma uvmf custom decode_env_dec_out_agent_bus_connections end
      );
   execute_in_if  execute_env_exe_in_agent_bus(
@@ -113,7 +143,7 @@ import uvmf_base_pkg_hdl::*;
      .w_control_in(dut.W_Control),
      .e_control(dut.E_Control), //Harry added missing e_control port connection, notice there is no "_in" suffix for the e_control
      .mem_control_in(dut.Mem_Control),
-     .enable_execute(dut.enable_execute),
+     .enable_execute(enable_execute_latch), //Harry: use latched enable_execute for tri port
      .mem_bypass_val(dut.memout)
      // pragma uvmf custom execute_env_exe_in_agent_bus_connections end
      );
@@ -130,7 +160,7 @@ import uvmf_base_pkg_hdl::*;
      .ir_exec(dut.IR_Exec),
      .nzp(dut.NZP),
      .m_data(dut.M_Data),
-     .enable_execute(dut.enable_execute)
+     .enable_execute(enable_execute_latch) //Harry: align execute monitor with latched control
      // pragma uvmf custom execute_env_exe_out_agent_bus_connections end
      );
   memaccess_in_if  memaccess_env_memaccess_in_agt_bus(
@@ -139,7 +169,7 @@ import uvmf_base_pkg_hdl::*;
      .M_Data(dut.M_Data),
      .M_Addr(dut.pcout),
      .M_Control(dut.Mem_Control_out),
-     .mem_state(dut.mem_state),
+     .mem_state(mem_state_latch), //Harry: provide registered mem_state to avoid inout/reg clash
      .DMem_dout(dut.Data_dout)
      // pragma uvmf custom memaccess_env_memaccess_in_agt_bus_connections end
      );
@@ -150,7 +180,7 @@ import uvmf_base_pkg_hdl::*;
      .DMem_din(dut.Data_din),
      .DMem_rd(dut.Data_rd),
      .memout(dut.memout),
-     .mem_state(dut.mem_state) //Harry added missing mem_state port connection
+     .mem_state(mem_state_latch) //Harry: use latched mem_state for memaccess monitor
      // pragma uvmf custom memaccess_env_memaccess_out_agt_bus_connections end
      );
   writeback_in_if  writeback_env_writeback_in_agent_bus(
@@ -189,17 +219,17 @@ import uvmf_base_pkg_hdl::*;
   controller_out_if  controller_env_controller_out_agent_bus(
      // pragma uvmf custom controller_env_controller_out_agent_bus_connections begin
      .clock(clk), .reset(rst),
-     .enable_updatePC(dut.enable_updatePC),
-     .enable_fetch(dut.enable_fetch),
-     .enable_decode(dut.enable_decode),
-     .enable_execute(dut.enable_execute),
+     .enable_updatePC(enable_updatePC_latch), //Harry: controller scoreboard uses latched enables
+     .enable_fetch(enable_fetch_latch),
+     .enable_decode(enable_decode_latch),
+     .enable_execute(enable_execute_latch),
      .enable_writeback(dut.enable_writeback),
      .br_taken(dut.br_taken),
      .bypass_alu_1(dut.bypass_alu_1),
      .bypass_alu_2(dut.bypass_alu_2),
      .bypass_mem_1(dut.bypass_mem_1),
      .bypass_mem_2(dut.bypass_mem_2),
-     .mem_state(dut.mem_state)
+     .mem_state(mem_state_latch)
      // pragma uvmf custom controller_env_controller_out_agent_bus_connections end
      );
   imem_if  imem_agent_bus(
