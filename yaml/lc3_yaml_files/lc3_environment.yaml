@@ -16,7 +16,7 @@ uvmf:
           type: controller
       agents: 
       - name: imem_agent
-        type: fetch_out  
+        type: imem
         initiator_responder: RESPONDER
       - name: dmem_agent
         type: dmem
