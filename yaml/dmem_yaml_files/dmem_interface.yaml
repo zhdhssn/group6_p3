@@ -34,6 +34,10 @@ uvmf:
         name: Data_addr
         reset_value: '''b0'
         width: '16'
+      - dir: output
+        name: D_macc
+        reset_value: '''b0'
+        width: '1'
       reset: reset
       reset_assertion_level: 'True'
       transaction_constraints: []

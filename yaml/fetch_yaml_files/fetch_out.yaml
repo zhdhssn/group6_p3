@@ -50,6 +50,16 @@ uvmf:
           dir: "input" 
           reset_value: "'h0000"
 
+        - name: "enable_updatePC"   
+          width: "1"        
+          dir: "input" 
+          reset_value: "'b0"
+
+        - name: "enable_fetch"   
+          width: "1"        
+          dir: "input" 
+          reset_value: "'b0"
+
       transaction_vars:
         - name: "instrmem_rd"  
           type: "bit" # transaction_variable_type

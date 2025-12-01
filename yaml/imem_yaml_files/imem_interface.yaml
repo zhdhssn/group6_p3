@@ -30,6 +30,10 @@ uvmf:
         name: instrmem_rd
         reset_value: '''bz'
         width: '1'
+      - dir: output
+        name: I_macc
+        reset_value: '''b0'
+        width: '1'
       reset: reset
       reset_assertion_level: 'True'
       transaction_constraints: []

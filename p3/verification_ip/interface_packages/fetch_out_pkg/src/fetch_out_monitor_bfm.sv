@@ -72,11 +72,15 @@ end
   tri  instrmem_rd_i;
   tri [15:0] pc_i;
   tri [15:0] npc_i;
+  tri  enable_updatePC_i;
+  tri  enable_fetch_i;
   assign clock_i = bus.clock;
   assign reset_i = bus.reset;
   assign instrmem_rd_i = bus.instrmem_rd;
   assign pc_i = bus.pc;
   assign npc_i = bus.npc;
+  assign enable_updatePC_i = bus.enable_updatePC;
+  assign enable_fetch_i = bus.enable_fetch;
 
   // Proxy handle to UVM monitor
   fetch_out_pkg::fetch_out_monitor  proxy;
@@ -159,6 +163,8 @@ end
     //      fetch_out_monitor_struct.xyz = instrmem_rd_i;  //     
     //      fetch_out_monitor_struct.xyz = pc_i;  //    [15:0] 
     //      fetch_out_monitor_struct.xyz = npc_i;  //    [15:0] 
+    //      fetch_out_monitor_struct.xyz = enable_updatePC_i;  //     
+    //      fetch_out_monitor_struct.xyz = enable_fetch_i;  //     
     // pragma uvmf custom do_monitor begin
     // UVMF_CHANGE_ME : Implement protocol monitoring.  The commented reference code 
     // below are examples of how to capture signal values and assign them to 

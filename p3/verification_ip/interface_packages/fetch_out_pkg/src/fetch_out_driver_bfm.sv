@@ -96,6 +96,10 @@ end
   reg [15:0] pc_o = 'h0000;
   tri [15:0] npc_i;
   reg [15:0] npc_o = 'h0000;
+  tri  enable_updatePC_i;
+  reg  enable_updatePC_o = 'b0;
+  tri  enable_fetch_i;
+  reg  enable_fetch_o = 'b0;
 
   // INITIATOR mode output signals
 
@@ -113,6 +117,10 @@ end
   assign bus.pc = (initiator_responder == RESPONDER) ? pc_o : 'bz;
   assign npc_i = bus.npc;
   assign bus.npc = (initiator_responder == RESPONDER) ? npc_o : 'bz;
+  assign enable_updatePC_i = bus.enable_updatePC;
+  assign bus.enable_updatePC = (initiator_responder == RESPONDER) ? enable_updatePC_o : 'bz;
+  assign enable_fetch_i = bus.enable_fetch;
+  assign bus.enable_fetch = (initiator_responder == RESPONDER) ? enable_fetch_o : 'bz;
 
 
   // These are signals marked as 'output' by the config file, but the outputs will

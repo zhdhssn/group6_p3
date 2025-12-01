@@ -24,6 +24,14 @@ uvmf:
         name: npc
         reset_value: '''h0000'
         width: '16'
+      - dir: input
+        name: enable_updatePC
+        reset_value: '''b0'
+        width: '1'
+      - dir: input
+        name: enable_fetch
+        reset_value: '''b0'
+        width: '1'
       reset: reset
       reset_assertion_level: 'True'
       transaction_constraints: []

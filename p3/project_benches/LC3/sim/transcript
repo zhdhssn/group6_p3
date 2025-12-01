@@ -1,0 +1,789 @@
+# vsim -c -sv_seed random "+UVM_TESTNAME=lc3_alu_test" -permit_unmatched_virtual_intf "+notimingchecks" -suppress 8887 -solvefaildebug -solvefailtestcase -uvmcontrol=none -printsimstats -do " coverage save -onexit lc3_alu_test.ucdb; set IterationLimit 140000; set NoQuitOnFinish 1;   run -all; quit -f;" optimized_batch_top_tb 
+# Start time: 10:22:03 on Dec 01,2025
+# //  Questa Sim
+# //  Version 2024.2 linux May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.imem_driver_bfm(fast)
+# Loading work.imem_monitor_bfm(fast)
+# Loading work.uvmf_base_pkg_hdl(fast)
+# Loading work.imem_pkg_hdl(fast)
+# Loading work.fetch_in_driver_bfm(fast)
+# Loading work.fetch_in_monitor_bfm(fast)
+# Loading work.fetch_out_driver_bfm(fast)
+# Loading work.fetch_out_monitor_bfm(fast)
+# Loading work.decode_in_driver_bfm(fast)
+# Loading work.decode_in_monitor_bfm(fast)
+# Loading work.decode_out_driver_bfm(fast)
+# Loading work.decode_out_monitor_bfm(fast)
+# Loading work.execute_in_driver_bfm(fast)
+# Loading work.execute_in_monitor_bfm(fast)
+# Loading work.execute_out_driver_bfm(fast)
+# Loading work.execute_out_monitor_bfm(fast)
+# Loading work.memaccess_in_driver_bfm(fast)
+# Loading work.memaccess_in_monitor_bfm(fast)
+# Loading work.memaccess_out_driver_bfm(fast)
+# Loading work.memaccess_out_monitor_bfm(fast)
+# Loading work.writeback_in_driver_bfm(fast)
+# Loading work.writeback_in_monitor_bfm(fast)
+# Loading work.writeback_out_driver_bfm(fast)
+# Loading work.writeback_out_monitor_bfm(fast)
+# Loading work.controller_in_driver_bfm(fast)
+# Loading work.controller_in_monitor_bfm(fast)
+# Loading work.controller_out_driver_bfm(fast)
+# Loading work.controller_out_monitor_bfm(fast)
+# Loading work.dmem_driver_bfm(fast)
+# Loading work.dmem_monitor_bfm(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.uvmf_base_pkg(fast)
+# Loading work.imem_pkg(fast)
+# Loading work.controller_out_pkg_hdl(fast)
+# Loading work.controller_out_pkg(fast)
+# Loading work.controller_in_pkg_hdl(fast)
+# Loading work.controller_in_pkg(fast)
+# Loading work.lc3_prediction_pkg(fast)
+# Loading work.controller_env_pkg(fast)
+# Loading work.writeback_out_pkg_hdl(fast)
+# Loading work.writeback_out_pkg(fast)
+# Loading work.writeback_in_pkg_hdl(fast)
+# Loading work.writeback_in_pkg(fast)
+# Loading work.writeback_env_pkg(fast)
+# Loading work.memaccess_out_pkg_hdl(fast)
+# Loading work.memaccess_out_pkg(fast)
+# Loading work.memaccess_in_pkg_hdl(fast)
+# Loading work.memaccess_in_pkg(fast)
+# Loading work.memaccess_env_pkg(fast)
+# Loading work.execute_out_pkg_hdl(fast)
+# Loading work.execute_out_pkg(fast)
+# Loading work.execute_in_pkg_hdl(fast)
+# Loading work.execute_in_pkg(fast)
+# Loading work.execute_env_pkg(fast)
+# Loading work.decode_out_pkg_hdl(fast)
+# Loading work.decode_out_pkg(fast)
+# Loading work.decode_in_pkg_hdl(fast)
+# Loading work.decode_in_pkg(fast)
+# Loading work.decode_env_pkg(fast)
+# Loading work.fetch_out_pkg_hdl(fast)
+# Loading work.fetch_out_pkg(fast)
+# Loading work.fetch_in_pkg_hdl(fast)
+# Loading work.fetch_in_pkg(fast)
+# Loading work.fetch_env_pkg(fast)
+# Loading work.dmem_pkg_hdl(fast)
+# Loading work.dmem_pkg(fast)
+# Loading work.lc3_env_pkg(fast)
+# Loading work.LC3_parameters_pkg(fast)
+# Loading work.LC3_sequences_pkg(fast)
+# Loading work.LC3_tests_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.hvl_top(fast)
+# Loading work.hdl_top(fast)
+# Loading work.fetch_in_if_sv_unit(fast)
+# Loading work.fetch_in_if(fast__1)
+# Loading work.fetch_out_if_sv_unit(fast)
+# Loading work.fetch_out_if(fast__1)
+# Loading work.decode_in_if_sv_unit(fast)
+# Loading work.decode_in_if(fast__1)
+# Loading work.decode_out_if_sv_unit(fast)
+# Loading work.decode_out_if(fast__1)
+# Loading work.execute_in_if_sv_unit(fast)
+# Loading work.execute_in_if(fast__1)
+# Loading work.execute_out_if_sv_unit(fast)
+# Loading work.execute_out_if(fast__1)
+# Loading work.memaccess_in_if_sv_unit(fast)
+# Loading work.memaccess_in_if(fast__1)
+# Loading work.memaccess_out_if_sv_unit(fast)
+# Loading work.memaccess_out_if(fast__1)
+# Loading work.writeback_in_if_sv_unit(fast)
+# Loading work.writeback_in_if(fast__1)
+# Loading work.writeback_out_if_sv_unit(fast)
+# Loading work.writeback_out_if(fast__1)
+# Loading work.controller_in_if_sv_unit(fast)
+# Loading work.controller_in_if(fast__1)
+# Loading work.controller_out_if_sv_unit(fast)
+# Loading work.controller_out_if(fast__1)
+# Loading work.imem_if_sv_unit(fast)
+# Loading work.imem_if(fast__1)
+# Loading work.dmem_if_sv_unit(fast)
+# Loading work.dmem_if(fast__1)
+# Loading work.fetch_in_monitor_bfm_sv_unit(fast)
+# Loading work.fetch_in_monitor_bfm(fast__1)
+# Loading work.fetch_out_monitor_bfm_sv_unit(fast)
+# Loading work.fetch_out_monitor_bfm(fast__1)
+# Loading work.decode_in_monitor_bfm_sv_unit(fast)
+# Loading work.decode_in_monitor_bfm(fast__1)
+# Loading work.decode_out_monitor_bfm_sv_unit(fast)
+# Loading work.decode_out_monitor_bfm(fast__1)
+# Loading work.execute_in_monitor_bfm_sv_unit(fast)
+# Loading work.execute_in_monitor_bfm(fast__1)
+# Loading work.execute_out_monitor_bfm_sv_unit(fast)
+# Loading work.execute_out_monitor_bfm(fast__1)
+# Loading work.memaccess_in_monitor_bfm_sv_unit(fast)
+# Loading work.memaccess_in_monitor_bfm(fast__1)
+# Loading work.memaccess_out_monitor_bfm_sv_unit(fast)
+# Loading work.memaccess_out_monitor_bfm(fast__1)
+# Loading work.writeback_in_monitor_bfm_sv_unit(fast)
+# Loading work.writeback_in_monitor_bfm(fast__1)
+# Loading work.writeback_out_monitor_bfm_sv_unit(fast)
+# Loading work.writeback_out_monitor_bfm(fast__1)
+# Loading work.controller_in_monitor_bfm_sv_unit(fast)
+# Loading work.controller_in_monitor_bfm(fast__1)
+# Loading work.controller_out_monitor_bfm_sv_unit(fast)
+# Loading work.controller_out_monitor_bfm(fast__1)
+# Loading work.imem_monitor_bfm_sv_unit(fast)
+# Loading work.imem_monitor_bfm(fast__1)
+# Loading work.dmem_monitor_bfm_sv_unit(fast)
+# Loading work.dmem_monitor_bfm(fast__1)
+# Loading work.imem_driver_bfm_sv_unit(fast)
+# Loading work.imem_driver_bfm(fast__1)
+# Loading work.dmem_driver_bfm_sv_unit(fast)
+# Loading work.dmem_driver_bfm(fast__1)
+# Loading /mnt/apps/public/COE/mg_apps/questa2024.2/questasim/uvm-1.1d/linux/uvm_dpi.so
+# Sv_Seed = 1679076500
+#  coverage save -onexit lc3_alu_test.ucdb
+#  set IterationLimit 140000
+# 140000
+#  set NoQuitOnFinish 1
+# 1
+#    run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# ----------------------------------------------------------------
+# //  UVM Framework 
+# //  Version 2023.4_2
+# //  (C) 2013-2024 Siemens Corporation
+# //  Digital Industries Software
+# //  Siemens EDA
+# //  All Rights Reserved.
+# ----------------------------------------------------------------
+# 
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init()
+# UVM_INFO @ 0.000ns: reporter [RNTST] Running test lc3_alu_test...
+# UVM_INFO @ 0.000ns: uvm_test_top [ALU_TEST] Applying ALU IMEM sequence override
+# UVM_WARNING @ 0.000ns: reporter [COVERAGE_MODEL_REVIEW] A covergroup has been constructed which may need review because of either generation or re-generation with merging.  Please note that configuration variables added as a result of re-generation and merging are not automatically added to the covergroup.  Remove this warning after the covergroup has been reviewed.
+# UVM_WARNING @ 0.000ns: reporter [COVERAGE_MODEL_REVIEW] A covergroup has been constructed which may need review because of either generation or re-generation with merging.  Please note that configuration variables added as a result of re-generation and merging are not automatically added to the covergroup.  Remove this warning after the covergroup has been reviewed.
+# UVM_WARNING @ 0.000ns: reporter [COVERAGE_MODEL_REVIEW] A covergroup has been constructed which may need review because of either generation or re-generation with merging.  Please note that configuration variables added as a result of re-generation and merging are not automatically added to the covergroup.  Remove this warning after the covergroup has been reviewed.
+# UVM_WARNING @ 0.000ns: reporter [COVERAGE_MODEL_REVIEW] A covergroup has been constructed which may need review because of either generation or re-generation with merging.  Please note that configuration variables added as a result of re-generation and merging are not automatically added to the covergroup.  Remove this warning after the covergroup has been reviewed.
+# UVM_WARNING @ 0.000ns: reporter [COVERAGE_MODEL_REVIEW] A covergroup has been constructed which may need review because of either generation or re-generation with merging.  Please note that configuration variables added as a result of re-generation and merging are not automatically added to the covergroup.  Remove this warning after the covergroup has been reviewed.
+# UVM_WARNING @ 0.000ns: reporter [COVERAGE_MODEL_REVIEW] A covergroup has been constructed which may need review because of either generation or re-generation with merging.  Please note that configuration variables added as a result of re-generation and merging are not automatically added to the covergroup.  Remove this warning after the covergroup has been reviewed.
+# UVM_WARNING @ 0.000ns: reporter [COVERAGE_MODEL_REVIEW] A covergroup has been constructed which may need review because of either generation or re-generation with merging.  Please note that configuration variables added as a result of re-generation and merging are not automatically added to the covergroup.  Remove this warning after the covergroup has been reviewed.
+# UVM_WARNING @ 0.000ns: uvm_test_top.environment.controller_env.controller_pred [PREDICTOR_REVIEW] This predictor has been created either through generation or re-generation with merging.  Remove this warning after the predictor has been reviewed.
+# UVM_WARNING @ 0.000ns: uvm_test_top.environment.execute_env.exe_pred [PREDICTOR_REVIEW] This predictor has been created either through generation or re-generation with merging.  Remove this warning after the predictor has been reviewed.
+# UVM_WARNING @ 0.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PREDICTOR_REVIEW] This predictor has been created either through generation or re-generation with merging.  Remove this warning after the predictor has been reviewed.
+# UVM_WARNING @ 0.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PREDICTOR_REVIEW] This predictor has been created either through generation or re-generation with merging.  Remove this warning after the predictor has been reviewed.
+# UVM_WARNING @ 0.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PREDICTOR_REVIEW] This predictor has been created either through generation or re-generation with merging.  Remove this warning after the predictor has been reviewed.
+# UVM_INFO @ 0.000ns: uvm_test_top [ALU_TEST] ===== LC3 ALU TEST STARTED =====
+# UVM_INFO @ 100.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 100.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x0 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000000 end_time:0x0000000000000064 transaction_view_h:0x00000000 
+# UVM_INFO @ 110.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 110.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 110.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 110.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 110.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000064 end_time:0x000000000000006e transaction_view_h:0x00000000 
+# UVM_INFO @ 120.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000000 end_time:0x0000000000000078 transaction_view_h:0x00000000 
+# UVM_INFO @ 120.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 120.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000000 end_time:0x0000000000000078 transaction_view_h:0x00000000 
+# UVM_INFO @ 120.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 120.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000006e end_time:0x0000000000000078 transaction_view_h:0x00000000 
+# UVM_INFO @ 130.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 130.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 130.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 130.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 130.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000078 end_time:0x0000000000000082 transaction_view_h:0x00000000 
+# UVM_INFO @ 140.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 140.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000082 end_time:0x000000000000008c transaction_view_h:0x00000000 
+# UVM_INFO @ 150.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000078 end_time:0x0000000000000096 transaction_view_h:0x00000000 
+# UVM_INFO @ 150.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 150.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000078 end_time:0x0000000000000096 transaction_view_h:0x00000000 
+# UVM_INFO @ 150.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 150.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 150.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 150.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 150.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000008c end_time:0x0000000000000096 transaction_view_h:0x00000000 
+# UVM_INFO @ 160.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 160.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000096 end_time:0x00000000000000a0 transaction_view_h:0x00000000 
+# UVM_INFO @ 170.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 170.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 170.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 170.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 170.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000000a0 end_time:0x00000000000000aa transaction_view_h:0x00000000 
+# UVM_INFO @ 180.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000096 end_time:0x00000000000000b4 transaction_view_h:0x00000000 
+# UVM_INFO @ 180.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 180.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000096 end_time:0x00000000000000b4 transaction_view_h:0x00000000 
+# UVM_INFO @ 180.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 180.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000000aa end_time:0x00000000000000b4 transaction_view_h:0x00000000 
+# UVM_INFO @ 190.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 190.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 190.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 190.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 190.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000000b4 end_time:0x00000000000000be transaction_view_h:0x00000000 
+# UVM_INFO @ 200.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 200.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 200.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 200.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000000be end_time:0x00000000000000c8 transaction_view_h:0x00000000 
+# UVM_INFO @ 210.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000000b4 end_time:0x00000000000000d2 transaction_view_h:0x00000000 
+# UVM_INFO @ 210.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 210.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000000b4 end_time:0x00000000000000d2 transaction_view_h:0x00000000 
+# UVM_INFO @ 210.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 210.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 210.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 210.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 210.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 210.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 210.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000000c8 end_time:0x00000000000000d2 transaction_view_h:0x00000000 
+# UVM_INFO @ 220.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 220.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 220.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000000d2 end_time:0x00000000000000dc transaction_view_h:0x00000000 
+# UVM_INFO @ 230.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 230.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 230.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 230.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 230.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 230.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000000dc end_time:0x00000000000000e6 transaction_view_h:0x00000000 
+# UVM_INFO @ 240.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000000d2 end_time:0x00000000000000f0 transaction_view_h:0x00000000 
+# UVM_INFO @ 240.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 240.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000000d2 end_time:0x00000000000000f0 transaction_view_h:0x00000000 
+# UVM_INFO @ 240.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 240.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 240.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 240.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000000e6 end_time:0x00000000000000f0 transaction_view_h:0x00000000 
+# UVM_INFO @ 250.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 250.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 250.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 250.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 250.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 250.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000000f0 end_time:0x00000000000000fa transaction_view_h:0x00000000 
+# UVM_INFO @ 260.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 260.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 260.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000000fa end_time:0x0000000000000104 transaction_view_h:0x00000000 
+# UVM_INFO @ 270.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000000f0 end_time:0x000000000000010e transaction_view_h:0x00000000 
+# UVM_INFO @ 270.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 270.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000000f0 end_time:0x000000000000010e transaction_view_h:0x00000000 
+# UVM_INFO @ 270.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 270.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 270.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 270.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 270.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 270.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000104 end_time:0x000000000000010e transaction_view_h:0x00000000 
+# UVM_INFO @ 280.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 280.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 280.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000010e end_time:0x0000000000000118 transaction_view_h:0x00000000 
+# UVM_INFO @ 290.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 290.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 290.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 290.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 290.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 290.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 290.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000118 end_time:0x0000000000000122 transaction_view_h:0x00000000 
+# UVM_INFO @ 300.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x000000000000010e end_time:0x000000000000012c transaction_view_h:0x00000000 
+# UVM_INFO @ 300.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 300.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x000000000000010e end_time:0x000000000000012c transaction_view_h:0x00000000 
+# UVM_INFO @ 300.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 300.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 300.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000122 end_time:0x000000000000012c transaction_view_h:0x00000000 
+# UVM_INFO @ 310.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 310.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 310.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 310.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 310.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 310.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000012c end_time:0x0000000000000136 transaction_view_h:0x00000000 
+# UVM_INFO @ 320.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 320.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 320.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000136 end_time:0x0000000000000140 transaction_view_h:0x00000000 
+# UVM_INFO @ 330.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x000000000000012c end_time:0x000000000000014a transaction_view_h:0x00000000 
+# UVM_INFO @ 330.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 330.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x000000000000012c end_time:0x000000000000014a transaction_view_h:0x00000000 
+# UVM_INFO @ 330.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 330.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 330.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 330.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 330.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 330.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000140 end_time:0x000000000000014a transaction_view_h:0x00000000 
+# UVM_INFO @ 340.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 340.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 340.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 340.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000014a end_time:0x0000000000000154 transaction_view_h:0x00000000 
+# UVM_INFO @ 350.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 350.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 350.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 350.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 350.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 350.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000154 end_time:0x000000000000015e transaction_view_h:0x00000000 
+# UVM_INFO @ 360.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x000000000000014a end_time:0x0000000000000168 transaction_view_h:0x00000000 
+# UVM_INFO @ 360.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 360.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x000000000000014a end_time:0x0000000000000168 transaction_view_h:0x00000000 
+# UVM_INFO @ 360.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 360.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 360.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000015e end_time:0x0000000000000168 transaction_view_h:0x00000000 
+# UVM_INFO @ 370.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 370.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 370.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 370.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 370.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 370.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000168 end_time:0x0000000000000172 transaction_view_h:0x00000000 
+# UVM_INFO @ 380.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 380.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 380.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000172 end_time:0x000000000000017c transaction_view_h:0x00000000 
+# UVM_INFO @ 390.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000168 end_time:0x0000000000000186 transaction_view_h:0x00000000 
+# UVM_INFO @ 390.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 390.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000168 end_time:0x0000000000000186 transaction_view_h:0x00000000 
+# UVM_INFO @ 390.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 390.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 390.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 390.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 390.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 390.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 390.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000017c end_time:0x0000000000000186 transaction_view_h:0x00000000 
+# UVM_INFO @ 400.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 400.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 400.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000186 end_time:0x0000000000000190 transaction_view_h:0x00000000 
+# UVM_INFO @ 410.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 410.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 410.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 410.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 410.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 410.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000190 end_time:0x000000000000019a transaction_view_h:0x00000000 
+# UVM_INFO @ 420.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000186 end_time:0x00000000000001a4 transaction_view_h:0x00000000 
+# UVM_INFO @ 420.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 420.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000186 end_time:0x00000000000001a4 transaction_view_h:0x00000000 
+# UVM_INFO @ 420.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 420.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 420.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000019a end_time:0x00000000000001a4 transaction_view_h:0x00000000 
+# UVM_INFO @ 430.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 430.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 430.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 430.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 430.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 430.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000001a4 end_time:0x00000000000001ae transaction_view_h:0x00000000 
+# UVM_INFO @ 440.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 440.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 440.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 440.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000001ae end_time:0x00000000000001b8 transaction_view_h:0x00000000 
+# UVM_INFO @ 450.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000001a4 end_time:0x00000000000001c2 transaction_view_h:0x00000000 
+# UVM_INFO @ 450.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 450.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000001a4 end_time:0x00000000000001c2 transaction_view_h:0x00000000 
+# UVM_INFO @ 450.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 450.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 450.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 450.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 450.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 450.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000001b8 end_time:0x00000000000001c2 transaction_view_h:0x00000000 
+# UVM_INFO @ 460.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 460.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 460.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000001c2 end_time:0x00000000000001cc transaction_view_h:0x00000000 
+# UVM_INFO @ 470.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 470.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 470.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 470.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 470.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 470.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000001cc end_time:0x00000000000001d6 transaction_view_h:0x00000000 
+# UVM_INFO @ 480.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000001c2 end_time:0x00000000000001e0 transaction_view_h:0x00000000 
+# UVM_INFO @ 480.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 480.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000001c2 end_time:0x00000000000001e0 transaction_view_h:0x00000000 
+# UVM_INFO @ 480.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 480.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 480.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000001d6 end_time:0x00000000000001e0 transaction_view_h:0x00000000 
+# UVM_INFO @ 490.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 490.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 490.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 490.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 490.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 490.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 490.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000001e0 end_time:0x00000000000001ea transaction_view_h:0x00000000 
+# UVM_INFO @ 500.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 500.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 500.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000001ea end_time:0x00000000000001f4 transaction_view_h:0x00000000 
+# UVM_INFO @ 510.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000001e0 end_time:0x00000000000001fe transaction_view_h:0x00000000 
+# UVM_INFO @ 510.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 510.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000001e0 end_time:0x00000000000001fe transaction_view_h:0x00000000 
+# UVM_INFO @ 510.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 510.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 510.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 510.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 510.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 510.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000001f4 end_time:0x00000000000001fe transaction_view_h:0x00000000 
+# UVM_INFO @ 520.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 520.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 520.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000001fe end_time:0x0000000000000208 transaction_view_h:0x00000000 
+# UVM_INFO @ 530.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 530.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 530.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 530.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 530.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 530.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000208 end_time:0x0000000000000212 transaction_view_h:0x00000000 
+# UVM_INFO @ 540.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000001fe end_time:0x000000000000021c transaction_view_h:0x00000000 
+# UVM_INFO @ 540.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 540.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000001fe end_time:0x000000000000021c transaction_view_h:0x00000000 
+# UVM_INFO @ 540.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 540.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 540.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 540.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000212 end_time:0x000000000000021c transaction_view_h:0x00000000 
+# UVM_INFO @ 550.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 550.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 550.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 550.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 550.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 550.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000021c end_time:0x0000000000000226 transaction_view_h:0x00000000 
+# UVM_INFO @ 560.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 560.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 560.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000226 end_time:0x0000000000000230 transaction_view_h:0x00000000 
+# UVM_INFO @ 570.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x000000000000021c end_time:0x000000000000023a transaction_view_h:0x00000000 
+# UVM_INFO @ 570.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 570.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x000000000000021c end_time:0x000000000000023a transaction_view_h:0x00000000 
+# UVM_INFO @ 570.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 570.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 570.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 570.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 570.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 570.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000230 end_time:0x000000000000023a transaction_view_h:0x00000000 
+# UVM_INFO @ 580.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 580.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 580.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000023a end_time:0x0000000000000244 transaction_view_h:0x00000000 
+# UVM_INFO @ 590.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 590.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 590.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 590.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 590.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 590.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 590.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000244 end_time:0x000000000000024e transaction_view_h:0x00000000 
+# UVM_INFO @ 600.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x000000000000023a end_time:0x0000000000000258 transaction_view_h:0x00000000 
+# UVM_INFO @ 600.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 600.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x000000000000023a end_time:0x0000000000000258 transaction_view_h:0x00000000 
+# UVM_INFO @ 600.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 600.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 600.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000024e end_time:0x0000000000000258 transaction_view_h:0x00000000 
+# UVM_INFO @ 610.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 610.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 610.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 610.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 610.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 610.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000258 end_time:0x0000000000000262 transaction_view_h:0x00000000 
+# UVM_INFO @ 620.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 620.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 620.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000262 end_time:0x000000000000026c transaction_view_h:0x00000000 
+# UVM_INFO @ 630.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000258 end_time:0x0000000000000276 transaction_view_h:0x00000000 
+# UVM_INFO @ 630.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 630.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000258 end_time:0x0000000000000276 transaction_view_h:0x00000000 
+# UVM_INFO @ 630.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 630.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 630.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 630.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 630.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 630.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000026c end_time:0x0000000000000276 transaction_view_h:0x00000000 
+# UVM_INFO @ 640.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 640.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 640.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 640.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000276 end_time:0x0000000000000280 transaction_view_h:0x00000000 
+# UVM_INFO @ 650.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 650.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 650.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 650.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 650.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 650.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000280 end_time:0x000000000000028a transaction_view_h:0x00000000 
+# UVM_INFO @ 660.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000276 end_time:0x0000000000000294 transaction_view_h:0x00000000 
+# UVM_INFO @ 660.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 660.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000276 end_time:0x0000000000000294 transaction_view_h:0x00000000 
+# UVM_INFO @ 660.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 660.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 660.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000028a end_time:0x0000000000000294 transaction_view_h:0x00000000 
+# UVM_INFO @ 670.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 670.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 670.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 670.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 670.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 670.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000294 end_time:0x000000000000029e transaction_view_h:0x00000000 
+# UVM_INFO @ 680.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 680.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 680.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000029e end_time:0x00000000000002a8 transaction_view_h:0x00000000 
+# UVM_INFO @ 690.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000294 end_time:0x00000000000002b2 transaction_view_h:0x00000000 
+# UVM_INFO @ 690.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 690.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000294 end_time:0x00000000000002b2 transaction_view_h:0x00000000 
+# UVM_INFO @ 690.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 690.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 690.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 690.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 690.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 690.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 690.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000002a8 end_time:0x00000000000002b2 transaction_view_h:0x00000000 
+# UVM_INFO @ 700.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 700.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 700.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000002b2 end_time:0x00000000000002bc transaction_view_h:0x00000000 
+# UVM_INFO @ 710.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 710.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 710.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 710.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 710.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 710.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000002bc end_time:0x00000000000002c6 transaction_view_h:0x00000000 
+# UVM_INFO @ 720.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000002b2 end_time:0x00000000000002d0 transaction_view_h:0x00000000 
+# UVM_INFO @ 720.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 720.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000002b2 end_time:0x00000000000002d0 transaction_view_h:0x00000000 
+# UVM_INFO @ 720.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 720.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 720.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000002c6 end_time:0x00000000000002d0 transaction_view_h:0x00000000 
+# UVM_INFO @ 730.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 730.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 730.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 730.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 730.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 730.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000002d0 end_time:0x00000000000002da transaction_view_h:0x00000000 
+# UVM_INFO @ 740.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 740.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 740.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 740.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000002da end_time:0x00000000000002e4 transaction_view_h:0x00000000 
+# UVM_INFO @ 750.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000002d0 end_time:0x00000000000002ee transaction_view_h:0x00000000 
+# UVM_INFO @ 750.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 750.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000002d0 end_time:0x00000000000002ee transaction_view_h:0x00000000 
+# UVM_INFO @ 750.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 750.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 750.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 750.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 750.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 750.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000002e4 end_time:0x00000000000002ee transaction_view_h:0x00000000 
+# UVM_INFO @ 760.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 760.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 760.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000002ee end_time:0x00000000000002f8 transaction_view_h:0x00000000 
+# UVM_INFO @ 770.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 770.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 770.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 770.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 770.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 770.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000002f8 end_time:0x0000000000000302 transaction_view_h:0x00000000 
+# UVM_INFO @ 780.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000002ee end_time:0x000000000000030c transaction_view_h:0x00000000 
+# UVM_INFO @ 780.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 780.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000002ee end_time:0x000000000000030c transaction_view_h:0x00000000 
+# UVM_INFO @ 780.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 780.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 780.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000302 end_time:0x000000000000030c transaction_view_h:0x00000000 
+# UVM_INFO @ 790.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 790.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 790.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 790.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 790.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 790.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 790.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000030c end_time:0x0000000000000316 transaction_view_h:0x00000000 
+# UVM_INFO @ 800.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 800.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 800.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000316 end_time:0x0000000000000320 transaction_view_h:0x00000000 
+# UVM_INFO @ 810.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x000000000000030c end_time:0x000000000000032a transaction_view_h:0x00000000 
+# UVM_INFO @ 810.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 810.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x000000000000030c end_time:0x000000000000032a transaction_view_h:0x00000000 
+# UVM_INFO @ 810.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 810.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 810.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 810.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 810.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 810.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000320 end_time:0x000000000000032a transaction_view_h:0x00000000 
+# UVM_INFO @ 820.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 820.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 820.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000032a end_time:0x0000000000000334 transaction_view_h:0x00000000 
+# UVM_INFO @ 830.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 830.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 830.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 830.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 830.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 830.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000334 end_time:0x000000000000033e transaction_view_h:0x00000000 
+# UVM_INFO @ 840.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x000000000000032a end_time:0x0000000000000348 transaction_view_h:0x00000000 
+# UVM_INFO @ 840.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 840.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x000000000000032a end_time:0x0000000000000348 transaction_view_h:0x00000000 
+# UVM_INFO @ 840.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 840.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 840.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 840.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000033e end_time:0x0000000000000348 transaction_view_h:0x00000000 
+# UVM_INFO @ 850.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 850.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 850.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 850.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 850.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 850.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000348 end_time:0x0000000000000352 transaction_view_h:0x00000000 
+# UVM_INFO @ 860.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 860.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 860.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000352 end_time:0x000000000000035c transaction_view_h:0x00000000 
+# UVM_INFO @ 870.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000348 end_time:0x0000000000000366 transaction_view_h:0x00000000 
+# UVM_INFO @ 870.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 870.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000348 end_time:0x0000000000000366 transaction_view_h:0x00000000 
+# UVM_INFO @ 870.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 870.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 870.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 870.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 870.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 870.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000035c end_time:0x0000000000000366 transaction_view_h:0x00000000 
+# UVM_INFO @ 880.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 880.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 880.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000366 end_time:0x0000000000000370 transaction_view_h:0x00000000 
+# UVM_INFO @ 890.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 890.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 890.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 890.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 890.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 890.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 890.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000370 end_time:0x000000000000037a transaction_view_h:0x00000000 
+# UVM_INFO @ 900.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000366 end_time:0x0000000000000384 transaction_view_h:0x00000000 
+# UVM_INFO @ 900.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 900.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000366 end_time:0x0000000000000384 transaction_view_h:0x00000000 
+# UVM_INFO @ 900.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 900.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 900.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000037a end_time:0x0000000000000384 transaction_view_h:0x00000000 
+# UVM_INFO @ 910.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 910.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 910.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 910.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 910.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 910.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000384 end_time:0x000000000000038e transaction_view_h:0x00000000 
+# UVM_INFO @ 920.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 920.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 920.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x000000000000038e end_time:0x0000000000000398 transaction_view_h:0x00000000 
+# UVM_INFO @ 930.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x0000000000000384 end_time:0x00000000000003a2 transaction_view_h:0x00000000 
+# UVM_INFO @ 930.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 930.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x0000000000000384 end_time:0x00000000000003a2 transaction_view_h:0x00000000 
+# UVM_INFO @ 930.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 930.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 930.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 930.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 930.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 930.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x0000000000000398 end_time:0x00000000000003a2 transaction_view_h:0x00000000 
+# UVM_INFO @ 940.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 940.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 940.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 940.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000003a2 end_time:0x00000000000003ac transaction_view_h:0x00000000 
+# UVM_INFO @ 950.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 950.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 950.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 950.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 950.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 950.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000003ac end_time:0x00000000000003b6 transaction_view_h:0x00000000 
+# UVM_INFO @ 960.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000003a2 end_time:0x00000000000003c0 transaction_view_h:0x00000000 
+# UVM_INFO @ 960.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 960.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000003a2 end_time:0x00000000000003c0 transaction_view_h:0x00000000 
+# UVM_INFO @ 960.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 960.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 960.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000003b6 end_time:0x00000000000003c0 transaction_view_h:0x00000000 
+# UVM_INFO @ 970.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 970.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 970.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 970.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 970.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 970.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000003c0 end_time:0x00000000000003ca transaction_view_h:0x00000000 
+# UVM_INFO @ 980.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 980.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 980.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000003ca end_time:0x00000000000003d4 transaction_view_h:0x00000000 
+# UVM_INFO @ 990.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Received fetch_in: br_taken:0x0 taddr:0x0000 enable_updatePC:0x0 enable_fetch:0x1 start_time:0x00000000000003c0 end_time:0x00000000000003de transaction_view_h:0x00000000 
+# UVM_INFO @ 990.000ns: uvm_test_top.environment.fetch_env.fetch_predictor [PRED] Prediction sent from fetch_model: pc=0x3000 npc=0x3001 instrmem_rd=1
+# UVM_INFO @ 990.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] MATCH! - EXPECTED: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: instrmem_rd:0x1 pc:0x3000 npc:0x3001 start_time:0x00000000000003c0 end_time:0x00000000000003de transaction_view_h:0x00000000 
+# UVM_INFO @ 990.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 990.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] MATCH! - EXPECTED: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 ACTUAL: DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 990.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Transaction Received through writeback_in_agent_ae
+# UVM_INFO @ 990.000ns: uvm_test_top.environment.writeback_env.writeback_pred [PRED] Prediction sent from writeback_model: vsr1=0x0 vsr2=0x0 psr=0x0
+# UVM_INFO @ 990.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] MATCH! - EXPECTED: psr:0x0 vsr1:0x0000 vsr2:0x0000 ACTUAL: psr:0x0 vsr1:0x0000 vsr2:0x0000 
+# UVM_INFO @ 990.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 990.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000003d4 end_time:0x00000000000003de transaction_view_h:0x00000000 
+# UVM_INFO @ 1000.000ns: uvm_test_top [ALU_TEST] ===== LC3 ALU TEST COMPLETED =====
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_predictor [PRED] Transaction Received through memaccess_analysis_predictor_export
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.controller_env.controller_pred [PRED] Transaction Received through analysis_export
+# UVM_ERROR @ 1000.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] MISMATCH! - EXPECTED: enable_updatePC:0x1 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0xxxxxxxxxxxxxxxxx end_time:0xxxxxxxxxxxxxxxxx transaction_view_h:0x00000000 ACTUAL: enable_updatePC:0x0 enable_fetch:0x1 enable_decode:0x0 enable_execute:0x0 enable_writeback:0x0 br_taken:0x0 bypass_alu_1:0x0 bypass_alu_2:0x0 bypass_mem_1:0x0 bypass_mem_2:0x0 mem_state:0x3 start_time:0x00000000000003de end_time:0x00000000000003e8 transaction_view_h:0x00000000 
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1000.000ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_ERROR @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] No Transactions Scoreboarded
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] Actual Entry           0:ir:0x0000 e_control:0x00 start_time:0x0000000000000000 end_time:0x0000000000000064 npc_out:0x0000 mem_control:0x0 w_control:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] Actual Entry           1:ir:0x0000 e_control:0x00 start_time:0x0000000000000064 end_time:0x000000000000006e npc_out:0x0000 mem_control:0x0 w_control:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] Actual Entry           2:ir:0x0000 e_control:0x00 start_time:0x000000000000006e end_time:0x0000000000000078 npc_out:0x0000 mem_control:0x0 w_control:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] Actual Entry           3:ir:0x0000 e_control:0x00 start_time:0x0000000000000078 end_time:0x0000000000000082 npc_out:0x0000 mem_control:0x0 w_control:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] Actual Entry           4:ir:0x0000 e_control:0x00 start_time:0x0000000000000082 end_time:0x000000000000008c npc_out:0x0000 mem_control:0x0 w_control:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] Actual Entry           5:ir:0x0000 e_control:0x00 start_time:0x000000000000008c end_time:0x0000000000000096 npc_out:0x0000 mem_control:0x0 w_control:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] Actual Entry           6:ir:0x0000 e_control:0x00 start_time:0x0000000000000096 end_time:0x00000000000000a0 npc_out:0x0000 mem_control:0x0 w_control:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] Actual Entry           7:ir:0x0000 e_control:0x00 start_time:0x00000000000000a0 end_time:0x00000000000000aa npc_out:0x0000 mem_control:0x0 w_control:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] Actual Entry           8:ir:0x0000 e_control:0x00 start_time:0x00000000000000aa end_time:0x00000000000000b4 npc_out:0x0000 mem_control:0x0 w_control:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] Actual Entry           9:ir:0x0000 e_control:0x00 start_time:0x00000000000000b4 end_time:0x00000000000000be npc_out:0x0000 mem_control:0x0 w_control:0x0 
+# UVM_ERROR @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] ACTUAL SCOREBOARD NOT EMPTY
+# UVM_ERROR @ 1000.000ns: uvm_test_top.environment.execute_env.exe_scoreboard [SCBD] No Transactions Scoreboarded
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] Expected Entry           0:DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] Expected Entry           1:DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] Expected Entry           2:DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] Expected Entry           3:DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] Expected Entry           4:DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] Expected Entry           5:DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] Expected Entry           6:DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] Expected Entry           7:DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] Expected Entry           8:DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] Expected Entry           9:DMem_addr:0x0000 DMem_din:0x0000 memout:0x0000 DMem_rd:0x0 
+# UVM_ERROR @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] EXPECTED SCOREBOARD NOT EMPTY
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=91 MATCHES=0 MISMATCHES=91
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.decode_env.scbd [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=0 MATCHES=0 MISMATCHES=0
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.execute_env.exe_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=0 MATCHES=0 MISMATCHES=0
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=30 MATCHES=30 MISMATCHES=0
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=81 MATCHES=18 MISMATCHES=0
+# UVM_INFO @ 1000.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=45 MATCHES=45 MISMATCHES=0
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  448
+# UVM_WARNING :   12
+# UVM_ERROR :   95
+# UVM_FATAL :    0
+# ** Report counts by id
+# [ALU_TEST]     3
+# [COVERAGE_MODEL_REVIEW]     7
+# [PRED]   322
+# [PREDICTOR_REVIEW]     5
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCBD]   214
+# [TEST_DONE]     1
+# ** Note: $finish    : /mnt/apps/public/COE/mg_apps/questa2024.2/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1 us  Iteration: 54  Instance: /hvl_top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /mnt/apps/public/COE/mg_apps/questa2024.2/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at /mnt/apps/public/COE/mg_apps/questa2024.2/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+#  quit -f
+# Saving coverage database on exit...
+# Memory Statistics                         
+#     mem: size after elab (VSZ)                 170.62 Mb
+#     mem: size during sim (VSZ)                 170.62 Mb
+# Elaboration Time                          
+#    elab: wall time                              18.01 s
+#    elab: cpu time                                1.03 s
+# Simulation Time                           
+#     sim: wall time                               0.15 s
+#     sim: cpu time                                0.04 s
+# Tcl Command Time                          
+#     cmd: wall time                               6.15 s
+#     cmd: cpu time                                0.01 s
+# Coverage Save Time                        
+#    save: wall time                               1.63 s
+#    save: cpu time                                0.08 s
+# Total Time                                
+#   total: wall time                              25.94 s
+#   total: cpu time                                1.16 s
+# HDL Simulation time                              1 us
+# 
+# End time: 10:22:29 on Dec 01,2025, Elapsed time: 0:00:26
+# Errors: 0, Warnings: 0

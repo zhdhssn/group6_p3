@@ -22,6 +22,8 @@
 // .dut_signal_port(fetch_out_bus.instrmem_rd), // Agent input 
 // .dut_signal_port(fetch_out_bus.pc), // Agent input 
 // .dut_signal_port(fetch_out_bus.npc), // Agent input 
+// .dut_signal_port(fetch_out_bus.enable_updatePC), // Agent input 
+// .dut_signal_port(fetch_out_bus.enable_fetch), // Agent input 
 
 import uvmf_base_pkg_hdl::*;
 import fetch_out_pkg_hdl::*;
@@ -33,7 +35,9 @@ interface  fetch_out_if
   input tri reset,
   inout tri  instrmem_rd,
   inout tri [15:0] pc,
-  inout tri [15:0] npc
+  inout tri [15:0] npc,
+  inout tri  enable_updatePC,
+  inout tri  enable_fetch
   );
 
 modport monitor_port 
@@ -42,7 +46,9 @@ modport monitor_port
   input reset,
   input instrmem_rd,
   input pc,
-  input npc
+  input npc,
+  input enable_updatePC,
+  input enable_fetch
   );
 
 modport initiator_port 
@@ -51,7 +57,9 @@ modport initiator_port
   input reset,
   input instrmem_rd,
   input pc,
-  input npc
+  input npc,
+  input enable_updatePC,
+  input enable_fetch
   );
 
 modport responder_port 
@@ -60,7 +68,9 @@ modport responder_port
   input reset,  
   output instrmem_rd,
   output pc,
-  output npc
+  output npc,
+  output enable_updatePC,
+  output enable_fetch
   );
   
 

@@ -40,12 +40,8 @@ class lc3_environment  extends uvmf_environment_base #(
 
 
 
-  // typedef fetch_out_agent  imem_agent_t;
-  // imem_agent_t imem_agent;
-  typedef imem_agent imem_agent_t;
+  typedef imem_agent  imem_agent_t;
   imem_agent_t imem_agent;
-
-
 
   typedef dmem_agent  dmem_agent_t;
   dmem_agent_t dmem_agent;
