@@ -1,0 +1,14 @@
+uvmf:
+  environments:
+    imem:
+      agents:
+      - initiator_responder: RESPONDER
+        name: imem_agent
+        type: imem
+      
+      analysis_components: []
+      analysis_exports: []
+      analysis_ports: []
+
+      config_constraints: []
+      config_vars: []
