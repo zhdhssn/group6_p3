@@ -1,0 +1,127 @@
+QuestaSim qrun 2024.2 Utility 2024.05 May 20 2024
+Start time: 10:40:59 on Nov 28,2024
+qrun -64 -gui -visualizer -onfinish stop -classdebug -permit_unmatched_virtual_intf -l run.log -f /mnt/ncsudrive/a/apsarode/ece748/proj_3/UVMF_2023.4/scripts/uvmf_template_output/project_benches/lc3/sim/top.qf -sv_seed 0 -msglimit error -msglimitcount 20 -do "set IterationLimit 140000; set NoQuitOnFinish 1; coverage attribute -name TESTNAME -value dummy_test; coverage save -onexit dummy_test.ucdb;run 0; do /mnt/ncsudrive/a/apsarode/ece748/proj_3/UVMF_2023.4/scripts/uvmf_template_output/project_benches/lc3/sim/viswave.do" "+UVM_TESTNAME=dummy_test" -debug,livesim -qwavedb=+signal+memory=1024+report+parameter+class+assertion+uvm_schematic+msg+classmemory=1024+statictaskfunc -top hdl_top -top hvl_top -suppress 8887,2286 -designfile design.bin -covermultiuserenv 
+-- Skipping 'vlog -64 +incdir+/mnt/ncsudrive/a/apsarode/ece748/proj_3/UVM...'
+-- Skipping 'vcom -64 -msglimit error -msglimitcount 20 -covermultiuseren...'
+QuestaSim-64 vopt 2024.2 Compiler 2024.05 May 20 2024
+Start time: 10:41:00 on Nov 28,2024
+vopt -msglimit error -msglimitcount 20 -debug,livesim -designfile design.bin hdl_top hvl_top -suppress 8887,2286 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+
+Top level modules:
+	hdl_top
+	hvl_top
+
+Analyzing design...
+-- Loading module hdl_top
+-- Importing package lc3_parameters_pkg
+-- Importing package uvmf_base_pkg_hdl
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Loading module hvl_top
+-- Importing package lc3_tests_pkg
+-- Importing package uvmf_base_pkg
+-- Importing package lc3_env_pkg
+-- Importing package imem_pkg
+-- Importing package imem_pkg_hdl
+-- Importing package data_mem_pkg
+-- Importing package data_mem_pkg_hdl
+-- Importing package fetch_env_pkg
+-- Importing package lc3_prediction_pkg
+-- Importing package fetch_in_pkg
+-- Importing package fetch_in_pkg_hdl
+-- Importing package fetch_out_pkg
+-- Importing package fetch_out_pkg_hdl
+-- Importing package decode_env_pkg
+-- Importing package decode_in_pkg
+-- Importing package decode_in_pkg_hdl
+-- Importing package decode_out_pkg
+-- Importing package decode_out_pkg_hdl
+-- Importing package execute_env_pkg
+-- Importing package execute_in_pkg
+-- Importing package execute_in_pkg_hdl
+-- Importing package execute_out_pkg
+-- Importing package execute_out_pkg_hdl
+-- Importing package writeback_env_pkg
+-- Importing package writeback_in_pkg
+-- Importing package writeback_in_pkg_hdl
+-- Importing package writeback_out_pkg
+-- Importing package writeback_out_pkg_hdl
+-- Importing package memaccess_env_pkg
+-- Importing package memaccess_in_pkg
+-- Importing package memaccess_in_pkg_hdl
+-- Importing package memaccess_out_pkg
+-- Importing package memaccess_out_pkg_hdl
+-- Importing package controller_env_pkg
+-- Importing package controller_in_pkg
+-- Importing package controller_in_pkg_hdl
+-- Importing package controller_out_pkg
+-- Importing package controller_out_pkg_hdl
+-- Importing package lc3_sequences_pkg
+-- Loading package mtiUvm.questa_uvm_pkg
+-- Loading interface imem_driver_bfm
+-- Loading interface imem_monitor_bfm
+-- Loading interface data_mem_driver_bfm
+-- Loading interface data_mem_monitor_bfm
+-- Loading interface fetch_in_driver_bfm
+-- Loading interface fetch_in_monitor_bfm
+-- Loading interface fetch_out_driver_bfm
+-- Loading interface fetch_out_monitor_bfm
+-- Loading interface decode_in_driver_bfm
+-- Loading interface decode_in_monitor_bfm
+-- Loading interface decode_out_driver_bfm
+-- Loading interface decode_out_monitor_bfm
+-- Loading interface execute_in_driver_bfm
+-- Loading interface execute_in_monitor_bfm
+-- Loading interface execute_out_driver_bfm
+-- Loading interface execute_out_monitor_bfm
+-- Loading interface writeback_in_driver_bfm
+-- Loading interface writeback_in_monitor_bfm
+-- Loading interface writeback_out_driver_bfm
+-- Loading interface writeback_out_monitor_bfm
+-- Loading interface memaccess_in_driver_bfm
+-- Loading interface memaccess_in_monitor_bfm
+-- Loading interface memaccess_out_driver_bfm
+-- Loading interface memaccess_out_monitor_bfm
+-- Loading interface controller_in_driver_bfm
+-- Loading interface controller_in_monitor_bfm
+-- Loading interface controller_out_driver_bfm
+-- Loading interface controller_out_monitor_bfm
+-- Loading interface imem_if
+-- Loading interface data_mem_if
+-- Loading module LC3
+-- Loading module Fetch
+-- Loading module Decode
+-- Loading module Execute
+-- Loading module ALU
+-- Loading module extension
+-- Loading module MemAccess
+-- Loading module Writeback
+-- Loading module RegFile
+-- Loading module Controller_Pipeline
+-- Loading interface fetch_in_if
+-- Loading interface fetch_out_if
+-- Loading interface decode_in_if
+-- Loading interface decode_out_if
+-- Loading interface execute_in_if
+-- Loading interface execute_out_if
+-- Loading interface writeback_in_if
+-- Loading interface writeback_out_if
+-- Loading interface memaccess_in_if
+-- Loading interface memaccess_out_if
+-- Loading interface controller_in_if
+-- Loading interface controller_out_if
+** Warning: /mnt/ncsudrive/a/apsarode/ece748/proj_3/UVMF_2023.4/scripts/uvmf_template_output/project_benches/lc3/tb/testbench/hdl_top.sv(232): (vopt-8637) A modport ('initiator_port') should not be used in a hierarchical path.
+** Warning: /mnt/ncsudrive/a/apsarode/ece748/proj_3/UVMF_2023.4/scripts/uvmf_template_output/project_benches/lc3/tb/testbench/hdl_top.sv(232): (vopt-8637) A modport ('initiator_port') should not be used in a hierarchical path.
+** Warning: /mnt/ncsudrive/a/apsarode/ece748/proj_3/UVMF_2023.4/scripts/uvmf_template_output/project_benches/lc3/tb/testbench/hdl_top.sv(232): (vopt-8637) A modport ('initiator_port') should not be used in a hierarchical path.
+Incremental compilation check found no design-units have changed.
+viscom:
+VISCOM: Start time: 10:41:05 on Nov 28,2024
+
+VISCOM: QuestaSim /mnt/apps/public/COE/mg_apps/questa2024.2/questasim/linux/../linux_x86_64/VisualizerRls/bin/viscom 2024.2 at 2024.05 May 20 2024
+VISCOM: Writing design.bin
+VISCOM: Done writing design.bin
+VISCOM: End time: 10:41:11 on Nov 28,2024, Elapsed time: 0:00:06 (Process Size : 326MB, Peak Process Size : 328MB)
+
+
+Optimized design name is qrun_opt
+End time: 10:41:11 on Nov 28,2024, Elapsed time: 0:00:11
+Errors: 0, Warnings: 3

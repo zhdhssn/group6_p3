@@ -1,0 +1,7 @@
+# VISUALIZERROOT = '/mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/linux_x86_64/VisualizerRls'
+# USER = 'ajoshi32'
+# Siemens software version 2025.1_1 (Build on Feb 13 2025)
+# Unpublished work. Copyright 2025 Siemens
+
+# visualizer -viewcov ./sim_and_testplan_merged.ucdb
+# SIGINT received, exiting.

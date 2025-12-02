@@ -1,0 +1,56 @@
+uvmf:
+  util_components:
+    "fetch_predictor":
+      type: "predictor"
+      analysis_exports:
+        - name: "analysis_export"
+          type: "fetch_in_transaction"
+      analysis_ports:
+        - name: "analysis_port"
+          type: "fetch_out_transaction"
+
+  environments:
+    "fetch":
+      existing_library_component: "False"
+
+      agents:
+        - name: "fetch_in_agent"
+          type: "fetch_in"
+          initiator_responder: "INITIATOR"
+
+        - name: "fetch_out_agent"
+          type: "fetch_out"
+          initiator_responder: "RESPONDER"
+
+      analysis_components:
+        - name: "fetch_predictor"
+          type: "fetch_predictor"
+
+      scoreboards:
+        - name: "fetch_scoreboard"
+          sb_type: "uvmf_in_order_scoreboard"
+          trans_type: "fetch_out_transaction"
+
+      tlm_connections:
+        # Input agent monitor -> predictor
+        - driver: "fetch_in_agent.monitored_ap"
+          receiver: "fetch_predictor.analysis_export"
+
+        # Predictor -> scoreboard (expected side)
+        - driver: "fetch_predictor.analysis_port"
+          receiver: "fetch_scoreboard.expected_analysis_export"
+
+        # Output agent monitor -> scoreboard (actual side)
+        - driver: "fetch_out_agent.monitored_ap"
+          receiver: "fetch_scoreboard.actual_analysis_export"
+
+      config_vars:
+        - name: "has_predictor"
+          type: "bit"
+          isrand: "False"
+          value: "1"
+
+        - name: "has_coverage"
+          type: "bit"
+          isrand: "False"
+          value: "1"
