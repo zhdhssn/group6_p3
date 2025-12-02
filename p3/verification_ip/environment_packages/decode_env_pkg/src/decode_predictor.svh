@@ -97,7 +97,16 @@ class decode_predictor #(
     bit mem_control;
     bit decode_model_output;
 
+    //Harry: skip the prediction if the enable_decode is 0 since the actual output is not valid to compare with
+    if (!t.enable_decode) begin
+      `uvm_info("DECODE_PRED",
+        $sformatf("Skipping decode prediction at %0t because enable_decode=0", $time),
+        UVM_HIGH)
+      return;
+    end
+
     decode_in_ae_debug = t;
+    
 
     /*decode_in_transaction
   rand bit [15:0] npc_in ;

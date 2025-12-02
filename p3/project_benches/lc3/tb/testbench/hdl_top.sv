@@ -33,7 +33,7 @@ import uvmf_base_pkg_hdl::*;
   // tbx clkgen
   initial begin
     clk = 0;
-    #100ns; //Harry: wait the reset to be disasserted so the there wont be any early comparison 
+    #100ns; //Harry: wait the reset to be disasserted so that there wont be any early comparison 
     forever begin
       clk = ~clk;
       #5ns;
