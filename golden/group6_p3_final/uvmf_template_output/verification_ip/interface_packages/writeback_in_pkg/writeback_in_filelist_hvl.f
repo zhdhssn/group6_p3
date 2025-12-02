@@ -1,1 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/writeback_in_pkg/writeback_in_pkg.sv

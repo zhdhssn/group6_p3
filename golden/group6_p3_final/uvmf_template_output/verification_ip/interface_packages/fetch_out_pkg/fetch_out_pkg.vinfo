@@ -1,4 +1,0 @@
-@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
-@use fetch_out_pkg_hdl.vinfo
-+incdir+@vinfodir
-fetch_out_pkg.sv

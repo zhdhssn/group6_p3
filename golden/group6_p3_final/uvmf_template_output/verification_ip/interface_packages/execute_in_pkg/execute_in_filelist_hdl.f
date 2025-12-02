@@ -1,1 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/execute_in_pkg/execute_in_pkg_hdl.sv
