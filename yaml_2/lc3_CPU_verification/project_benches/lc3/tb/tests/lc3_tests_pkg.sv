@@ -63,6 +63,8 @@ package lc3_tests_pkg;
    `include "src/test_top.svh"
    `include "src/register_test.svh"
    `include "src/example_derived_test.svh"
+  //Harry: add the single ADD instruction test -> to test the top-level integration
+   `include "src/singleADDinstr_test.svh"
 
   // pragma uvmf custom package_item_additional begin
   // UVMF_CHANGE_ME : When adding new tests to the src directory

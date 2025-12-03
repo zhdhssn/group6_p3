@@ -70,6 +70,9 @@ package imem_pkg;
    //    the new sequence after any base sequences of the new sequence.
    // pragma uvmf custom package_item_additional end
 
+   //Harry: add the single ADD instruction sequence
+   `include "src/imem_responder_singleADDinstr_sequence.svh"
+
 endpackage
 
 // pragma uvmf custom external begin
