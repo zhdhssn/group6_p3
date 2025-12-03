@@ -59,16 +59,39 @@ import uvmf_base_pkg_hdl::*;
   // The signal bundle, _if, contains signals to be connected to the DUT.
   // The monitor, monitor_bfm, observes the bus, _if, and captures transactions.
   // The driver, driver_bfm, drives transactions onto the bus, _if.
+
+//Harry: connect internal signal in the DUT to testbench's env bus so that 
+//1. we can capture signals among the stages
+//2. then bfm beblow can convert the signals to structs
+//3. and then monitor can convert the struct to transactions
+//4. after that monitor can send the transactions to the predictor for prediction, and so on...
+
   fetch_in_if  fetch_env_fetch_in_agent_bus(
      // pragma uvmf custom fetch_env_fetch_in_agent_bus_connections begin
-     .clock(clk), .reset(rst)
+     .clock(clk), 
+     .reset(rst), 
+     .enable_updatePC(dut.enable_updatePC), 
+     .enable_fetch(dut.enable_fetch), 
+     .br_taken(dut.br_taken), 
+     .taddr(dut.taddr)
      // pragma uvmf custom fetch_env_fetch_in_agent_bus_connections end
      );
   fetch_out_if  fetch_env_fetch_out_agent_bus(
      // pragma uvmf custom fetch_env_fetch_out_agent_bus_connections begin
-     .clock(clk), .reset(rst)
+     .clock(clk), 
+     .reset(rst), 
+     .npc(dut.npc_out_fetch), //need check if this is correct
+     .pc(dut.pc), 
+     .instrmem_rd(dut.instrmem_rd) //need check if this is correct
      // pragma uvmf custom fetch_env_fetch_out_agent_bus_connections end
      );
+
+
+//======================================================================================
+//Harry: I connect the wire above based on what TopLevelLC3.v shows in it's sub-block, 
+//I believe we might need to refer to that but need someone check again
+//you might want to do the same for the following interfaces
+//======================================================================================
   decode_in_if  decode_env_decode_in_agent_bus(
      // pragma uvmf custom decode_env_decode_in_agent_bus_connections begin
      .clock(clk), .reset(rst)
@@ -150,8 +173,26 @@ import uvmf_base_pkg_hdl::*;
   // UVMF_CHANGE_ME : Add DUT and connect to signals in _bus interfaces listed above
   // Instantiate your DUT here
   // These DUT's instantiated to show verilog and vhdl instantiation
-  verilog_dut         dut_verilog(   .clk(clk), .rst(rst), .in_signal(vhdl_to_verilog_signal), .out_signal(verilog_to_vhdl_signal));
-  vhdl_dut            dut_vhdl   (   .clk(clk), .rst(rst), .in_signal(verilog_to_vhdl_signal), .out_signal(vhdl_to_verilog_signal));
+//   verilog_dut         dut_verilog(   .clk(clk), .rst(rst), .in_signal(vhdl_to_verilog_signal), .out_signal(verilog_to_vhdl_signal));
+//   vhdl_dut            dut_vhdl   (   .clk(clk), .rst(rst), .in_signal(verilog_to_vhdl_signal), .out_signal(vhdl_to_verilog_signal));
+
+   //Harry: instantiate the LC3 DUT based on the following sequence(same as TopLevelLC3.v)
+   // clock, reset, pc, instrmem_rd, Instr_dout, Data_addr, complete_instr, complete_data,  
+	// Data_din, Data_dout, Data_rd	
+   //DUT only interact with imem and dmem
+   LC3 dut(
+    .clock(clk),
+    .reset(rst),
+    .pc(imem_agent_bus.pc),
+    .instrmem_rd(imem_agent_bus.instrmem_rd),
+    .Instr_dout(imem_agent_bus.Instr_dout),
+    .Data_addr(dmem_agent_bus.Data_addr),
+    .complete_instr(imem_agent_bus.complete_instr),
+    .complete_data(dmem_agent_bus.complete_data),
+    .Data_din(dmem_agent_bus.Data_din),
+    .Data_dout(dmem_agent_bus.Data_dout),
+    .Data_rd(dmem_agent_bus.Data_rd)
+   );
   // pragma uvmf custom dut_instantiation end
 
   initial begin      // tbx vif_binding_block 
