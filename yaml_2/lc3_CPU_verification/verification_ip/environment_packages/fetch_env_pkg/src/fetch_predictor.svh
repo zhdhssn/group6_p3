@@ -94,12 +94,29 @@ class fetch_predictor #(
     `uvm_info("PRED", "Transaction Received through fetch_in_ae", UVM_MEDIUM)
     `uvm_info("PRED", {"            Data: ",t.convert2string()}, UVM_FULL)
     // Construct one of each output transaction type.
+    //Harry: feel that the sb_ap_output is not good naming, maybe pred_ap_output migght be a better name but it's not a big deal
     fetch_sb_ap_output_transaction = fetch_sb_ap_output_transaction_t::type_id::create("fetch_sb_ap_output_transaction");
     //  UVMF_CHANGE_ME: Implement predictor model here.  
-    `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
-    `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "UVMF_CHANGE_ME: The fetch_predictor::write_fetch_in_ae function needs to be completed with DUT prediction model",UVM_NONE)
-    `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
- 
+    // `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
+    // `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "UVMF_CHANGE_ME: The fetch_predictor::write_fetch_in_ae function needs to be completed with DUT prediction model",UVM_NONE)
+    // `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
+    
+    //Harry: integrate the given predictor model in the fetch in predictor
+    if(fetch_model(
+                  t.enable_updatePC, 
+                  t.enable_fetch, 
+                  t.br_taken, 
+                  t.taddr, 
+                  fetch_sb_ap_output_transaction.npc,
+                  fetch_sb_ap_output_transaction.pc, 
+                  fetch_sb_ap_output_transaction.instrmem_rd)) begin
+                    //Harry: print out the predicted values
+                    `uvm_info("PRED", $sformatf("Harry->Fetch prediction successful! \n Predicted values: npc = %h, pc = %h, instrmem_rd = %b", fetch_sb_ap_output_transaction.npc, fetch_sb_ap_output_transaction.pc, fetch_sb_ap_output_transaction.instrmem_rd), UVM_HIGH);
+                  end
+                  else begin 
+                    `uvm_error("PRED", "Harry->Fetch prediction failed!");
+                  end
+
     // Code for sending output transaction out through fetch_sb_ap
     // Please note that each broadcasted transaction should be a different object than previously 
     // broadcasted transactions.  Creation of a different object is done by constructing the transaction 
