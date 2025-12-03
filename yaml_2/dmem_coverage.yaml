@@ -1,0 +1,7 @@
+uvmf:
+  util_components:
+    "dmem_coverage":
+      type: "coverage"
+      analysis_exports:
+      - name: "dmem_coverage_ae"
+        type: "dmem_transaction"

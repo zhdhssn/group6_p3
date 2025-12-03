@@ -1,0 +1,56 @@
+uvmf:
+  interfaces:
+    "memaccess_in":
+      clock: "clock"
+      reset: "reset"
+      reset_assertion_level: "True"
+      veloce_ready: "True"
+
+      ports:
+      - dir: "output"
+        name: "mem_state"
+        width: "2"
+        reset_value: "'bz"
+      - dir: "output"
+        name: "M_Control"
+        width: "1"
+        reset_value: "'bz"
+      - dir: "output"
+        name: M_Data
+        width: '16'
+        reset_value: "'bz"
+      - dir: "output"
+        name: "M_Addr"
+        width: "16"
+        reset_value: "'bz"
+      - dir: "output"
+        name: "DMem_dout"
+        width: "16"
+        reset_value: "'bz"
+
+      transaction_vars:
+
+      - name: "mem_state"
+        type: "bit [1:0]"
+        isrand: "False"
+        iscompare: "True"
+
+      - name: "M_Control"
+        type: "bit"
+        isrand: "False"
+        iscompare: "True"
+
+      - name: "M_Data"
+        type: "bit [15:0]"
+        isrand: "False"
+        iscompare: "True"
+
+      - name: "M_Addr"
+        type: "bit [15:0]"
+        isrand: "False"
+        iscompare: "True"
+
+      - name: "DMem_dout"
+        type: "bit [15:0]"
+        isrand: "False"
+        iscompare: "True"

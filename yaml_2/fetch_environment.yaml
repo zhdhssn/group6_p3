@@ -1,0 +1,33 @@
+uvmf:
+  environments:
+    "fetch":
+      imports:
+        - name: "lc3_prediction_pkg"
+
+      agents:
+        - name: "fetch_in_agent"
+          type: "fetch_in"
+        - name: "fetch_out_agent"
+          type: "fetch_out"
+
+      analysis_components:
+        - name: "fetch_pred"
+          type: "fetch_predictor"
+
+      scoreboards:
+        - name: "fetch_scoreboard"
+          sb_type: "uvmf_in_order_scoreboard"
+          trans_type: "fetch_out_transaction"
+
+      tlm_connections:
+        # Input agent monitor -> predictor
+        - driver: "fetch_in_agent.monitored_ap"
+          receiver: "fetch_pred.fetch_in_ae"
+
+        # Predictor -> scoreboard (expected side)
+        - driver: "fetch_pred.fetch_sb_ap"
+          receiver: "fetch_scoreboard.expected_analysis_export"
+
+        # Output agent monitor -> scoreboard (actual side)
+        - driver: "fetch_out_agent.monitored_ap"
+          receiver: "fetch_scoreboard.actual_analysis_export"

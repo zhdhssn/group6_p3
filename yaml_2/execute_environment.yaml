@@ -1,0 +1,28 @@
+uvmf:
+  environments:
+    "execute":
+      imports:
+      - name: "lc3_prediction_pkg"
+
+      agents:
+      - name: "execute_in_agent"
+        type: "execute_in"
+      - name: "execute_out_agent"
+        type: "execute_out"
+
+      analysis_components:
+      - name: "execute_pred"
+        type: "execute_predictor"
+
+      scoreboards:
+      - name: "execute_scoreboard"
+        sb_type: "uvmf_in_order_scoreboard"
+        trans_type: "execute_out_transaction"
+
+      tlm_connections:
+      - driver: "execute_in_agent.monitored_ap"
+        receiver: "execute_pred.execute_in_ae"
+      - driver: "execute_pred.execute_sb_ap"
+        receiver: "execute_scoreboard.expected_analysis_export"
+      - driver: "execute_out_agent.monitored_ap"
+        receiver: "execute_scoreboard.actual_analysis_export"

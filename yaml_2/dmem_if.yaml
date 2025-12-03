@@ -1,0 +1,59 @@
+uvmf:
+  interfaces:
+    "dmem":
+      clock: "clock"
+      reset: "reset"
+      reset_assertion_level: "True"
+      ports:
+      - dir: "input"
+        name: "complete_data"
+        width: "1"
+        reset_value: "'bz"
+      - dir: "input"
+        name: "Data_dout"
+        width: "16"
+        reset_value: "'bz"
+      - dir: "output"
+        name: "Data_din"
+        width: "16"
+        reset_value: "'bz"
+      - dir: "output"
+        name: "Data_rd"
+        width: "1"
+        reset_value: "'bz"
+      - dir: "output"
+        name: "Data_addr"
+        width: "16"
+        reset_value: "'bz"
+      
+      transaction_constraints:
+      - name: wait_complete_constraint
+        value: "{ wait_complete > 0 ; wait_complete < 6;}"
+      - name: wait_complete_constraint_2
+        value: "{ wait_complete dist {0:=90,1:=40,2:=25,3:=15,4:=10,5:=10};}"
+
+      transaction_vars:
+      - name: "complete_data"
+        type: bit
+        isrand: "False"
+        iscompare: "False"
+      - name: wait_complete
+        type: int
+        isrand: 'True'
+        iscompare: 'False'
+      - name: "Data_dout"
+        type: bit [15:0]
+        isrand: "True"
+        iscompare: "False"
+      - name: "Data_din"
+        type: bit [15:0]
+        isrand: "False"
+        iscompare: "False"
+      - name: "Data_rd"
+        type: bit
+        isrand: "False"
+        iscompare: "False"
+      - name: "Data_addr"
+        type: bit [15:0]
+        isrand: "False"
+        iscompare: "False"

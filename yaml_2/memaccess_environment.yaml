@@ -1,0 +1,27 @@
+uvmf:
+  environments:
+    "memaccess":
+      imports:
+      - name: "lc3_prediction_pkg"
+      agents:
+      - name: "memaccess_in_agent"
+        type: "memaccess_in"
+      - name: "memaccess_out_agent"
+        type: "memaccess_out"
+
+      analysis_components:
+      - name: "memaccess_pred"
+        type: "memaccess_predictor"
+
+      scoreboards:
+      - name: "memaccess_scoreboard"
+        sb_type: "uvmf_in_order_scoreboard"
+        trans_type: "memaccess_out_transaction"
+
+      tlm_connections:
+      - driver: "memaccess_in_agent.monitored_ap"
+        receiver: "memaccess_pred.memaccess_in_ae"
+      - driver: "memaccess_pred.memaccess_sb_ap"
+        receiver: "memaccess_scoreboard.expected_analysis_export"
+      - driver: "memaccess_out_agent.monitored_ap"
+        receiver: "memaccess_scoreboard.actual_analysis_export"

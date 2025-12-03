@@ -1,0 +1,27 @@
+uvmf:
+  environments:
+    "controller" :
+      imports:
+        - name: "lc3_prediction_pkg"
+      agents :
+        - name: "controller_in_agent" 
+          type: "controller_in"
+        - name: "controller_out_agent" 
+          type: "controller_out"
+ ## Analysis components are defined externally          
+      analysis_components :
+        - name: "controller_pred"
+          type: "controller_predictor"
+ ## Each scoreboard is
+      scoreboards : 
+        - name: "controller_scoreboard"
+          sb_type: "uvmf_in_order_race_scoreboard"
+          trans_type: "controller_out_transaction"
+## Define internal TLM
+      tlm_connections :
+        - driver:   "controller_in_agent.monitored_ap"
+          receiver: "controller_pred.controller_in_ae"
+        - driver:   "controller_pred.controller_sb_ap"
+          receiver: "controller_scoreboard.expected_analysis_export"  
+        - driver:   "controller_out_agent.monitored_ap"
+          receiver: "controller_scoreboard.actual_analysis_export"

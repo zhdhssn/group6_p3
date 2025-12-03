@@ -1,0 +1,27 @@
+uvmf:
+  environments:
+    "decode":
+      imports:
+        - name: "lc3_prediction_pkg"
+      agents:
+        - name: "decode_in_agent"
+          type: "decode_in"
+        - name: "decode_out_agent"
+          type: "decode_out"
+      
+      analysis_components:
+        - name: "decode_pred"
+          type: "decode_predictor"
+
+      scoreboards:
+        - name: "decode_scoreboard"
+          sb_type: "uvmf_in_order_scoreboard"
+          trans_type: "decode_out_transaction"
+
+      tlm_connections:
+        - driver: "decode_in_agent.monitored_ap"
+          receiver: "decode_pred.decode_in_ae"
+        - driver: "decode_pred.decode_sb_ap"
+          receiver: "decode_scoreboard.expected_analysis_export"
+        - driver: "decode_out_agent.monitored_ap"
+          receiver: "decode_scoreboard.actual_analysis_export"

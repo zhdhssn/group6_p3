@@ -1,0 +1,53 @@
+uvmf:
+  interfaces:
+    "fetch_out":
+      clock: "clock"
+      reset: "reset"
+      reset_assertion_level: "True"
+      veloce_ready: "True"
+
+      ports:
+        - name: "npc"   
+          width: "16"        
+          dir: "input" 
+          reset_value: "'bz"
+        - name: "pc"   
+          width: "16"        
+          dir: "input" 
+          reset_value: "'bz"
+        - name: "instrmem_rd"   
+          width: "1"        
+          dir: "input" 
+          reset_value: "'bz"
+
+      transaction_vars:
+        
+        - name: "npc"  
+          type: "bit [15:0]"
+          isrand: "False"
+          iscompare: "True" 
+
+        - name: "pc"  
+          type: "bit [15:0]"
+          isrand: "False"
+          iscompare: "True" 
+
+        - name: "instrmem_rd"  
+          type: "bit"
+          isrand: "False"
+          iscompare: "True" 
+
+        - name: "start_time"  
+          type: "time" 
+          isrand: "False"
+          iscompare: "False"
+        
+        - name: "end_time"  
+          type: "time" 
+          isrand: "False"
+          iscompare: "False"
+        
+        - name: "transaction_view_h"
+          type: "int" 
+          isrand: "False"
+          iscompare: "False"

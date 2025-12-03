@@ -1,0 +1,48 @@
+# The purpose of this file is meant to provide a
+# starting point for the creation of a new YAML interface
+# description. Uncomment what you require to define a
+# given interface YAML file.
+
+uvmf:
+  interfaces:
+    "memaccess_out":
+      clock: "clock"
+      reset: "reset"
+      reset_assertion_level: "True"
+      veloce_ready: "True"
+
+      ports:
+        - name: "DMem_addr"   
+          width: "16"        
+          dir: "input"
+          reset_value: "'bz"
+        - name: "DMem_rd"   
+          width: "1"        
+          dir: "input"
+          reset_value: "'bz"
+        - name: "DMem_din"   
+          width: "16"        
+          dir: "input"
+          reset_value: "'bz"
+        - name: "memout"   
+          width: "16"        
+          dir: "input"
+          reset_value: "'bz"
+
+      transaction_vars:
+        - name: "DMem_addr"  
+          type: "bit [15:0]"
+          isrand: "False"
+          iscompare: "True"
+        - name: "DMem_rd"  
+          type: "bit"
+          isrand: "False"
+          iscompare: "True"
+        - name: "DMem_din"  
+          type: "bit [15:0]"
+          isrand: "False"
+          iscompare: "True"
+        - name: "memout"  
+          type: "bit [15:0]"
+          isrand: "False"
+          iscompare: "True"

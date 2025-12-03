@@ -1,0 +1,28 @@
+# Writeback environment
+# No stages will have configuration variables
+uvmf:
+  environments:
+    "writeback":
+      imports:
+        - name: "lc3_prediction_pkg"
+      agents:
+        - name: "writeback_in_agent"
+          type: "writeback_in"
+        - name: "writeback_out_agent"
+          type: "writeback_out"
+
+      analysis_components:
+        - name: "writeback_pred"
+          type: "writeback_predictor"
+      scoreboards:
+        - name: "writeback_scoreboard"
+          sb_type: "uvmf_in_order_scoreboard"
+          trans_type: "writeback_out_transaction"
+
+      tlm_connections:
+        - driver: "writeback_in_agent.monitored_ap"
+          receiver: "writeback_pred.writeback_in_ae"
+        - driver: "writeback_pred.writeback_sb_ap"
+          receiver: "writeback_scoreboard.expected_analysis_export"
+        - driver: "writeback_out_agent.monitored_ap"
+          receiver: "writeback_scoreboard.actual_analysis_export"

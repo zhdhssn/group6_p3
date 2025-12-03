@@ -1,0 +1,140 @@
+uvmf:
+  interfaces:
+    "execute_in":
+      clock: "clock"
+      reset: "reset"
+      reset_assertion_level: "True"
+      veloce_ready: "True"
+
+      ports:
+      - dir: "output"
+        name: enable_execute
+        width: "1"
+        reset_value: "'bz"
+      - dir: "output"
+        name: E_control
+        width: "6"
+        reset_value: "'bz"
+      - dir: "output"
+        name: bypass_alu_1
+        width: "1"
+        reset_value: "'bz"
+      - dir: "output"
+        name: bypass_alu_2
+        width: "1"
+        reset_value: "'bz"
+      - dir: "output"
+        name: bypass_mem_1
+        width: "1"
+        reset_value: "'bz"
+      - dir: "output"
+        name: bypass_mem_2
+        width: "1"
+        reset_value: "'bz"
+      - dir: "output"
+        name: VSR1
+        width: "16"
+        reset_value: "'bz"
+      - dir: "output"
+        name: VSR2
+        width: "16"
+        reset_value: "'bz"
+      - dir: "output"
+        name: Mem_Bypass_Val
+        width: "16"
+        reset_value: "'bz"
+      - dir: "output"
+        name: IR
+        width: "16"
+        reset_value: "'bz"
+      - dir: "output"
+        name: npc_in
+        width: "16"
+        reset_value: "'bz"
+      - dir: "output"
+        name: Mem_Control_in
+        width: "1"
+        reset_value: "'bz"
+      - dir: "output"
+        name: W_Control_in
+        width: "2"
+        reset_value: "'bz"
+
+      transaction_vars:
+      - name: "E_control"
+        type: "bit [5:0]"
+        isrand: "False"
+        iscompare: "True"
+
+      - name: "IR"
+        type: "bit [15:0]"
+        isrand: "False"
+        iscompare: "True"
+
+      - name: "npc_in"
+        type: "bit [15:0]"
+        isrand: "False"
+        iscompare: "True"  
+        
+      - name: "bypass_alu_1"
+        type: "bit"
+        isrand: "False"
+        iscompare: "True"
+        
+      - name: "bypass_alu_2"
+        type: "bit"
+        isrand: "False"
+        iscompare: "True"
+
+      - name: "bypass_mem_1"
+        type: "bit"
+        isrand: "False"
+        iscompare: "True"
+        
+      - name: "bypass_mem_2"
+        type: "bit"
+        isrand: "False"
+        iscompare: "True"
+        
+      - name: "VSR1"
+        type: "bit [15:0]"
+        isrand: "False"
+        iscompare: "True"
+        
+      - name: "VSR2"
+        type: "bit [15:0]"
+        isrand: "False"
+        iscompare: "True"
+
+      - name: "W_Control_in"
+        type: "bit [1:0]"
+        isrand: "False"
+        iscompare: "True"
+        
+      - name: "Mem_Control_in"
+        type: "bit"
+        isrand: "False"
+        iscompare: "True"
+
+      - name: "enable_execute"
+        type: "bit"
+        isrand: "False"
+        iscompare: "True"
+        
+      - name: "Mem_Bypass_Val"
+        type: "bit [15:0]"
+        isrand: "False"
+        iscompare: "True"
+      
+      - name: "start_time"
+        type: "time"
+        isrand: "False"
+        iscompare: "False"
+      - name: "end_time"
+        type: "time"
+        isrand: "False"
+        iscompare: "False"
+      - name: "transaction_view_h"
+        type: "int"
+        isrand: "False"
+        iscompare: "False"

@@ -1,0 +1,10 @@
+uvmf:
+  util_components:
+    "controller_predictor" :
+      type: "predictor"
+      analysis_exports :
+        - name: "controller_in_ae"
+          type: "controller_in_transaction"
+      analysis_ports : 
+        - name: "controller_sb_ap"
+          type: "controller_out_transaction"

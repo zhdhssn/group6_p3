@@ -1,0 +1,71 @@
+# The purpose of this file is meant to provide a
+# starting point for the creation of a new YAML interface
+# description. Uncomment what you require to define a
+# given interface YAML file.
+
+uvmf:
+  interfaces:
+    "fetch_in":
+      clock: "clock"
+      reset: "reset"
+      reset_assertion_level: "True"
+      veloce_ready: "True"
+
+      ports:
+        - name: "enable_updatePC"
+          width: "1"        
+          dir: "output" 
+          reset_value: "'bz"
+
+        - name: "enable_fetch"
+          width: "1"        
+          dir: "output" 
+          reset_value: "'bz"
+
+        - name: "br_taken"
+          width: "1"        
+          dir: "output" 
+          reset_value: "'bz"
+
+        - name: "taddr"
+          width: "16"        
+          dir: "output" 
+          reset_value: "'bz"
+
+
+
+      transaction_vars:
+        - name: "enable_updatePC"  
+          type: "bit" 
+          isrand: "False"
+          iscompare: "True" 
+
+        - name: "enable_fetch"  
+          type: "bit" 
+          isrand: "False"
+          iscompare: "True"
+
+        - name: "br_taken"  
+          type: "bit" 
+          isrand: "False"
+          iscompare: "True" 
+        
+        - name: "taddr"  
+          type: "bit [15:0]" 
+          isrand: "False"
+          iscompare: "True" 
+
+        - name: "start_time"  
+          type: "time" 
+          isrand: "False"
+          iscompare: "False"
+        
+        - name: "end_time"  
+          type: "time" 
+          isrand: "False"
+          iscompare: "False"
+        
+        - name: "transaction_view_h"
+          type: "int" 
+          isrand: "False"
+          iscompare: "False"
