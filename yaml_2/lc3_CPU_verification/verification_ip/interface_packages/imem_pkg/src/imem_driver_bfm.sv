@@ -319,20 +319,36 @@ bit first_transfer=1;
        //      Instr_dout_o <= imem_responder_struct.xyz;  //    [15:0] 
        //      complete_instr_o <= imem_responder_struct.xyz;  //     
        //    Responder inout signals
-    
+
+  //Harry;spinning until the complete_instr is 1
+  /*SPEC:complete_instr signal comes from the Instruction Memory which tells
+  the controller that the instruction that the memory access block is waiting on is
+  present at the output of IMem*/
+  //so I think only assign the signal when the complete_instr is 1
   @(posedge clock_i);
-  if (!first_transfer) begin
-    // Perform transfer response here.   
-    // Reply using data recieved in the imem_responder_struct.
-    @(posedge clock_i);
-    // Reply using data recieved in the transaction handle.
-    @(posedge clock_i);
+  while(imem_responder_struct.complete_instr == 1'b0) @(posedge clock_i);
+
+  if(imem_responder_struct.complete_instr == 1'b1) begin
+    Instr_dout_o <= imem_responder_struct.instruction;
+    complete_instr_o <= 1'b1;
+  end else begin
+    Instr_dout_o <= 'b0;
+    complete_instr_o <= 'b0;
   end
-    // Wait for next transfer then gather info from intiator about the transfer.
-    // Place the data into the imem_initiator_struct.
-    @(posedge clock_i);
-    @(posedge clock_i);
-    first_transfer = 0;
+    
+  // @(posedge clock_i);
+  // if (!first_transfer) begin
+  //   // Perform transfer response here.   
+  //   // Reply using data recieved in the imem_responder_struct.
+  //   @(posedge clock_i);
+  //   // Reply using data recieved in the transaction handle.
+  //   @(posedge clock_i);
+  // end
+  //   // Wait for next transfer then gather info from intiator about the transfer.
+  //   // Place the data into the imem_initiator_struct.
+  //   @(posedge clock_i);
+  //   @(posedge clock_i);
+  //   first_transfer = 0;
   endtask
 // pragma uvmf custom respond_and_wait_for_next_transfer end
 
