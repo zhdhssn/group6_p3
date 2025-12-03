@@ -326,7 +326,7 @@ bit first_transfer=1;
   present at the output of IMem*/
   //so I think only assign the signal when the complete_instr is 1
   @(posedge clock_i);
-  while(imem_responder_struct.complete_instr == 1'b0) @(posedge clock_i);
+  while(instrmem_rd_i == 1'b0) @(posedge clock_i);
 
   if(imem_responder_struct.complete_instr == 1'b1) begin
     Instr_dout_o <= imem_responder_struct.instruction;
