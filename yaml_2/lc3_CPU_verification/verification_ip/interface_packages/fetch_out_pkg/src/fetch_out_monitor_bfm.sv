@@ -170,11 +170,16 @@ end
     // task should return when a complete transfer has been observed.  Once this task is
     // exited with captured values, it is then called again to wait for and observe 
     // the next transfer. One clock cycle is consumed between calls to do_monitor.
-    @(posedge clock_i);
-    @(posedge clock_i);
-    @(posedge clock_i);
-    @(posedge clock_i);
-    // pragma uvmf custom do_monitor end
+  
+  //Harry: this part is kinda tricky, unlike fetch_in_monitor_bfm
+  //where we have enable_fetch signal to control the monitor,
+  //we dont have that for the output side
+  //Action Item: might need to solve the sync issue of the input and output side by importing the fetch enable signal from hdl_top.sv
+  //while(not enable)@(posedge clock_i);//keep spinning
+  fetch_out_monitor_struct.npc = npc_i;
+  fetch_out_monitor_struct.pc = pc_i;
+  fetch_out_monitor_struct.instrmem_rd = instrmem_rd_i;
+  // pragma uvmf custom do_monitor end
   endtask         
   
  
