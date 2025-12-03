@@ -1,0 +1,14 @@
+uvmf:
+  environments:
+    dmem:
+      agents:
+      - initiator_responder: RESPONDER
+        name: dmem_agent
+        type: dmem
+      
+      analysis_components: []
+      analysis_exports: []
+      analysis_ports: []
+
+      config_constraints: []
+      config_vars: []
