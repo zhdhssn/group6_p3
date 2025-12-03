@@ -1,0 +1,832 @@
+QuestaSim-64 qrun 2025.1_1 Utility 2025.02 Feb 13 2025
+Start time: 13:24:58 on Dec 02,2025
+qrun -64 -batch -visualizer -debug -permit_unmatched_virtual_intf -l run.log -f /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/sim/top.qf -sv_seed 847293 -msglimit error -msglimitcount 20 -do "set IterationLimit 140000; set NoQuitOnFinish 1; coverage attribute -name TESTNAME -value test_top; coverage save -onexit test_top.ucdb;run -all;quit" "+UVM_TESTNAME=test_top" "+UVM_VERBOSITY=UVM_LOW" -debug -qwavedb=+signal+memory=1024+report+parameter+class+assertion+uvm_schematic+msg+classmemory=1024+statictaskfunc -top hdl_top -top hvl_top -suppress 8887,2286 -designfile design.bin -covermultiuserenv 
+Creating library 'qrun.out/work'.
+QuestaSim-64 vlog 2025.1_1 Compiler 2025.02 Feb 13 2025
+Start time: 13:24:58 on Dec 02,2025
+vlog -64 "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_in_pkg" "+incdir+/mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/verilog_src/uvm-1.1d/src" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_out_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_in_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_out_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_in_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_out_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_in_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_out_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_in_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_out_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_in_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_out_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/imem_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/dmem_pkg" "+incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/tb/testbench" -msglimit error -msglimitcount 20 -covermultiuserenv -suppress 8887,2286 /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/uvmf_base_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/uvmf_base_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_in_pkg/fetch_in_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_in_pkg/fetch_in_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_in_pkg/src/fetch_in_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_in_pkg/src/fetch_in_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_in_pkg/src/fetch_in_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_out_pkg/fetch_out_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_out_pkg/fetch_out_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_out_pkg/src/fetch_out_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_out_pkg/src/fetch_out_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/fetch_out_pkg/src/fetch_out_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_in_pkg/decode_in_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_in_pkg/decode_in_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_in_pkg/src/decode_in_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_in_pkg/src/decode_in_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_in_pkg/src/decode_in_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_out_pkg/decode_out_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_out_pkg/decode_out_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_out_pkg/src/decode_out_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_out_pkg/src/decode_out_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/decode_out_pkg/src/decode_out_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_in_pkg/execute_in_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_in_pkg/execute_in_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_in_pkg/src/execute_in_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_in_pkg/src/execute_in_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_in_pkg/src/execute_in_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_out_pkg/execute_out_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_out_pkg/execute_out_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_out_pkg/src/execute_out_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_out_pkg/src/execute_out_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/execute_out_pkg/src/execute_out_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_in_pkg/writeback_in_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_in_pkg/writeback_in_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_in_pkg/src/writeback_in_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_in_pkg/src/writeback_in_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_in_pkg/src/writeback_in_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_out_pkg/writeback_out_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_out_pkg/writeback_out_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_out_pkg/src/writeback_out_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_out_pkg/src/writeback_out_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/writeback_out_pkg/src/writeback_out_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_in_pkg/memaccess_in_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_in_pkg/memaccess_in_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_in_pkg/src/memaccess_in_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_in_pkg/src/memaccess_in_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_in_pkg/src/memaccess_in_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_out_pkg/memaccess_out_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_out_pkg/memaccess_out_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_out_pkg/src/memaccess_out_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_out_pkg/src/memaccess_out_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/memaccess_out_pkg/src/memaccess_out_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_in_pkg/controller_in_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_in_pkg/controller_in_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_in_pkg/src/controller_in_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_in_pkg/src/controller_in_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_in_pkg/src/controller_in_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_out_pkg/controller_out_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_out_pkg/controller_out_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_out_pkg/src/controller_out_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_out_pkg/src/controller_out_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/controller_out_pkg/src/controller_out_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/imem_pkg/imem_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/imem_pkg/imem_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/imem_pkg/src/imem_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/imem_pkg/src/imem_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/imem_pkg/src/imem_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/dmem_pkg/dmem_pkg_hdl.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/dmem_pkg/dmem_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/dmem_pkg/src/dmem_if.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/dmem_pkg/src/dmem_monitor_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/interface_packages/dmem_pkg/src/dmem_driver_bfm.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/environment_packages/lc3_prediction_pkg/lc3_prediction_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/environment_packages/fetch_env_pkg/fetch_env_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/environment_packages/decode_env_pkg/decode_env_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/environment_packages/execute_env_pkg/execute_env_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/environment_packages/writeback_env_pkg/writeback_env_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/environment_packages/memaccess_env_pkg/memaccess_env_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/environment_packages/controller_env_pkg/controller_env_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/verification_ip/environment_packages/lc3_env_pkg/lc3_env_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/tb/parameters/lc3_parameters_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/tb/sequences/lc3_sequences_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/tb/tests/lc3_tests_pkg.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/tb/testbench/hvl_top.sv /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/rtl/verilog/data_defs.v /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/rtl/verilog/TopLevelLC3.v /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/rtl/verilog/Controller_Pipeline.v /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/rtl/verilog/Decode_Pipelined.v /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/rtl/verilog/Execute.v /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/rtl/verilog/Fetch.v /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/rtl/verilog/Mem_Access.v /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/rtl/verilog/WriteBack.v /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/tb/testbench/hdl_top.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+-- Compiling package uvmf_base_pkg_hdl
+-- Compiling package uvmf_base_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package uvmf_base_pkg_hdl
+-- Compiling package fetch_in_pkg_hdl
+-- Compiling package fetch_in_pkg
+-- Importing package uvmf_base_pkg
+-- Importing package fetch_in_pkg_hdl
+-- Compiling package fetch_in_if_sv_unit
+-- Compiling interface fetch_in_if
+-- Compiling package fetch_in_monitor_bfm_sv_unit
+-- Compiling interface fetch_in_monitor_bfm
+-- Importing package fetch_in_pkg
+-- Compiling package fetch_in_driver_bfm_sv_unit
+-- Compiling interface fetch_in_driver_bfm
+-- Compiling package fetch_out_pkg_hdl
+-- Compiling package fetch_out_pkg
+-- Importing package fetch_out_pkg_hdl
+-- Compiling package fetch_out_if_sv_unit
+-- Compiling interface fetch_out_if
+-- Compiling package fetch_out_monitor_bfm_sv_unit
+-- Compiling interface fetch_out_monitor_bfm
+-- Importing package fetch_out_pkg
+-- Compiling package fetch_out_driver_bfm_sv_unit
+-- Compiling interface fetch_out_driver_bfm
+-- Compiling package decode_in_pkg_hdl
+-- Compiling package decode_in_pkg
+-- Importing package decode_in_pkg_hdl
+-- Compiling package decode_in_if_sv_unit
+-- Compiling interface decode_in_if
+-- Compiling package decode_in_monitor_bfm_sv_unit
+-- Compiling interface decode_in_monitor_bfm
+-- Importing package decode_in_pkg
+-- Compiling package decode_in_driver_bfm_sv_unit
+-- Compiling interface decode_in_driver_bfm
+-- Compiling package decode_out_pkg_hdl
+-- Compiling package decode_out_pkg
+-- Importing package decode_out_pkg_hdl
+-- Compiling package decode_out_if_sv_unit
+-- Compiling interface decode_out_if
+-- Compiling package decode_out_monitor_bfm_sv_unit
+-- Compiling interface decode_out_monitor_bfm
+-- Importing package decode_out_pkg
+-- Compiling package decode_out_driver_bfm_sv_unit
+-- Compiling interface decode_out_driver_bfm
+-- Compiling package execute_in_pkg_hdl
+-- Compiling package execute_in_pkg
+-- Importing package execute_in_pkg_hdl
+-- Compiling package execute_in_if_sv_unit
+-- Compiling interface execute_in_if
+-- Compiling package execute_in_monitor_bfm_sv_unit
+-- Compiling interface execute_in_monitor_bfm
+-- Importing package execute_in_pkg
+-- Compiling package execute_in_driver_bfm_sv_unit
+-- Compiling interface execute_in_driver_bfm
+-- Compiling package execute_out_pkg_hdl
+-- Compiling package execute_out_pkg
+-- Importing package execute_out_pkg_hdl
+-- Compiling package execute_out_if_sv_unit
+-- Compiling interface execute_out_if
+-- Compiling package execute_out_monitor_bfm_sv_unit
+-- Compiling interface execute_out_monitor_bfm
+-- Importing package execute_out_pkg
+-- Compiling package execute_out_driver_bfm_sv_unit
+-- Compiling interface execute_out_driver_bfm
+-- Compiling package writeback_in_pkg_hdl
+-- Compiling package writeback_in_pkg
+-- Importing package writeback_in_pkg_hdl
+-- Compiling package writeback_in_if_sv_unit
+-- Compiling interface writeback_in_if
+-- Compiling package writeback_in_monitor_bfm_sv_unit
+-- Compiling interface writeback_in_monitor_bfm
+-- Importing package writeback_in_pkg
+-- Compiling package writeback_in_driver_bfm_sv_unit
+-- Compiling interface writeback_in_driver_bfm
+-- Compiling package writeback_out_pkg_hdl
+-- Compiling package writeback_out_pkg
+-- Importing package writeback_out_pkg_hdl
+-- Compiling package writeback_out_if_sv_unit
+-- Compiling interface writeback_out_if
+-- Compiling package writeback_out_monitor_bfm_sv_unit
+-- Compiling interface writeback_out_monitor_bfm
+-- Importing package writeback_out_pkg
+-- Compiling package writeback_out_driver_bfm_sv_unit
+-- Compiling interface writeback_out_driver_bfm
+-- Compiling package memaccess_in_pkg_hdl
+-- Compiling package memaccess_in_pkg
+-- Importing package memaccess_in_pkg_hdl
+-- Compiling package memaccess_in_if_sv_unit
+-- Compiling interface memaccess_in_if
+-- Compiling package memaccess_in_monitor_bfm_sv_unit
+-- Compiling interface memaccess_in_monitor_bfm
+-- Importing package memaccess_in_pkg
+-- Compiling package memaccess_in_driver_bfm_sv_unit
+-- Compiling interface memaccess_in_driver_bfm
+-- Compiling package memaccess_out_pkg_hdl
+-- Compiling package memaccess_out_pkg
+-- Importing package memaccess_out_pkg_hdl
+-- Compiling package memaccess_out_if_sv_unit
+-- Compiling interface memaccess_out_if
+-- Compiling package memaccess_out_monitor_bfm_sv_unit
+-- Compiling interface memaccess_out_monitor_bfm
+-- Importing package memaccess_out_pkg
+-- Compiling package memaccess_out_driver_bfm_sv_unit
+-- Compiling interface memaccess_out_driver_bfm
+-- Compiling package controller_in_pkg_hdl
+-- Compiling package controller_in_pkg
+-- Importing package controller_in_pkg_hdl
+-- Compiling package controller_in_if_sv_unit
+-- Compiling interface controller_in_if
+-- Compiling package controller_in_monitor_bfm_sv_unit
+-- Compiling interface controller_in_monitor_bfm
+-- Importing package controller_in_pkg
+-- Compiling package controller_in_driver_bfm_sv_unit
+-- Compiling interface controller_in_driver_bfm
+-- Compiling package controller_out_pkg_hdl
+-- Compiling package controller_out_pkg
+-- Importing package controller_out_pkg_hdl
+-- Compiling package controller_out_if_sv_unit
+-- Compiling interface controller_out_if
+-- Compiling package controller_out_monitor_bfm_sv_unit
+-- Compiling interface controller_out_monitor_bfm
+-- Importing package controller_out_pkg
+-- Compiling package controller_out_driver_bfm_sv_unit
+-- Compiling interface controller_out_driver_bfm
+-- Compiling package imem_pkg_hdl
+-- Compiling package imem_pkg
+-- Importing package imem_pkg_hdl
+-- Compiling package imem_if_sv_unit
+-- Compiling interface imem_if
+-- Compiling package imem_monitor_bfm_sv_unit
+-- Compiling interface imem_monitor_bfm
+-- Importing package imem_pkg
+-- Compiling package imem_driver_bfm_sv_unit
+-- Compiling interface imem_driver_bfm
+-- Compiling package dmem_pkg_hdl
+-- Compiling package dmem_pkg
+-- Importing package dmem_pkg_hdl
+-- Compiling package dmem_if_sv_unit
+-- Compiling interface dmem_if
+-- Compiling package dmem_monitor_bfm_sv_unit
+-- Compiling interface dmem_monitor_bfm
+-- Importing package dmem_pkg
+-- Compiling package dmem_driver_bfm_sv_unit
+-- Compiling interface dmem_driver_bfm
+-- Compiling package lc3_prediction_pkg
+-- Compiling package fetch_env_pkg
+-- Importing package lc3_prediction_pkg
+-- Compiling package decode_env_pkg
+-- Compiling package execute_env_pkg
+-- Compiling package writeback_env_pkg
+-- Compiling package memaccess_env_pkg
+-- Compiling package controller_env_pkg
+-- Compiling package lc3_env_pkg
+-- Importing package fetch_env_pkg
+-- Importing package decode_env_pkg
+-- Importing package execute_env_pkg
+-- Importing package writeback_env_pkg
+-- Importing package memaccess_env_pkg
+-- Importing package controller_env_pkg
+-- Compiling package lc3_parameters_pkg
+-- Compiling package lc3_sequences_pkg
+-- Importing package lc3_parameters_pkg
+-- Importing package lc3_env_pkg
+-- Compiling package lc3_tests_pkg
+-- Importing package lc3_sequences_pkg
+-- Compiling module hvl_top
+-- Importing package lc3_tests_pkg
+-- Compiling module LC3
+-- Compiling module Controller_Pipeline
+-- Compiling module Decode
+-- Compiling module Execute
+-- Compiling module extension
+-- Compiling module ALU
+-- Compiling module Fetch
+-- Compiling module MemAccess
+-- Compiling module Writeback
+-- Compiling module RegFile
+-- Compiling module hdl_top
+
+Top level modules:
+	hvl_top
+	hdl_top
+End time: 13:25:16 on Dec 02,2025, Elapsed time: 0:00:18
+Errors: 0, Warnings: 0
+QuestaSim-64 vcom 2025.1_1 Compiler 2025.02 Feb 13 2025
+Start time: 13:25:16 on Dec 02,2025
+vcom -64 -msglimit error -msglimitcount 20 -covermultiuserenv -suppress 8887,2286 /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/rtl/vhdl/vhdl_dut.vhd -work qrun.out/work -autoorder -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+-- Loading package STANDARD
+-- Scanning entity vhdl_dut
+-- Scanning architecture rtl of vhdl_dut
+End time: 13:25:17 on Dec 02,2025, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+QuestaSim-64 vcom 2025.1_1 Compiler 2025.02 Feb 13 2025
+Start time: 13:25:17 on Dec 02,2025
+vcom -refresh_marked -work qrun.out/work -csession=incr -statslog qrun.out/stats_log 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity vhdl_dut
+-- Compiling architecture rtl of vhdl_dut
+End time: 13:25:18 on Dec 02,2025, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2025.1_1 Compiler 2025.02 Feb 13 2025
+Start time: 13:25:19 on Dec 02,2025
+vopt -debug -msglimit error -msglimitcount 20 -debug -designfile design.bin hdl_top hvl_top -suppress 8887,2286 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+
+Top level modules:
+	hdl_top
+	hvl_top
+
+Analyzing design...
+-- Loading module hdl_top
+-- Importing package lc3_parameters_pkg
+-- Importing package uvmf_base_pkg_hdl
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Loading module hvl_top
+-- Importing package lc3_tests_pkg
+-- Importing package uvmf_base_pkg
+-- Importing package lc3_env_pkg
+-- Importing package imem_pkg
+-- Importing package imem_pkg_hdl
+-- Importing package dmem_pkg
+-- Importing package dmem_pkg_hdl
+-- Importing package fetch_env_pkg
+-- Importing package lc3_prediction_pkg
+-- Importing package fetch_in_pkg
+-- Importing package fetch_in_pkg_hdl
+-- Importing package fetch_out_pkg
+-- Importing package fetch_out_pkg_hdl
+-- Importing package decode_env_pkg
+-- Importing package decode_in_pkg
+-- Importing package decode_in_pkg_hdl
+-- Importing package decode_out_pkg
+-- Importing package decode_out_pkg_hdl
+-- Importing package execute_env_pkg
+-- Importing package execute_in_pkg
+-- Importing package execute_in_pkg_hdl
+-- Importing package execute_out_pkg
+-- Importing package execute_out_pkg_hdl
+-- Importing package writeback_env_pkg
+-- Importing package writeback_in_pkg
+-- Importing package writeback_in_pkg_hdl
+-- Importing package writeback_out_pkg
+-- Importing package writeback_out_pkg_hdl
+-- Importing package memaccess_env_pkg
+-- Importing package memaccess_in_pkg
+-- Importing package memaccess_in_pkg_hdl
+-- Importing package memaccess_out_pkg
+-- Importing package memaccess_out_pkg_hdl
+-- Importing package controller_env_pkg
+-- Importing package controller_in_pkg
+-- Importing package controller_in_pkg_hdl
+-- Importing package controller_out_pkg
+-- Importing package controller_out_pkg_hdl
+-- Importing package lc3_sequences_pkg
+-- Loading package mtiUvm.questa_uvm_pkg
+-- Loading interface imem_driver_bfm
+-- Loading interface imem_monitor_bfm
+-- Loading interface dmem_driver_bfm
+-- Loading interface dmem_monitor_bfm
+-- Loading interface fetch_in_driver_bfm
+-- Loading interface fetch_in_monitor_bfm
+-- Loading interface fetch_out_driver_bfm
+-- Loading interface fetch_out_monitor_bfm
+-- Loading interface decode_in_driver_bfm
+-- Loading interface decode_in_monitor_bfm
+-- Loading interface decode_out_driver_bfm
+-- Loading interface decode_out_monitor_bfm
+-- Loading interface execute_in_driver_bfm
+-- Loading interface execute_in_monitor_bfm
+-- Loading interface execute_out_driver_bfm
+-- Loading interface execute_out_monitor_bfm
+-- Loading interface writeback_in_driver_bfm
+-- Loading interface writeback_in_monitor_bfm
+-- Loading interface writeback_out_driver_bfm
+-- Loading interface writeback_out_monitor_bfm
+-- Loading interface memaccess_in_driver_bfm
+-- Loading interface memaccess_in_monitor_bfm
+-- Loading interface memaccess_out_driver_bfm
+-- Loading interface memaccess_out_monitor_bfm
+-- Loading interface controller_in_driver_bfm
+-- Loading interface controller_in_monitor_bfm
+-- Loading interface controller_out_driver_bfm
+-- Loading interface controller_out_monitor_bfm
+-- Loading interface imem_if
+-- Loading interface dmem_if
+-- Loading module LC3
+-- Loading module Fetch
+-- Loading module Decode
+-- Loading module Execute
+-- Loading module ALU
+-- Loading module extension
+-- Loading module MemAccess
+-- Loading module Writeback
+-- Loading module RegFile
+-- Loading module Controller_Pipeline
+-- Loading interface fetch_in_if
+-- Loading interface fetch_out_if
+-- Loading interface decode_in_if
+-- Loading interface decode_out_if
+-- Loading interface execute_in_if
+-- Loading interface execute_out_if
+-- Loading interface writeback_in_if
+-- Loading interface writeback_out_if
+-- Loading interface memaccess_in_if
+-- Loading interface memaccess_out_if
+-- Loading interface controller_in_if
+-- Loading interface controller_out_if
+Optimizing 181 design-units (inlining 10/54 module instances):
+-- Optimizing interface imem_monitor_bfm(fast)
+-- Optimizing interface imem_driver_bfm(fast)
+-- Optimizing package decode_out_driver_bfm_sv_unit(fast)
+-- Optimizing package decode_out_monitor_bfm_sv_unit(fast)
+-- Optimizing package execute_in_pkg_hdl(fast)
+-- Optimizing package execute_in_driver_bfm_sv_unit(fast)
+-- Optimizing package execute_in_monitor_bfm_sv_unit(fast)
+-- Optimizing package execute_out_pkg_hdl(fast)
+-- Optimizing package execute_out_driver_bfm_sv_unit(fast)
+-- Optimizing package execute_out_monitor_bfm_sv_unit(fast)
+-- Optimizing package writeback_in_pkg_hdl(fast)
+-- Optimizing package writeback_in_driver_bfm_sv_unit(fast)
+-- Optimizing package writeback_in_monitor_bfm_sv_unit(fast)
+-- Optimizing package writeback_out_pkg_hdl(fast)
+-- Optimizing package writeback_out_driver_bfm_sv_unit(fast)
+-- Optimizing package writeback_out_monitor_bfm_sv_unit(fast)
+-- Optimizing package memaccess_in_pkg_hdl(fast)
+-- Optimizing package memaccess_in_driver_bfm_sv_unit(fast)
+-- Optimizing package memaccess_in_monitor_bfm_sv_unit(fast)
+-- Optimizing package memaccess_out_pkg_hdl(fast)
+-- Optimizing package memaccess_out_driver_bfm_sv_unit(fast)
+-- Optimizing package memaccess_out_monitor_bfm_sv_unit(fast)
+-- Optimizing package controller_in_pkg_hdl(fast)
+-- Optimizing package controller_in_driver_bfm_sv_unit(fast)
+-- Optimizing package controller_in_monitor_bfm_sv_unit(fast)
+-- Optimizing package controller_out_pkg_hdl(fast)
+-- Optimizing package controller_out_driver_bfm_sv_unit(fast)
+-- Optimizing package controller_out_monitor_bfm_sv_unit(fast)
+-- Optimizing package imem_if_sv_unit(fast)
+-- Optimizing package dmem_if_sv_unit(fast)
+-- Optimizing package fetch_in_if_sv_unit(fast)
+-- Optimizing package fetch_out_if_sv_unit(fast)
+-- Optimizing package decode_in_if_sv_unit(fast)
+-- Optimizing package decode_out_if_sv_unit(fast)
+-- Optimizing package execute_in_if_sv_unit(fast)
+-- Optimizing package execute_out_if_sv_unit(fast)
+-- Optimizing package writeback_in_if_sv_unit(fast)
+-- Optimizing package writeback_out_if_sv_unit(fast)
+-- Optimizing package memaccess_in_if_sv_unit(fast)
+-- Optimizing package memaccess_out_if_sv_unit(fast)
+-- Optimizing package controller_in_if_sv_unit(fast)
+-- Optimizing package controller_out_if_sv_unit(fast)
+-- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+-- Optimizing package uvmf_base_pkg(fast)
+-- Optimizing package imem_pkg(fast)
+-- Optimizing package execute_in_pkg(fast)
+-- Optimizing package controller_out_pkg(fast)
+-- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+-- Optimizing interface controller_out_if(fast)
+-- Optimizing interface controller_in_if(fast)
+-- Optimizing interface memaccess_out_if(fast)
+-- Optimizing interface memaccess_in_if(fast)
+-- Optimizing interface writeback_out_if(fast)
+-- Optimizing interface writeback_in_if(fast)
+-- Optimizing interface execute_out_if(fast)
+-- Optimizing interface execute_in_if(fast)
+-- Optimizing interface decode_out_if(fast)
+-- Optimizing interface decode_in_if(fast)
+-- Optimizing interface fetch_out_if(fast)
+-- Optimizing interface fetch_in_if(fast)
+-- Optimizing interface dmem_if(fast)
+-- Optimizing interface imem_if(fast)
+-- Optimizing interface controller_out_monitor_bfm(fast)
+-- Optimizing interface controller_out_driver_bfm(fast)
+-- Optimizing interface controller_in_monitor_bfm(fast)
+-- Optimizing interface controller_in_driver_bfm(fast)
+-- Optimizing interface memaccess_out_monitor_bfm(fast)
+-- Optimizing interface memaccess_out_driver_bfm(fast)
+-- Optimizing interface memaccess_in_monitor_bfm(fast)
+-- Optimizing interface memaccess_in_driver_bfm(fast)
+-- Optimizing interface writeback_out_monitor_bfm(fast)
+-- Optimizing interface writeback_out_driver_bfm(fast)
+-- Optimizing interface writeback_in_monitor_bfm(fast)
+-- Optimizing interface writeback_in_driver_bfm(fast)
+-- Optimizing interface execute_out_monitor_bfm(fast)
+-- Optimizing interface execute_out_driver_bfm(fast)
+-- Optimizing interface execute_in_monitor_bfm(fast)
+-- Optimizing interface execute_in_driver_bfm(fast)
+-- Optimizing interface decode_out_monitor_bfm(fast)
+-- Optimizing interface decode_out_driver_bfm(fast)
+-- Optimizing interface decode_in_monitor_bfm(fast)
+-- Optimizing interface decode_in_driver_bfm(fast)
+-- Optimizing interface fetch_out_monitor_bfm(fast)
+-- Optimizing interface fetch_out_driver_bfm(fast)
+-- Optimizing interface fetch_in_monitor_bfm(fast)
+-- Optimizing interface fetch_in_driver_bfm(fast)
+-- Optimizing interface dmem_monitor_bfm(fast)
+-- Optimizing interface dmem_driver_bfm(fast)
+-- Optimizing package uvmf_base_pkg_hdl(fast)
+-- Optimizing package lc3_parameters_pkg(fast)
+-- Optimizing package imem_pkg_hdl(fast)
+-- Optimizing package imem_driver_bfm_sv_unit(fast)
+-- Optimizing package imem_monitor_bfm_sv_unit(fast)
+-- Optimizing package dmem_pkg_hdl(fast)
+-- Optimizing package dmem_driver_bfm_sv_unit(fast)
+-- Optimizing package dmem_monitor_bfm_sv_unit(fast)
+-- Optimizing package fetch_in_pkg_hdl(fast)
+-- Optimizing package fetch_in_driver_bfm_sv_unit(fast)
+-- Optimizing package fetch_in_monitor_bfm_sv_unit(fast)
+-- Optimizing package fetch_out_pkg_hdl(fast)
+-- Optimizing package fetch_out_driver_bfm_sv_unit(fast)
+-- Optimizing package fetch_out_monitor_bfm_sv_unit(fast)
+-- Optimizing package decode_in_pkg_hdl(fast)
+-- Optimizing package decode_in_driver_bfm_sv_unit(fast)
+-- Optimizing package decode_in_monitor_bfm_sv_unit(fast)
+-- Optimizing package decode_out_pkg_hdl(fast)
+-- Optimizing interface decode_in_monitor_bfm(fast__1)
+-- Optimizing interface imem_monitor_bfm(fast__1)
+-- Optimizing interface fetch_in_monitor_bfm(fast__1)
+-- Optimizing interface writeback_out_monitor_bfm(fast__1)
+-- Optimizing interface writeback_out_driver_bfm(fast__1)
+-- Optimizing interface fetch_out_monitor_bfm(fast__1)
+-- Optimizing interface execute_in_if(fast__1)
+-- Optimizing interface execute_out_if(fast__1)
+-- Optimizing interface controller_out_if(fast__1)
+-- Optimizing interface writeback_in_if(fast__1)
+-- Optimizing interface controller_in_if(fast__1)
+-- Optimizing interface decode_out_if(fast__1)
+-- Optimizing interface dmem_if(fast__1)
+-- Optimizing interface memaccess_in_if(fast__1)
+-- Optimizing interface imem_if(fast__1)
+-- Optimizing interface fetch_in_if(fast__1)
+-- Optimizing interface fetch_out_if(fast__1)
+-- Optimizing interface decode_in_if(fast__1)
+-- Optimizing interface writeback_out_if(fast__1)
+-- Optimizing interface memaccess_out_if(fast__1)
+-- Optimizing module hvl_top(fast)
+-- Optimizing package lc3_prediction_pkg(fast)
+-- Optimizing package fetch_env_pkg(fast)
+-- Optimizing package decode_env_pkg(fast)
+-- Optimizing package execute_env_pkg(fast)
+-- Optimizing package writeback_env_pkg(fast)
+-- Optimizing package memaccess_env_pkg(fast)
+-- Optimizing package controller_env_pkg(fast)
+-- Optimizing package lc3_env_pkg(fast)
+-- Optimizing package lc3_tests_pkg(fast)
+-- Optimizing interface execute_in_driver_bfm(fast__1)
+-- Optimizing interface controller_out_driver_bfm(fast__1)
+-- Optimizing interface execute_out_driver_bfm(fast__1)
+-- Optimizing interface execute_in_monitor_bfm(fast__1)
+-- Optimizing interface writeback_in_driver_bfm(fast__1)
+-- Optimizing interface execute_out_monitor_bfm(fast__1)
+-- Optimizing interface controller_out_monitor_bfm(fast__1)
+-- Optimizing interface controller_in_driver_bfm(fast__1)
+-- Optimizing interface dmem_driver_bfm(fast__1)
+-- Optimizing interface writeback_in_monitor_bfm(fast__1)
+-- Optimizing interface dmem_monitor_bfm(fast__1)
+-- Optimizing interface controller_in_monitor_bfm(fast__1)
+-- Optimizing interface decode_out_driver_bfm(fast__1)
+-- Optimizing interface decode_out_monitor_bfm(fast__1)
+-- Optimizing interface imem_driver_bfm(fast__1)
+-- Optimizing interface memaccess_in_driver_bfm(fast__1)
+-- Optimizing interface fetch_in_driver_bfm(fast__1)
+-- Optimizing interface memaccess_out_driver_bfm(fast__1)
+-- Optimizing interface memaccess_in_monitor_bfm(fast__1)
+-- Optimizing interface decode_in_driver_bfm(fast__1)
+-- Optimizing interface memaccess_out_monitor_bfm(fast__1)
+-- Optimizing interface fetch_out_driver_bfm(fast__1)
+-- Optimizing package dmem_pkg(fast)
+-- Optimizing package fetch_in_pkg(fast)
+-- Optimizing package fetch_out_pkg(fast)
+-- Optimizing package decode_in_pkg(fast)
+-- Optimizing package decode_out_pkg(fast)
+-- Optimizing package execute_out_pkg(fast)
+-- Optimizing package writeback_in_pkg(fast)
+-- Optimizing package writeback_out_pkg(fast)
+-- Optimizing package memaccess_in_pkg(fast)
+-- Optimizing package memaccess_out_pkg(fast)
+-- Optimizing package controller_in_pkg(fast)
+-- Optimizing package lc3_sequences_pkg(fast)
+-- Inlining module Fetch(fast)
+-- Inlining module Decode(fast)
+-- Inlining module ALU(fast)
+-- Inlining module extension(fast)
+-- Inlining module Execute(fast)
+-- Inlining module MemAccess(fast)
+-- Inlining module RegFile(fast)
+-- Inlining module Writeback(fast)
+-- Inlining module Controller_Pipeline(fast)
+-- Inlining module LC3(fast)
+-- Optimizing module hdl_top(fast)
+viscom:
+VISCOM: Start time: 13:25:29 on Dec 02,2025
+
+VISCOM: QuestaSim /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/linux_x86_64/VisualizerRls/bin/viscom 2025.1_1 at 2025.02 Feb 13 2025
+VISCOM: Writing design.bin
+VISCOM: Done writing design.bin
+VISCOM: End time: 13:25:51 on Dec 02,2025, Elapsed time: 0:00:22 (Process Size : 345MB, Peak Process Size : 346MB)
+
+
+Optimized design name is qrun_opt
+End time: 13:25:51 on Dec 02,2025, Elapsed time: 0:00:32
+Errors: 0, Warnings: 0
+# vsim -64 -batch -permit_unmatched_virtual_intf -sv_seed 847293 -msglimit error -msglimitcount 20 "+UVM_TESTNAME=test_top" "+UVM_VERBOSITY=UVM_LOW" -qwavedb=+signal+memory=1024+report+parameter+class+assertion+uvm_schematic+msg+classmemory=1024+statictaskfunc -lib qrun.out/work -do "set IterationLimit 140000; set NoQuitOnFinish 1; coverage attribute -name TESTNAME -value test_top; coverage save -onexit test_top.ucdb;run -all;quit" -statslog qrun.out/stats_log qrun_opt -suppress 8887,2286 -appendlog -l run.log 
+# Start time: 13:25:52 on Dec 02,2025
+# Loading Siemens Visualizer shared object '/mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/bin/../linux_x86_64/VisualizerRls/bin/libqvisualizer.so'
+# //  Questa Sim-64
+# //  Version 2025.1_1 linux_x86_64 Feb 13 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.fetch_in_monitor_bfm(fast)
+# Loading work.fetch_out_monitor_bfm(fast)
+# Loading work.decode_in_monitor_bfm(fast)
+# Loading work.decode_out_monitor_bfm(fast)
+# Loading work.execute_in_monitor_bfm(fast)
+# Loading work.execute_out_monitor_bfm(fast)
+# Loading work.writeback_in_monitor_bfm(fast)
+# Loading work.writeback_out_monitor_bfm(fast)
+# Loading work.memaccess_in_monitor_bfm(fast)
+# Loading work.memaccess_out_monitor_bfm(fast)
+# Loading work.controller_in_monitor_bfm(fast)
+# Loading work.controller_out_monitor_bfm(fast)
+# Loading work.imem_monitor_bfm(fast)
+# Loading work.dmem_monitor_bfm(fast)
+# Loading work.fetch_in_driver_bfm(fast)
+# Loading work.fetch_out_driver_bfm(fast)
+# Loading work.decode_in_driver_bfm(fast)
+# Loading work.decode_out_driver_bfm(fast)
+# Loading work.execute_in_driver_bfm(fast)
+# Loading work.execute_out_driver_bfm(fast)
+# Loading work.writeback_in_driver_bfm(fast)
+# Loading work.writeback_out_driver_bfm(fast)
+# Loading work.memaccess_in_driver_bfm(fast)
+# Loading work.memaccess_out_driver_bfm(fast)
+# Loading work.controller_in_driver_bfm(fast)
+# Loading work.controller_out_driver_bfm(fast)
+# Loading work.imem_driver_bfm(fast)
+# Loading work.dmem_driver_bfm(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.uvmf_base_pkg_hdl(fast)
+# Loading work.lc3_parameters_pkg(fast)
+# Loading work.hdl_top(fast)
+# Loading work.imem_pkg_hdl(fast)
+# Loading work.imem_if_sv_unit(fast)
+# Loading work.imem_if(fast__1)
+# Loading work.dmem_pkg_hdl(fast)
+# Loading work.dmem_if_sv_unit(fast)
+# Loading work.dmem_if(fast__1)
+# Loading work.fetch_in_pkg_hdl(fast)
+# Loading work.uvmf_base_pkg(fast)
+# Loading work.fetch_in_pkg(fast)
+# Loading work.fetch_in_monitor_bfm_sv_unit(fast)
+# Loading work.fetch_in_monitor_bfm(fast__1)
+# Loading work.fetch_out_pkg_hdl(fast)
+# Loading work.fetch_out_pkg(fast)
+# Loading work.fetch_out_monitor_bfm_sv_unit(fast)
+# Loading work.fetch_out_monitor_bfm(fast__1)
+# Loading work.decode_in_pkg_hdl(fast)
+# Loading work.decode_in_pkg(fast)
+# Loading work.decode_in_monitor_bfm_sv_unit(fast)
+# Loading work.decode_in_monitor_bfm(fast__1)
+# Loading work.decode_out_pkg_hdl(fast)
+# Loading work.decode_out_pkg(fast)
+# Loading work.decode_out_monitor_bfm_sv_unit(fast)
+# Loading work.decode_out_monitor_bfm(fast__1)
+# Loading work.execute_in_pkg_hdl(fast)
+# Loading work.execute_in_pkg(fast)
+# Loading work.execute_in_monitor_bfm_sv_unit(fast)
+# Loading work.execute_in_monitor_bfm(fast__1)
+# Loading work.execute_out_pkg_hdl(fast)
+# Loading work.execute_out_pkg(fast)
+# Loading work.execute_out_monitor_bfm_sv_unit(fast)
+# Loading work.execute_out_monitor_bfm(fast__1)
+# Loading work.writeback_in_pkg_hdl(fast)
+# Loading work.writeback_in_pkg(fast)
+# Loading work.writeback_in_monitor_bfm_sv_unit(fast)
+# Loading work.writeback_in_monitor_bfm(fast__1)
+# Loading work.writeback_out_pkg_hdl(fast)
+# Loading work.writeback_out_pkg(fast)
+# Loading work.writeback_out_monitor_bfm_sv_unit(fast)
+# Loading work.writeback_out_monitor_bfm(fast__1)
+# Loading work.memaccess_in_pkg_hdl(fast)
+# Loading work.memaccess_in_pkg(fast)
+# Loading work.memaccess_in_monitor_bfm_sv_unit(fast)
+# Loading work.memaccess_in_monitor_bfm(fast__1)
+# Loading work.memaccess_out_pkg_hdl(fast)
+# Loading work.memaccess_out_pkg(fast)
+# Loading work.memaccess_out_monitor_bfm_sv_unit(fast)
+# Loading work.memaccess_out_monitor_bfm(fast__1)
+# Loading work.controller_in_pkg_hdl(fast)
+# Loading work.controller_in_pkg(fast)
+# Loading work.controller_in_monitor_bfm_sv_unit(fast)
+# Loading work.controller_in_monitor_bfm(fast__1)
+# Loading work.controller_out_pkg_hdl(fast)
+# Loading work.controller_out_pkg(fast)
+# Loading work.controller_out_monitor_bfm_sv_unit(fast)
+# Loading work.controller_out_monitor_bfm(fast__1)
+# Loading work.imem_pkg(fast)
+# Loading work.imem_monitor_bfm_sv_unit(fast)
+# Loading work.imem_monitor_bfm(fast__1)
+# Loading work.dmem_pkg(fast)
+# Loading work.dmem_monitor_bfm_sv_unit(fast)
+# Loading work.dmem_monitor_bfm(fast__1)
+# Loading work.fetch_in_driver_bfm_sv_unit(fast)
+# Loading work.fetch_in_driver_bfm(fast__1)
+# Loading work.fetch_out_driver_bfm_sv_unit(fast)
+# Loading work.fetch_out_driver_bfm(fast__1)
+# Loading work.decode_in_driver_bfm_sv_unit(fast)
+# Loading work.decode_in_driver_bfm(fast__1)
+# Loading work.decode_out_driver_bfm_sv_unit(fast)
+# Loading work.decode_out_driver_bfm(fast__1)
+# Loading work.execute_in_driver_bfm_sv_unit(fast)
+# Loading work.execute_in_driver_bfm(fast__1)
+# Loading work.execute_out_driver_bfm_sv_unit(fast)
+# Loading work.execute_out_driver_bfm(fast__1)
+# Loading work.writeback_in_driver_bfm_sv_unit(fast)
+# Loading work.writeback_in_driver_bfm(fast__1)
+# Loading work.writeback_out_driver_bfm_sv_unit(fast)
+# Loading work.writeback_out_driver_bfm(fast__1)
+# Loading work.memaccess_in_driver_bfm_sv_unit(fast)
+# Loading work.memaccess_in_driver_bfm(fast__1)
+# Loading work.memaccess_out_driver_bfm_sv_unit(fast)
+# Loading work.memaccess_out_driver_bfm(fast__1)
+# Loading work.controller_in_driver_bfm_sv_unit(fast)
+# Loading work.controller_in_driver_bfm(fast__1)
+# Loading work.controller_out_driver_bfm_sv_unit(fast)
+# Loading work.controller_out_driver_bfm(fast__1)
+# Loading work.imem_driver_bfm_sv_unit(fast)
+# Loading work.imem_driver_bfm(fast__1)
+# Loading work.dmem_driver_bfm_sv_unit(fast)
+# Loading work.dmem_driver_bfm(fast__1)
+# Loading work.controller_out_if_sv_unit(fast)
+# Loading work.controller_out_if(fast__1)
+# Loading work.controller_in_if_sv_unit(fast)
+# Loading work.controller_in_if(fast__1)
+# Loading work.memaccess_out_if_sv_unit(fast)
+# Loading work.memaccess_out_if(fast__1)
+# Loading work.memaccess_in_if_sv_unit(fast)
+# Loading work.memaccess_in_if(fast__1)
+# Loading work.writeback_out_if_sv_unit(fast)
+# Loading work.writeback_out_if(fast__1)
+# Loading work.writeback_in_if_sv_unit(fast)
+# Loading work.writeback_in_if(fast__1)
+# Loading work.execute_out_if_sv_unit(fast)
+# Loading work.execute_out_if(fast__1)
+# Loading work.execute_in_if_sv_unit(fast)
+# Loading work.execute_in_if(fast__1)
+# Loading work.decode_out_if_sv_unit(fast)
+# Loading work.decode_out_if(fast__1)
+# Loading work.decode_in_if_sv_unit(fast)
+# Loading work.decode_in_if(fast__1)
+# Loading work.fetch_out_if_sv_unit(fast)
+# Loading work.fetch_out_if(fast__1)
+# Loading work.fetch_in_if_sv_unit(fast)
+# Loading work.fetch_in_if(fast__1)
+# Loading work.lc3_prediction_pkg(fast)
+# Loading work.controller_env_pkg(fast)
+# Loading work.memaccess_env_pkg(fast)
+# Loading work.writeback_env_pkg(fast)
+# Loading work.execute_env_pkg(fast)
+# Loading work.decode_env_pkg(fast)
+# Loading work.fetch_env_pkg(fast)
+# Loading work.lc3_env_pkg(fast)
+# Loading work.lc3_sequences_pkg(fast)
+# Loading work.lc3_tests_pkg(fast)
+# Loading work.hvl_top(fast)
+# Loading /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# 
+# set IterationLimit 140000
+# 140000
+# set NoQuitOnFinish 1
+# 1
+# coverage attribute -name TESTNAME -value test_top
+# coverage save -onexit test_top.ucdb
+# run -all
+# Static tasks and functions will be logged.
+# 	Arrays of 1 unpacked dimension inside classes will be logged if they have 1024 or fewer elements
+# qwavedb_dumpvars: Initiating qwavedb class logging
+# 
+# 	Loading class filter file '/mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/bin/../linux_x86_64/VisualizerRls/bin/../config/uvmclassfilter.txt'
+# 
+# qwavedb_dumpvars: Done initiating qwavedb class logging
+# 	Arrays of 1 unpacked dimension will be logged if they have 1024 or fewer elements
+# qwavedb_dumpvars: Initiating qwavedb waveform capturing
+# 
+# Info: Enabling parallel (multi-threaded) wave dumping.
+# ** Note: (vsim-4912) Signal uvm_pkg.uvm_bits_to_string.str is not recorded. Its size is 115200 bits, and the limit is 4096.
+#   (Dumping 1 array)
+# 
+# qwavedb_dumpvars: Done initiating qwavedb waveform capturing
+# 
+# ----------------------------------------------------------------
+# 
+# UVM-1.1d
+# 
+# (C) 2007-2013 Mentor Graphics Corporation
+# 
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# 
+# (C) 2006-2013 Synopsys, Inc.
+# 
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# 
+# ----------------------------------------------------------------
+# 
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+# 
+#   You are using a version of the UVM library that has been compiled
+# 
+#   with `UVM_NO_DEPRECATED undefined.
+# 
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+# 
+#   You are using a version of the UVM library that has been compiled
+# 
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+# 
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# 
+# ----------------------------------------------------------------
+# 
+# //  UVM Framework 
+# 
+# //  Version 2023.4_2
+# 
+# //  (C) 2013-2024 Siemens Corporation
+# 
+# //  Digital Industries Software
+# 
+# //  Siemens EDA
+# 
+# //  All Rights Reserved.
+# 
+# ----------------------------------------------------------------
+# 
+# 
+# 
+# 
+# UVM_INFO @ 0.000ns: reporter [RNTST] Running test test_top...
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(101) @ 0.000ns: uvm_test_top.environment.decode_env.dec_sb [SCBD] end_of_test_empty_check has been turned off
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(101) @ 0.000ns: uvm_test_top.environment.execute_env.execute_scoreboard [SCBD] end_of_test_empty_check has been turned off
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(101) @ 0.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] end_of_test_empty_check has been turned off
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(101) @ 0.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] end_of_test_empty_check has been turned off
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(101) @ 0.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] end_of_test_empty_check has been turned off
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 215200.000ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 215200.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=21517 MATCHES=21517 MISMATCHES=0
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 215200.000ns: uvm_test_top.environment.decode_env.dec_sb [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=8038 MATCHES=8037 MISMATCHES=0
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 215200.000ns: uvm_test_top.environment.execute_env.execute_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=21517 MATCHES=21516 MISMATCHES=0
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 215200.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=21517 MATCHES=21516 MISMATCHES=0
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 215200.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=21516 MATCHES=21515 MISMATCHES=0
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 215200.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=21516 MATCHES=21515 MISMATCHES=0
+# 
+# 
+# --- UVM Report Summary ---
+# 
+# 
+# 
+# ** Report counts by severity
+# 
+# UVM_INFO :   13
+# 
+# UVM_WARNING :    0
+# 
+# UVM_ERROR :    0
+# 
+# UVM_FATAL :    0
+# 
+# ** Report counts by id
+# 
+# [RNTST]     1
+# 
+# [SCBD]    11
+# 
+# [TEST_DONE]     1
+# 
+# ** Note: $finish    : /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 215200 ns  Iteration: 61  Instance: /hvl_top
+# 	 Class Filter File used = /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/bin/../linux_x86_64/VisualizerRls/bin/../config/uvmclassfilter.txt
+# 1
+# Break in Task uvm_root::run_test at /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# quit
+# Saving coverage database on exit...
+# End time: 13:26:16 on Dec 02,2025, Elapsed time: 0:00:24
+# Errors: 0, Warnings: 0
+# Disable bg thread...
+# qwavedb_dumpvars : Simulation ending at [0 215200] 0
+# ========= Visualizer Dump Summary report =========
+# 	 #Design Ids       = 8430
+# 	 #Assertion Ids    = 4
+# 	 #Class Ids        = 7475 (Recycled = 0)
+# 	 #Message Ids      = 8
+# 	 #2D Array Ids     = 1
+# 	 #Total Ids        = 8445
+# 	 #Swaps            = 12
+# 	  Id Memory        = 878.28 KB
+# 	  Swap Memory      = 100.00 MB
+# ========= End of Visualizer Dump Summary report =========
+End time: 13:26:22 on Dec 02,2025, Elapsed time: 0:01:24
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vcom: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   0
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   0

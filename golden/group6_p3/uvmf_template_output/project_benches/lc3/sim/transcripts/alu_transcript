@@ -1,0 +1,325 @@
+QuestaSim-64 qrun 2025.1_1 Utility 2025.02 Feb 13 2025
+Start time: 13:26:29 on Dec 02,2025
+qrun -64 -batch -visualizer -debug -permit_unmatched_virtual_intf -l run.log -f /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/group6_p3_final/uvmf_template_output/project_benches/lc3/sim/top.qf -sv_seed 562841 -msglimit error -msglimitcount 20 -do "set IterationLimit 140000; set NoQuitOnFinish 1; coverage attribute -name TESTNAME -value dummy_test; coverage save -onexit dummy_test.ucdb;run -all;quit" "+UVM_TESTNAME=dummy_test" "+UVM_VERBOSITY=UVM_LOW" -debug -qwavedb=+signal+memory=1024+report+parameter+class+assertion+uvm_schematic+msg+classmemory=1024+statictaskfunc -top hdl_top -top hvl_top -suppress 8887,2286 -designfile design.bin -covermultiuserenv 
+-- Skipping 'vlog -64 +incdir+/mnt/ncsudrive/z/zhussai/uvm_ece748/git_rep...'
+-- Skipping 'vcom -64 -msglimit error -msglimitcount 20 -covermultiuseren...'
+-- Skipping vopt
+# vsim -64 -batch -permit_unmatched_virtual_intf -sv_seed 562841 -msglimit error -msglimitcount 20 "+UVM_TESTNAME=dummy_test" "+UVM_VERBOSITY=UVM_LOW" -qwavedb=+signal+memory=1024+report+parameter+class+assertion+uvm_schematic+msg+classmemory=1024+statictaskfunc -lib qrun.out/work -do "set IterationLimit 140000; set NoQuitOnFinish 1; coverage attribute -name TESTNAME -value dummy_test; coverage save -onexit dummy_test.ucdb;run -all;quit" -statslog qrun.out/stats_log qrun_opt -suppress 8887,2286 -appendlog -l run.log 
+# Start time: 13:26:32 on Dec 02,2025
+# Loading Siemens Visualizer shared object '/mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/bin/../linux_x86_64/VisualizerRls/bin/libqvisualizer.so'
+# //  Questa Sim-64
+# //  Version 2025.1_1 linux_x86_64 Feb 13 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.fetch_in_monitor_bfm(fast)
+# Loading work.fetch_out_monitor_bfm(fast)
+# Loading work.decode_in_monitor_bfm(fast)
+# Loading work.decode_out_monitor_bfm(fast)
+# Loading work.execute_in_monitor_bfm(fast)
+# Loading work.execute_out_monitor_bfm(fast)
+# Loading work.writeback_in_monitor_bfm(fast)
+# Loading work.writeback_out_monitor_bfm(fast)
+# Loading work.memaccess_in_monitor_bfm(fast)
+# Loading work.memaccess_out_monitor_bfm(fast)
+# Loading work.controller_in_monitor_bfm(fast)
+# Loading work.controller_out_monitor_bfm(fast)
+# Loading work.imem_monitor_bfm(fast)
+# Loading work.dmem_monitor_bfm(fast)
+# Loading work.fetch_in_driver_bfm(fast)
+# Loading work.fetch_out_driver_bfm(fast)
+# Loading work.decode_in_driver_bfm(fast)
+# Loading work.decode_out_driver_bfm(fast)
+# Loading work.execute_in_driver_bfm(fast)
+# Loading work.execute_out_driver_bfm(fast)
+# Loading work.writeback_in_driver_bfm(fast)
+# Loading work.writeback_out_driver_bfm(fast)
+# Loading work.memaccess_in_driver_bfm(fast)
+# Loading work.memaccess_out_driver_bfm(fast)
+# Loading work.controller_in_driver_bfm(fast)
+# Loading work.controller_out_driver_bfm(fast)
+# Loading work.imem_driver_bfm(fast)
+# Loading work.dmem_driver_bfm(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.uvmf_base_pkg_hdl(fast)
+# Loading work.lc3_parameters_pkg(fast)
+# Loading work.hdl_top(fast)
+# Loading work.imem_pkg_hdl(fast)
+# Loading work.imem_if_sv_unit(fast)
+# Loading work.imem_if(fast__1)
+# Loading work.dmem_pkg_hdl(fast)
+# Loading work.dmem_if_sv_unit(fast)
+# Loading work.dmem_if(fast__1)
+# Loading work.fetch_in_pkg_hdl(fast)
+# Loading work.uvmf_base_pkg(fast)
+# Loading work.fetch_in_pkg(fast)
+# Loading work.fetch_in_monitor_bfm_sv_unit(fast)
+# Loading work.fetch_in_monitor_bfm(fast__1)
+# Loading work.fetch_out_pkg_hdl(fast)
+# Loading work.fetch_out_pkg(fast)
+# Loading work.fetch_out_monitor_bfm_sv_unit(fast)
+# Loading work.fetch_out_monitor_bfm(fast__1)
+# Loading work.decode_in_pkg_hdl(fast)
+# Loading work.decode_in_pkg(fast)
+# Loading work.decode_in_monitor_bfm_sv_unit(fast)
+# Loading work.decode_in_monitor_bfm(fast__1)
+# Loading work.decode_out_pkg_hdl(fast)
+# Loading work.decode_out_pkg(fast)
+# Loading work.decode_out_monitor_bfm_sv_unit(fast)
+# Loading work.decode_out_monitor_bfm(fast__1)
+# Loading work.execute_in_pkg_hdl(fast)
+# Loading work.execute_in_pkg(fast)
+# Loading work.execute_in_monitor_bfm_sv_unit(fast)
+# Loading work.execute_in_monitor_bfm(fast__1)
+# Loading work.execute_out_pkg_hdl(fast)
+# Loading work.execute_out_pkg(fast)
+# Loading work.execute_out_monitor_bfm_sv_unit(fast)
+# Loading work.execute_out_monitor_bfm(fast__1)
+# Loading work.writeback_in_pkg_hdl(fast)
+# Loading work.writeback_in_pkg(fast)
+# Loading work.writeback_in_monitor_bfm_sv_unit(fast)
+# Loading work.writeback_in_monitor_bfm(fast__1)
+# Loading work.writeback_out_pkg_hdl(fast)
+# Loading work.writeback_out_pkg(fast)
+# Loading work.writeback_out_monitor_bfm_sv_unit(fast)
+# Loading work.writeback_out_monitor_bfm(fast__1)
+# Loading work.memaccess_in_pkg_hdl(fast)
+# Loading work.memaccess_in_pkg(fast)
+# Loading work.memaccess_in_monitor_bfm_sv_unit(fast)
+# Loading work.memaccess_in_monitor_bfm(fast__1)
+# Loading work.memaccess_out_pkg_hdl(fast)
+# Loading work.memaccess_out_pkg(fast)
+# Loading work.memaccess_out_monitor_bfm_sv_unit(fast)
+# Loading work.memaccess_out_monitor_bfm(fast__1)
+# Loading work.controller_in_pkg_hdl(fast)
+# Loading work.controller_in_pkg(fast)
+# Loading work.controller_in_monitor_bfm_sv_unit(fast)
+# Loading work.controller_in_monitor_bfm(fast__1)
+# Loading work.controller_out_pkg_hdl(fast)
+# Loading work.controller_out_pkg(fast)
+# Loading work.controller_out_monitor_bfm_sv_unit(fast)
+# Loading work.controller_out_monitor_bfm(fast__1)
+# Loading work.imem_pkg(fast)
+# Loading work.imem_monitor_bfm_sv_unit(fast)
+# Loading work.imem_monitor_bfm(fast__1)
+# Loading work.dmem_pkg(fast)
+# Loading work.dmem_monitor_bfm_sv_unit(fast)
+# Loading work.dmem_monitor_bfm(fast__1)
+# Loading work.fetch_in_driver_bfm_sv_unit(fast)
+# Loading work.fetch_in_driver_bfm(fast__1)
+# Loading work.fetch_out_driver_bfm_sv_unit(fast)
+# Loading work.fetch_out_driver_bfm(fast__1)
+# Loading work.decode_in_driver_bfm_sv_unit(fast)
+# Loading work.decode_in_driver_bfm(fast__1)
+# Loading work.decode_out_driver_bfm_sv_unit(fast)
+# Loading work.decode_out_driver_bfm(fast__1)
+# Loading work.execute_in_driver_bfm_sv_unit(fast)
+# Loading work.execute_in_driver_bfm(fast__1)
+# Loading work.execute_out_driver_bfm_sv_unit(fast)
+# Loading work.execute_out_driver_bfm(fast__1)
+# Loading work.writeback_in_driver_bfm_sv_unit(fast)
+# Loading work.writeback_in_driver_bfm(fast__1)
+# Loading work.writeback_out_driver_bfm_sv_unit(fast)
+# Loading work.writeback_out_driver_bfm(fast__1)
+# Loading work.memaccess_in_driver_bfm_sv_unit(fast)
+# Loading work.memaccess_in_driver_bfm(fast__1)
+# Loading work.memaccess_out_driver_bfm_sv_unit(fast)
+# Loading work.memaccess_out_driver_bfm(fast__1)
+# Loading work.controller_in_driver_bfm_sv_unit(fast)
+# Loading work.controller_in_driver_bfm(fast__1)
+# Loading work.controller_out_driver_bfm_sv_unit(fast)
+# Loading work.controller_out_driver_bfm(fast__1)
+# Loading work.imem_driver_bfm_sv_unit(fast)
+# Loading work.imem_driver_bfm(fast__1)
+# Loading work.dmem_driver_bfm_sv_unit(fast)
+# Loading work.dmem_driver_bfm(fast__1)
+# Loading work.controller_out_if_sv_unit(fast)
+# Loading work.controller_out_if(fast__1)
+# Loading work.controller_in_if_sv_unit(fast)
+# Loading work.controller_in_if(fast__1)
+# Loading work.memaccess_out_if_sv_unit(fast)
+# Loading work.memaccess_out_if(fast__1)
+# Loading work.memaccess_in_if_sv_unit(fast)
+# Loading work.memaccess_in_if(fast__1)
+# Loading work.writeback_out_if_sv_unit(fast)
+# Loading work.writeback_out_if(fast__1)
+# Loading work.writeback_in_if_sv_unit(fast)
+# Loading work.writeback_in_if(fast__1)
+# Loading work.execute_out_if_sv_unit(fast)
+# Loading work.execute_out_if(fast__1)
+# Loading work.execute_in_if_sv_unit(fast)
+# Loading work.execute_in_if(fast__1)
+# Loading work.decode_out_if_sv_unit(fast)
+# Loading work.decode_out_if(fast__1)
+# Loading work.decode_in_if_sv_unit(fast)
+# Loading work.decode_in_if(fast__1)
+# Loading work.fetch_out_if_sv_unit(fast)
+# Loading work.fetch_out_if(fast__1)
+# Loading work.fetch_in_if_sv_unit(fast)
+# Loading work.fetch_in_if(fast__1)
+# Loading work.lc3_prediction_pkg(fast)
+# Loading work.controller_env_pkg(fast)
+# Loading work.memaccess_env_pkg(fast)
+# Loading work.writeback_env_pkg(fast)
+# Loading work.execute_env_pkg(fast)
+# Loading work.decode_env_pkg(fast)
+# Loading work.fetch_env_pkg(fast)
+# Loading work.lc3_env_pkg(fast)
+# Loading work.lc3_sequences_pkg(fast)
+# Loading work.lc3_tests_pkg(fast)
+# Loading work.hvl_top(fast)
+# Loading /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# 
+# set IterationLimit 140000
+# 140000
+# set NoQuitOnFinish 1
+# 1
+# coverage attribute -name TESTNAME -value dummy_test
+# coverage save -onexit dummy_test.ucdb
+# run -all
+# Static tasks and functions will be logged.
+# 	Arrays of 1 unpacked dimension inside classes will be logged if they have 1024 or fewer elements
+# qwavedb_dumpvars: Initiating qwavedb class logging
+# 
+# 	Loading class filter file '/mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/bin/../linux_x86_64/VisualizerRls/bin/../config/uvmclassfilter.txt'
+# 
+# qwavedb_dumpvars: Done initiating qwavedb class logging
+# 	Arrays of 1 unpacked dimension will be logged if they have 1024 or fewer elements
+# qwavedb_dumpvars: Initiating qwavedb waveform capturing
+# 
+# Info: Enabling parallel (multi-threaded) wave dumping.
+# ** Note: (vsim-4912) Signal uvm_pkg.uvm_bits_to_string.str is not recorded. Its size is 115200 bits, and the limit is 4096.
+#   (Dumping 1 array)
+# 
+# qwavedb_dumpvars: Done initiating qwavedb waveform capturing
+# 
+# ----------------------------------------------------------------
+# 
+# UVM-1.1d
+# 
+# (C) 2007-2013 Mentor Graphics Corporation
+# 
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# 
+# (C) 2006-2013 Synopsys, Inc.
+# 
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# 
+# ----------------------------------------------------------------
+# 
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+# 
+#   You are using a version of the UVM library that has been compiled
+# 
+#   with `UVM_NO_DEPRECATED undefined.
+# 
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+# 
+#   You are using a version of the UVM library that has been compiled
+# 
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+# 
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# 
+# ----------------------------------------------------------------
+# 
+# //  UVM Framework 
+# 
+# //  Version 2023.4_2
+# 
+# //  (C) 2013-2024 Siemens Corporation
+# 
+# //  Digital Industries Software
+# 
+# //  Siemens EDA
+# 
+# //  All Rights Reserved.
+# 
+# ----------------------------------------------------------------
+# 
+# 
+# 
+# 
+# UVM_INFO @ 0.000ns: reporter [RNTST] Running test dummy_test...
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(101) @ 0.000ns: uvm_test_top.environment.decode_env.dec_sb [SCBD] end_of_test_empty_check has been turned off
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(101) @ 0.000ns: uvm_test_top.environment.execute_env.execute_scoreboard [SCBD] end_of_test_empty_check has been turned off
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(101) @ 0.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] end_of_test_empty_check has been turned off
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(101) @ 0.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] end_of_test_empty_check has been turned off
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(101) @ 0.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] end_of_test_empty_check has been turned off
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 80790.000ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 80790.000ns: uvm_test_top.environment.controller_env.controller_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=8076 MATCHES=8076 MISMATCHES=0
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 80790.000ns: uvm_test_top.environment.decode_env.dec_sb [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=8038 MATCHES=8037 MISMATCHES=0
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 80790.000ns: uvm_test_top.environment.execute_env.execute_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=8076 MATCHES=8075 MISMATCHES=0
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 80790.000ns: uvm_test_top.environment.fetch_env.fetch_scoreboard [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=8076 MATCHES=8075 MISMATCHES=0
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 80790.000ns: uvm_test_top.environment.memaccess_env.memaccess_sb [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=8075 MATCHES=8074 MISMATCHES=0
+# UVM_INFO /mnt/ncsudrive/z/zhussai/uvm_ece748/git_repo/group6_p3/golden/UVMF_2023.4_2/uvmf_base_pkg/src/uvmf_scoreboard_base.svh(251) @ 80790.000ns: uvm_test_top.environment.writeback_env.writeback_sb [SCBD] SCOREBOARD_RESULTS:  PREDICTED_TRANSACTIONS=8075 MATCHES=8074 MISMATCHES=0
+# 
+# 
+# --- UVM Report Summary ---
+# 
+# 
+# 
+# ** Report counts by severity
+# 
+# UVM_INFO :   13
+# 
+# UVM_WARNING :    0
+# 
+# UVM_ERROR :    0
+# 
+# UVM_FATAL :    0
+# 
+# ** Report counts by id
+# 
+# [RNTST]     1
+# 
+# [SCBD]    11
+# 
+# [TEST_DONE]     1
+# 
+# ** Note: $finish    : /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 80790 ns  Iteration: 60  Instance: /hvl_top
+# 	 Class Filter File used = /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/bin/../linux_x86_64/VisualizerRls/bin/../config/uvmclassfilter.txt
+# 1
+# Break in Task uvm_root::run_test at /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at /mnt/apps/public/COE/mg_apps/questa2025.1_1/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# quit
+# Saving coverage database on exit...
+# End time: 13:26:50 on Dec 02,2025, Elapsed time: 0:00:18
+# Errors: 0, Warnings: 0
+# Disable bg thread...
+# qwavedb_dumpvars : Simulation ending at [0 80790] 0
+# ========= Visualizer Dump Summary report =========
+# 	 #Design Ids       = 8430
+# 	 #Assertion Ids    = 4
+# 	 #Class Ids        = 7475 (Recycled = 0)
+# 	 #Message Ids      = 8
+# 	 #2D Array Ids     = 1
+# 	 #Total Ids        = 8445
+# 	 #Swaps            = 8
+# 	  Id Memory        = 878.28 KB
+# 	  Swap Memory      = 100.00 MB
+# ========= End of Visualizer Dump Summary report =========
+End time: 13:26:51 on Dec 02,2025, Elapsed time: 0:00:22
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   0
