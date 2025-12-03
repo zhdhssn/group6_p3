@@ -174,10 +174,16 @@ end
     // task should return when a complete transfer has been observed.  Once this task is
     // exited with captured values, it is then called again to wait for and observe 
     // the next transfer. One clock cycle is consumed between calls to do_monitor.
-    @(posedge clock_i);
-    @(posedge clock_i);
-    @(posedge clock_i);
-    @(posedge clock_i);
+
+    //Harry: keep bfm spinning if fetch is not enabled or PC is not updated
+    while(!(enable_fetch_i ==1'b1 && enable_updatePC_i ==1'b1)) @(posedge clock_i);
+
+    //Harry: connect what we have from bus to the fetch_in_monitor_struct
+    //fetch in monitor will later convert the struct to the transaction
+    fetch_in_monitor_struct.enable_updatePC = enable_updatePC_i;  
+    fetch_in_monitor_struct.enable_fetch = enable_fetch_i;  
+    fetch_in_monitor_struct.br_taken = br_taken_i;  
+    fetch_in_monitor_struct.taddr = taddr_i;
     // pragma uvmf custom do_monitor end
   endtask         
   
